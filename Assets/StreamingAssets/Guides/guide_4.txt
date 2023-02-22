@@ -1,0 +1,1 @@
+        _guides.Add(GuideName.KilledSlime, "OK, fine! That wasn't too difficult. It seemes like you`re ready! Good luck!");

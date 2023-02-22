@@ -1,0 +1,1 @@
+Congratulations, you've found it! To open your inventory, press 'I'. You will how many ammo you have. Now, to fire, press 'Space'. Don't waste all of the ammo! You'll gonna need it. I want you to go North. There is a training slime from that escaped from our laboratory and needs to be destroyed! Be careful!");

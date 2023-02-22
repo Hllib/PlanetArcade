@@ -1,0 +1,161 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class GameManager : MonoBehaviour
+{
+    public static float TimeInGame { get; private set; }
+    [SerializeField]
+    private GameObject _pauseMenu;
+    [SerializeField]
+    private GameObject _playerStatsMenu;
+    [SerializeField]
+    private Animator _rocketAnimator;
+    [SerializeField]
+    private Player _player;
+
+    public bool IsPlayerDead { get; set; }
+    public bool IsPaused { get; private set; }
+
+    private static GameManager _instance;
+
+    public Dictionary<int, int> levelFinished = new Dictionary<int, int>();
+
+    public static GameManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                Debug.LogError("Game Manager is NULL::GameManager.cs");
+            }
+
+            return _instance;
+        }
+    }
+
+    private void Awake()
+    {
+        _instance = this;
+        CheckPauseState();
+
+        levelFinished = new Dictionary<int, int>()
+        {
+            {PlanetID.Earth, PlayerPrefs.GetInt("Earth", 0)},
+            {PlanetID.Moon, PlayerPrefs.GetInt("Moon", 0)},
+            {PlanetID.Mars, PlayerPrefs.GetInt("Mars", 0)}
+        };
+
+        TimeInGame = PlayerPrefs.GetFloat("TimeInGame", 0);
+        StartCoroutine(CheckTimeInGame());
+    }
+
+    IEnumerator CheckTimeInGame()
+    {
+        while (true)
+        {
+            TimeInGame += Time.time;
+            PlayerPrefs.SetFloat("TimeInGame", TimeInGame);
+            PlayerPrefs.Save();
+
+            yield return new WaitForSecondsRealtime(15f);
+        }
+    }
+
+    public void SavePlayerPrefs()
+    {
+        PlayerPrefs.SetInt("Earth", levelFinished[PlanetID.Earth]);
+        PlayerPrefs.SetInt("Moon", levelFinished[PlanetID.Moon]);
+        PlayerPrefs.SetInt("Mars", levelFinished[PlanetID.Mars]);
+        PlayerPrefs.Save();
+        _player.SaveInventory();
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        StopPause();
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void GoToLocation(int id)
+    {
+        if(_rocketAnimator != null)
+        {
+            switch(id)
+            {
+                case PlanetID.Earth: _rocketAnimator.SetInteger("PlanetID", 0); StartCoroutine(LoadSceneWithDelay(PlanetID.Earth)); break;
+                case PlanetID.Moon: _rocketAnimator.SetInteger("PlanetID", 1); StartCoroutine(LoadSceneWithDelay(PlanetID.Moon)); break;
+                case PlanetID.Mars: _rocketAnimator.SetInteger("PlanetID", 2); StartCoroutine(LoadSceneWithDelay(PlanetID.Mars)); break;
+                case PlanetID.Station3D: _rocketAnimator.SetInteger("PlanetID", 3); StartCoroutine(LoadSceneWithDelay(PlanetID.Station3D)); break;
+            }
+        }
+    }
+
+    IEnumerator LoadSceneWithDelay(int id)
+    {
+        StopPause();
+        yield return new WaitForSeconds(2f);
+        
+        switch(id)
+        {
+            case PlanetID.Earth: LoadScene("Earth"); break;
+            case PlanetID.Moon: LoadScene("Moon"); break;
+            case PlanetID.Mars: LoadScene("Mars"); break;
+            case PlanetID.Station3D: LoadScene("Station3D"); break;
+        }
+    }
+
+    private void StopPause()
+    {
+        Time.timeScale = 1f;
+        IsPaused = false;
+    }
+
+    private void StartPause()
+    {
+        Time.timeScale = 0f;
+        IsPaused = true;
+    }
+
+    public void ShowPlayerStats()
+    {
+        _playerStatsMenu.SetActive(!_playerStatsMenu.activeSelf);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && _pauseMenu != null && IsPlayerDead == false)
+        {
+            _pauseMenu.SetActive(!_pauseMenu.activeSelf);
+            CheckPauseState();
+        }
+
+        if(IsPlayerDead == true)
+        {
+            UIManager.Instance.ShowGameOverScren();
+        }
+    }
+
+    public void Resume()
+    {
+        _pauseMenu.SetActive(!_pauseMenu.activeSelf);
+        CheckPauseState();
+    }
+
+    public void CheckPauseState()
+    {
+        if(_pauseMenu != null)
+        {
+            switch (_pauseMenu.activeSelf)
+            {
+                case true:
+                    StartPause();
+                    break;
+                case false:
+                    StopPause();
+                    break;
+            }
+        }
+    }
+}

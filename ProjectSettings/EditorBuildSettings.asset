@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Level/Scenes/Menu/MainMenu.unity
+    guid: 0a28aca86462fec4e8c50907544b4695
+  - enabled: 1
+    path: Assets/Level/Scenes/Station3D.unity
+    guid: ae8591ac11319cb41ab70a0408df872b
+  - enabled: 1
+    path: Assets/Level/Scenes/Menu/PlanetsMenu.unity
+    guid: 6ac946f9f9a4b254a88c5eb9c268d2c2
+  - enabled: 1
+    path: Assets/Level/Scenes/Planets/Earth.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Level/Scenes/Planets/Moon.unity
+    guid: 7b30e1cdf5c51a244bbda6834a178ff2
+  - enabled: 1
+    path: Assets/Level/Scenes/Planets/Cave.unity
+    guid: 7428c20db2a560a43a4b644406763097
+  m_configObjects: {}
