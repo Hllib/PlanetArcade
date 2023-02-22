@@ -8,17 +8,6 @@ public class AudioManager : MonoBehaviour
     private static AudioManager _instance;
     private AudioSource _audioSource;
 
-    [SerializeField]
-    private AudioClip _firePistol;
-    [SerializeField]
-    private AudioClip _fireRifle;
-    [SerializeField]
-    private AudioClip _bgMusic_calm;
-    [SerializeField]
-    private AudioClip _bgMusic_epic;
-    [SerializeField]
-    private AudioSource _bgMusicSource;
-
     public static AudioManager Instance
     {
         get
@@ -38,15 +27,9 @@ public class AudioManager : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
-    public void BgMusic_Calm()
+    public void PlayClip(AudioClip clip)
     {
-        _bgMusicSource.clip = _bgMusic_calm;
-        _bgMusicSource.Play();
-    }
-
-    public void BgMusic_Epic()
-    {
-        _bgMusicSource.clip = _bgMusic_epic;
-        _bgMusicSource.Play();
+        _audioSource.clip = clip;
+        _audioSource.Play();
     }
 }

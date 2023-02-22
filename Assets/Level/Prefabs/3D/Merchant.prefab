@@ -659,6 +659,7 @@ MonoBehaviour:
   _itemsTitles:
   - {fileID: 0}
   - {fileID: 0}
+  _goldAmount: {fileID: 0}
   currentSelectedItem: 0
   currentSelectedCost: 0
 --- !u!65 &963871899

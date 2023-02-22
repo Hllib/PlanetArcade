@@ -13,6 +13,12 @@ public class MainMenu : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        StartCoroutine(Load(sceneName));
+    }
+
+    IEnumerator Load(string sceneName)
+    {
+        yield return new WaitForSeconds(0.4f);
         SceneManager.LoadScene(sceneName);
     }
 
