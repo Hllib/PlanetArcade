@@ -7,6 +7,8 @@ using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using FMOD.Studio;
+using System.Net;
 
 public class Player : MonoBehaviour, IDamageable
 {
@@ -38,11 +40,18 @@ public class Player : MonoBehaviour, IDamageable
     public bool FireBlocked { get; set; }
     public bool IsShieldEnabled { get; private set; }
     private bool _hasShield;
+    [SerializeField]
     private bool _isSprinting;
     private bool _sprintAllowed;
 
+    private EventInstance _playerFootstepsWalk;
+    private EventInstance _playerFootstepsSprint;
+
     void Start()
     {
+        _playerFootstepsWalk = AudioManager.Instance.CreateEventInstance(FMODEvents.Instance.playerFootstepsWalk);
+        _playerFootstepsSprint = AudioManager.Instance.CreateEventInstance(FMODEvents.Instance.playerFootstepsSprint);
+
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<PlayerAnimator>();
         _playerInventory = GetComponent<Inventory>();
@@ -123,6 +132,7 @@ public class Player : MonoBehaviour, IDamageable
         if (GameManager.Instance.IsPaused) return;
 
         CalculateMovement();
+        UpdateSound();
         CheckShield();
         if (_playerInventory.SelectedItem != null)
         {
@@ -281,5 +291,42 @@ public class Player : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(0.3f);
         speed = localSpeed;
         _sprintAllowed = true;
+    }
+
+    public void UpdateSound()
+    {
+        Debug.Log("X: " + _rigidbody.velocity.x + "Y: " + _rigidbody.velocity.y);
+
+        if ((_rigidbody.velocity.x != 0 || _rigidbody.velocity.y != 0) && !_isSprinting)
+        {
+            _playerFootstepsSprint.stop(STOP_MODE.IMMEDIATE);
+
+            PLAYBACK_STATE playbackState;
+            _playerFootstepsWalk.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                _playerFootstepsWalk.start();
+            }
+        }
+        else if ((_rigidbody.velocity.x != 0 || _rigidbody.velocity.y != 0) && _isSprinting)
+        {
+            _playerFootstepsWalk.stop(STOP_MODE.IMMEDIATE);
+
+            PLAYBACK_STATE playbackState;
+            _playerFootstepsSprint.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                _playerFootstepsSprint.start();
+            }
+        }
+        else if (_rigidbody.velocity.x == 0 && _rigidbody.velocity.y == 0)
+        {
+            _playerFootstepsWalk.stop(STOP_MODE.ALLOWFADEOUT);
+            _playerFootstepsSprint.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+        else
+        {
+            
+        }
     }
 }

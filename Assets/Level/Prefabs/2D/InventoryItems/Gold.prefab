@@ -124,4 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7568d9b494cb4c043a14cd275300ff18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventoryType: 3
+  _goldCollectedSound:
+    Guid:
+      Data1: -322307314
+      Data2: 1131781687
+      Data3: -1580104015
+      Data4: -749367103
+    Path: event:/Coin_pickup
