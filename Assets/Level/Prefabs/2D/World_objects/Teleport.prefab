@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 339418257420674683}
   - component: {fileID: 339418257420674684}
   - component: {fileID: 339418257420674685}
+  - component: {fileID: 339418257401721762}
   m_Layer: 0
   m_Name: Teleport
   m_TagString: Untagged
@@ -163,3 +164,33 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0122795105, y: 0.012280226}
   m_Size: {x: 1.2037659, y: 2.1550298}
   m_Direction: 0
+--- !u!114 &339418257401721762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339418257420674679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -654181691
+      Data2: 1283671040
+      Data3: -538455620
+      Data4: 1867755998
+    Path: event:/SFX/Portla_idle
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 5

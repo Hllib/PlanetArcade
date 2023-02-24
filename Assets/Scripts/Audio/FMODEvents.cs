@@ -13,6 +13,14 @@ public class FMODEvents : MonoBehaviour
 
     [field: SerializeField]
     public EventReference goldCollected { get; private set; }
+    [field: SerializeField]
+    public EventReference ambience { get; private set; }
+    [field: SerializeField]
+    public EventReference music { get; private set; }
+    [field: SerializeField]
+    public EventReference buttonEnter;
+    [field: SerializeField]
+    public EventReference buttonClick;
 
     private static FMODEvents _instance;
 

@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _pauseMenu;
     [SerializeField]
-    private GameObject _playerStatsMenu;
-    [SerializeField]
     private Animator _rocketAnimator;
     [SerializeField]
     private Player _player;
@@ -116,11 +114,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         IsPaused = true;
-    }
-
-    public void ShowPlayerStats()
-    {
-        _playerStatsMenu.SetActive(!_playerStatsMenu.activeSelf);
     }
 
     private void Update()

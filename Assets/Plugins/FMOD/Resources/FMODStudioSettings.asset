@@ -317,7 +317,9 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Cave
   - SFX
+  - UI
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

@@ -194,7 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Setting
+  m_Text: 'Audio Setting
 
 '
 --- !u!222 &73434184
@@ -291,21 +291,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlayButtonClickSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 204342476}
         m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
-        m_MethodName: PressedSound
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -366,8 +354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _layoutGroup: {fileID: 0}
-  _buttonEnter: {fileID: 8300000, guid: 99348d26b121bdf40bca2ff30b000207, type: 3}
-  _buttonPressed: {fileID: 8300000, guid: 70e02441ad3cd8f488092b6a4933e446, type: 3}
 --- !u!95 &204342477
 Animator:
   serializedVersion: 5
@@ -476,7 +462,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 220009832}
         m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
-        m_MethodName: PressedSound
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -549,8 +535,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _layoutGroup: {fileID: 0}
-  _buttonEnter: {fileID: 8300000, guid: 99348d26b121bdf40bca2ff30b000207, type: 3}
-  _buttonPressed: {fileID: 8300000, guid: 70e02441ad3cd8f488092b6a4933e446, type: 3}
 --- !u!95 &220009833
 Animator:
   serializedVersion: 5
@@ -859,6 +843,99 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &536045602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 536045603}
+  - component: {fileID: 536045604}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &536045603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536045602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1572910256}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &536045604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536045602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11008a4ba8cb12041b6011fa31b40946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <playerFootstepsWalk>k__BackingField:
+    Guid:
+      Data1: 519369890
+      Data2: 1125655310
+      Data3: -989387620
+      Data4: 302466747
+    Path: event:/SFX/Player/Player_footsteps_walk_stone
+  <playerFootstepsSprint>k__BackingField:
+    Guid:
+      Data1: 934359065
+      Data2: 1107733622
+      Data3: 309286022
+      Data4: 795008787
+    Path: event:/SFX/Player/Player_footsteps_sprint_stone
+  <goldCollected>k__BackingField:
+    Guid:
+      Data1: -322307314
+      Data2: 1131781687
+      Data3: -1580104015
+      Data4: -749367103
+    Path: event:/SFX/Gold_pickup
+  <ambience>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <music>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  buttonEnter:
+    Guid:
+      Data1: 1898462042
+      Data2: 1262695259
+      Data3: -2134346835
+      Data4: 1828201455
+    Path: event:/UI_Sounds/ButtonEnter
+  buttonClick:
+    Guid:
+      Data1: 957308390
+      Data2: 1284203019
+      Data3: 192856223
+      Data4: -841462014
+    Path: event:/UI_Sounds/ButtonClick
 --- !u!1 &602969523
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +1024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
+  attenuationObject: {fileID: 1185692967}
 --- !u!1 &748606538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,7 +1113,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 748606544}
         m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
-        m_MethodName: PressedSound
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1121,8 +1198,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _layoutGroup: {fileID: 0}
-  _buttonEnter: {fileID: 8300000, guid: 99348d26b121bdf40bca2ff30b000207, type: 3}
-  _buttonPressed: {fileID: 8300000, guid: 70e02441ad3cd8f488092b6a4933e446, type: 3}
 --- !u!95 &748606545
 Animator:
   serializedVersion: 5
@@ -1770,6 +1845,51 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1572910254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1572910256}
+  - component: {fileID: 1572910255}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1572910255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572910254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 349b80fe3d84c5c449f2f18e483f365a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1572910256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572910254}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 536045603}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1580739434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,7 +2256,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1898694517}
         m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
-        m_MethodName: PressedSound
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2209,8 +2329,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _layoutGroup: {fileID: 0}
-  _buttonEnter: {fileID: 8300000, guid: 99348d26b121bdf40bca2ff30b000207, type: 3}
-  _buttonPressed: {fileID: 8300000, guid: 70e02441ad3cd8f488092b6a4933e446, type: 3}
 --- !u!95 &1898694518
 Animator:
   serializedVersion: 5

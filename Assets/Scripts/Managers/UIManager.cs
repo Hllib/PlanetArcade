@@ -12,10 +12,6 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Image[] _healthBars;
     [SerializeField]
-    private Image[] _healthBarsInStats;
-    [SerializeField]
-    private Text _timeInGameText;
-    [SerializeField]
     private GameObject _messagePrefab;
     [SerializeField]
     private Transform _messageHolder;
@@ -25,6 +21,8 @@ public class UIManager : MonoBehaviour
     private GameObject _foundArtifactPanel;
     [SerializeField]
     private GameObject _fadeToBlackCave;
+    [SerializeField]
+    private GameObject _soundPanel;
 
     private Animator _animator;
 
@@ -48,7 +46,6 @@ public class UIManager : MonoBehaviour
         _instance = this;
 
         _animator = GetComponent<Animator>();
-        StartCoroutine(CheckTimeInGame());
     }
 
     public void ShowGameOverScren()
@@ -80,7 +77,6 @@ public class UIManager : MonoBehaviour
             if (i == currentLives)
             {
                 _healthBars[i].enabled = false;
-                _healthBarsInStats[i].enabled = false;
             }
         }
     }
@@ -112,13 +108,8 @@ public class UIManager : MonoBehaviour
         messageUiText.text = string.Empty;
     }
 
-    IEnumerator CheckTimeInGame()
+    public void ShowSoundPanel()
     {
-        while (true)
-        {
-            yield return new WaitForSecondsRealtime(5f);
-            _timeInGame = PlayerPrefs.GetFloat("TimeInGame", 0);
-            _timeInGameText.text = $"PLAYING TIME: {Mathf.FloorToInt(_timeInGame / 60 / 60)} h. {Mathf.FloorToInt(_timeInGame / 60)} min.";
-        }
+        _soundPanel.SetActive(!_soundPanel.activeSelf);
     }
 }

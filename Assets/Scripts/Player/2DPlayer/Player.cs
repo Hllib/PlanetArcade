@@ -295,8 +295,6 @@ public class Player : MonoBehaviour, IDamageable
 
     public void UpdateSound()
     {
-        Debug.Log("X: " + _rigidbody.velocity.x + "Y: " + _rigidbody.velocity.y);
-
         if ((_rigidbody.velocity.x != 0 || _rigidbody.velocity.y != 0) && !_isSprinting)
         {
             _playerFootstepsSprint.stop(STOP_MODE.IMMEDIATE);
