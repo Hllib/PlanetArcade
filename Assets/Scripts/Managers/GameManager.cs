@@ -122,6 +122,7 @@ public class GameManager : MonoBehaviour
         {
             _pauseMenu.SetActive(!_pauseMenu.activeSelf);
             CheckPauseState();
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, Vector3.zero);
         }
 
         if(IsPlayerDead == true)

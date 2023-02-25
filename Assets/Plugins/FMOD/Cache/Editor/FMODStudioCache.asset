@@ -96,7 +96,7 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Cave.bank
   Name: Cave
   StudioPath: bank:/Cave
-  lastModified: 638128545930306603
+  lastModified: 638129262160737785
   FileSizes:
   - Name: Desktop
     Value: 3007712
@@ -143,11 +143,38 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638128545930326787
+  lastModified: 638129262160757813
   FileSizes:
   - Name: Desktop
     Value: 1486
   Exists: 1
+--- !u!114 &-2879566097635981401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/OpenChest
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/OpenChest
+  Guid:
+    Data1: 254215438
+    Data2: 1079736219
+    Data3: -1128137087
+    Data4: 1279685668
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2273952311991654268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,10 +217,10 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638128545930606764
+  lastModified: 638129262161277910
   FileSizes:
   - Name: Desktop
-    Value: 86720
+    Value: 101824
   Exists: 1
 --- !u!114 &-1594653345179488292
 MonoBehaviour:
@@ -252,12 +279,15 @@ MonoBehaviour:
   - {fileID: 7044269835125881051}
   - {fileID: -2273952311991654268}
   - {fileID: -6922389499074735547}
+  - {fileID: 2548274966523821445}
+  - {fileID: 3728999951671857789}
+  - {fileID: -2879566097635981401}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3411546643693388285}
   StringsBanks:
   - {fileID: 3057868749645026645}
-  cacheTime: 638128545930886794
+  cacheTime: 638129262161657976
   cacheVersion: 131601
 --- !u!114 &1874654284659622568
 MonoBehaviour:
@@ -313,6 +343,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 121263
+--- !u!114 &2548274966523821445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/SelectItem
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/SelectItem
+  Guid:
+    Data1: 1874813044
+    Data2: 1174387823
+    Data3: 219191991
+    Data4: -741620040
+  Banks:
+  - {fileID: 8626422252569744216}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3057868749645026645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,11 +385,38 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638128545930336687
+  lastModified: 638129262160767789
   FileSizes:
   - Name: Desktop
-    Value: 1528
+    Value: 1664
   Exists: 1
+--- !u!114 &3728999951671857789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/InvSlot_hover
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/InvSlot_hover
+  Guid:
+    Data1: 1164992165
+    Data2: 1271151541
+    Data3: 1098744217
+    Data4: 96984100
+  Banks:
+  - {fileID: 8626422252569744216}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4240582672844820393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,8 +513,8 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638128545930886794
+  lastModified: 638129262161657976
   FileSizes:
   - Name: Desktop
-    Value: 3434400
+    Value: 3437344
   Exists: 1

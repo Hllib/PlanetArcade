@@ -26,6 +26,8 @@ public class Chest : MonoBehaviour
                 _isLooted = true;
                 _animator.enabled = false;
                 Instantiate(_lootPrefab, transform.position, Quaternion.identity);
+
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.chestOpen, this.transform.position);
             }
         }
 

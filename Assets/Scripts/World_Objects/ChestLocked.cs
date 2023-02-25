@@ -30,6 +30,8 @@ public class ChestLocked : MonoBehaviour
 
                     _playerInv.RemoveItem(InventoryTypes.Key);
                     Instantiate(_lootPrefab, transform.position, Quaternion.identity);
+
+                    AudioManager.Instance.PlayOneShot(FMODEvents.Instance.chestOpen, this.transform.position);
                 }
                 else
                 {

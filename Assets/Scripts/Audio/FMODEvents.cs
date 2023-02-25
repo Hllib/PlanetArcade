@@ -10,7 +10,6 @@ public class FMODEvents : MonoBehaviour
     public EventReference playerFootstepsWalk { get; private set; }
     [field: SerializeField]
     public EventReference playerFootstepsSprint { get; private set; }
-
     [field: SerializeField]
     public EventReference goldCollected { get; private set; }
     [field: SerializeField]
@@ -18,9 +17,15 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField]
     public EventReference music { get; private set; }
     [field: SerializeField]
-    public EventReference buttonEnter;
+    public EventReference buttonEnter { get; private set; }
     [field: SerializeField]
-    public EventReference buttonClick;
+    public EventReference buttonClick { get; private set; }
+    [field: SerializeField]
+    public EventReference invSlot_hover { get; private set; }
+    [field: SerializeField]
+    public EventReference invSlot_select { get; private set; }
+    [field: SerializeField]
+    public EventReference chestOpen { get; private set; }
 
     private static FMODEvents _instance;
 

@@ -26,11 +26,12 @@ public class ChestTutorial : MonoBehaviour
                 if (_playerInv.playerItems.Any(item => item.id == InventoryTypes.Key))
                 {
                     _isLooted = true;
-                    _animator.enabled= false;
+                    _animator.enabled = false;
 
                     _playerInv.RemoveItem(InventoryTypes.Key);
                     Instantiate(_lootPrefab, transform.position, Quaternion.identity);
 
+                    AudioManager.Instance.PlayOneShot(FMODEvents.Instance.chestOpen, this.transform.position);
                     Guide.Instance.EnableAmmo();
                 }
                 else

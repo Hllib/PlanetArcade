@@ -27,6 +27,8 @@ public class Inventory : MonoBehaviour
 
         if(UIManager.Instance != null)
             UIManager.Instance.DisplayMessage("item added: " + itemToAdd.title);
+
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.invSlot_select, Vector3.zero);
     }
 
     public void GiveItem(string itemTitle)
@@ -37,6 +39,8 @@ public class Inventory : MonoBehaviour
 
         if (UIManager.Instance != null)
             UIManager.Instance.DisplayMessage("item added: " + itemToAdd.title);
+
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.invSlot_select, Vector3.zero);
     }
 
     public InventoryItem CheckForItem(int itemId)
@@ -94,6 +98,7 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             _uiInventory.gameObject.SetActive(!_uiInventory.gameObject.activeSelf);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, Vector3.zero);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -101,7 +106,8 @@ public class Inventory : MonoBehaviour
             if (_quickSelections[0].GetComponentInChildren<UIItem>().item != null)
             {
                 SelectedItem = _quickSelections[0].GetComponentInChildren<UIItem>().item;
-                UIManager.Instance.DisplayMessage("_player holds " + SelectedItem.title);
+                UIManager.Instance.DisplayMessage("Player holds " + SelectedItem.title);
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.invSlot_select, Vector3.zero);
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -109,7 +115,8 @@ public class Inventory : MonoBehaviour
             if (_quickSelections[1].GetComponentInChildren<UIItem>().item != null)
             {
                 SelectedItem = _quickSelections[1].GetComponentInChildren<UIItem>().item;
-                UIManager.Instance.DisplayMessage("_player holds " + SelectedItem.title);
+                UIManager.Instance.DisplayMessage("Player holds " + SelectedItem.title);
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.invSlot_select, Vector3.zero);
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -117,7 +124,8 @@ public class Inventory : MonoBehaviour
             if (_quickSelections[2].GetComponentInChildren<UIItem>().item != null)
             {
                 SelectedItem = _quickSelections[2].GetComponentInChildren<UIItem>().item;
-                UIManager.Instance.DisplayMessage("_player holds " + SelectedItem.title);
+                UIManager.Instance.DisplayMessage("Player holds " + SelectedItem.title);
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.invSlot_select, Vector3.zero);
             }
         }
     }
