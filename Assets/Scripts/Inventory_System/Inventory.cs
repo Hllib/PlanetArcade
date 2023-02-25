@@ -26,9 +26,9 @@ public class Inventory : MonoBehaviour
         _uiInventory.AddNewItem(itemToAdd);
 
         if(UIManager.Instance != null)
-            UIManager.Instance.DisplayMessage("item added: " + itemToAdd.title);
+            UIManager.Instance.DisplayMessage("Item added: " + itemToAdd.title);
 
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.invSlot_select, Vector3.zero);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.itemInteraction, Vector3.zero);
     }
 
     public void GiveItem(string itemTitle)
@@ -38,9 +38,9 @@ public class Inventory : MonoBehaviour
         _uiInventory.AddNewItem(itemToAdd);
 
         if (UIManager.Instance != null)
-            UIManager.Instance.DisplayMessage("item added: " + itemToAdd.title);
+            UIManager.Instance.DisplayMessage("Item added: " + itemToAdd.title);
 
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.invSlot_select, Vector3.zero);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.itemInteraction, Vector3.zero);
     }
 
     public InventoryItem CheckForItem(int itemId)
@@ -107,7 +107,7 @@ public class Inventory : MonoBehaviour
             {
                 SelectedItem = _quickSelections[0].GetComponentInChildren<UIItem>().item;
                 UIManager.Instance.DisplayMessage("Player holds " + SelectedItem.title);
-                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.invSlot_select, Vector3.zero);
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.itemEquip, Vector3.zero);
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -116,7 +116,7 @@ public class Inventory : MonoBehaviour
             {
                 SelectedItem = _quickSelections[1].GetComponentInChildren<UIItem>().item;
                 UIManager.Instance.DisplayMessage("Player holds " + SelectedItem.title);
-                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.invSlot_select, Vector3.zero);
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.itemEquip, Vector3.zero);
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -125,7 +125,7 @@ public class Inventory : MonoBehaviour
             {
                 SelectedItem = _quickSelections[2].GetComponentInChildren<UIItem>().item;
                 UIManager.Instance.DisplayMessage("Player holds " + SelectedItem.title);
-                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.invSlot_select, Vector3.zero);
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.itemEquip, Vector3.zero);
             }
         }
     }

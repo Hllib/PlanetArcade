@@ -8,7 +8,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using FMOD.Studio;
-using System.Net;
 
 public class Player : MonoBehaviour, IDamageable
 {
@@ -256,6 +255,7 @@ public class Player : MonoBehaviour, IDamageable
         else
         {
             ShowFloatingDamage(damage, Color.red);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.playerHit, transform.position);
 
             Health -= damage;
             _animator.OnPlayerHit(LookDirection);
@@ -274,6 +274,8 @@ public class Player : MonoBehaviour, IDamageable
 
     public void OnPlayerDeath()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.playerDeath, transform.position);
+
         _rigidbody.velocity = Vector3.zero;
         speed = 0f;
         _animator.OnPlayerDeath();

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1425,21 +1425,21 @@ MonoBehaviour:
       Data2: 1125655310
       Data3: -989387620
       Data4: 302466747
-    Path: event:/SFX/Player/Player_footsteps_walk_stone
+    Path: event:/SFX/Player/Footsteps/Player_footsteps_walk_stone
   <playerFootstepsSprint>k__BackingField:
     Guid:
       Data1: 934359065
       Data2: 1107733622
       Data3: 309286022
       Data4: 795008787
-    Path: event:/SFX/Player/Player_footsteps_sprint_stone
+    Path: event:/SFX/Player/Footsteps/Player_footsteps_sprint_stone
   <goldCollected>k__BackingField:
     Guid:
       Data1: -322307314
       Data2: 1131781687
       Data3: -1580104015
       Data4: -749367103
-    Path: event:/SFX/Gold_pickup
+    Path: event:/SFX/Player/Gold_pickup
   <ambience>k__BackingField:
     Guid:
       Data1: 0
@@ -1454,20 +1454,62 @@ MonoBehaviour:
       Data3: 335103404
       Data4: 1449349578
     Path: event:/Music/MainMenuMusic
-  buttonEnter:
+  <buttonEnter>k__BackingField:
     Guid:
-      Data1: 1898462042
-      Data2: 1262695259
-      Data3: -2134346835
-      Data4: 1828201455
-    Path: event:/UI_Sounds/ButtonEnter
-  buttonClick:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <buttonClick>k__BackingField:
     Guid:
-      Data1: 957308390
-      Data2: 1284203019
-      Data3: 192856223
-      Data4: -841462014
-    Path: event:/UI_Sounds/ButtonClick
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <itemInteraction>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <chestOpen>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <itemEquip>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <pistolFire>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <rifleFire>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <slimeJump>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &602969523
 GameObject:
   m_ObjectHideFlags: 0

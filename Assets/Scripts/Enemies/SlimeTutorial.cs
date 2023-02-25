@@ -21,6 +21,7 @@ public class SlimeTutorial : Enemy, IDamageable
         UIManager.Instance.DisplayMessage($"Damage done: {damage}");
 
         Health -= damage;
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hit, this.transform.position);
         UpdateHealthBar(Health * 100 / _initialHealth);
         ShowFloatingDamage(damage);
 
@@ -29,6 +30,7 @@ public class SlimeTutorial : Enemy, IDamageable
             isDead = true;
             Destroy(gameObject);
             UIManager.Instance.DisplayMessage("Slime destroyed!");
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.slimeDeath, this.transform.position);
             Guide.Instance.HasFinishedTutorial = true;
             Guide.Instance.FinalMessage();
         }
@@ -67,6 +69,7 @@ public class SlimeTutorial : Enemy, IDamageable
 
     IEnumerator Attack()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.slimeAttack, this.transform.position);
         this.animator.SetTrigger("Attack");
         yield return new WaitForSeconds(0.5f);
         player.Damage(1);
@@ -78,5 +81,10 @@ public class SlimeTutorial : Enemy, IDamageable
 
         CheckAttackZone(_chaseStartRadius, _chaseStopRadius, _attackRadius);
         base.CalculateMovement();
+    }
+
+    public void JumpSound()
+    {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.slimeJump, this.transform.position);
     }
 }

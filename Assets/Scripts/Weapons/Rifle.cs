@@ -38,6 +38,8 @@ public class Rifle : Weapon
             ammoAmount -= 1;
             _player.UpdateAmmo(ammoAmount);
             UIManager.Instance.DisplayMessage($"Ammo left: {ammoAmount}");
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.rifleFire, this.transform.position);
+
             yield return new WaitForSeconds(1f);
         }
     }

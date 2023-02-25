@@ -59,7 +59,7 @@ public class UIItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
     {
         if (this.item != null)
         {
-            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.invSlot_select, Vector3.zero);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.itemInteraction, Vector3.zero);
 
             if (_selectedItem.item != null)
             {
@@ -76,7 +76,7 @@ public class UIItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
         }
         else if (_selectedItem.item != null)
         {
-            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.invSlot_select, Vector3.zero);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.itemInteraction, Vector3.zero);
             UpdateItem(_selectedItem.item);
             _selectedItem.UpdateItem(null);
         }
@@ -91,7 +91,6 @@ public class UIItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
             if (this.item != null)
             {
                 _tooltip.GenerateTooltip(this.item);
-                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.invSlot_hover, Vector3.zero);
             }
         }
     }

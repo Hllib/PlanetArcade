@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8642281764806332498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemies/Slime_death
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemies/Slime_death
+  Guid:
+    Data1: -1490046994
+    Data2: 1231221515
+    Data3: 298800047
+    Data4: -2032441238
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7969360210085122475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/Footsteps/Player_footsteps_sprint_grass
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/Footsteps/Player_footsteps_sprint_grass
+  Guid:
+    Data1: -446108458
+    Data2: 1147993525
+    Data3: -610458191
+    Data4: -627028968
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 550
 --- !u!114 &-6922389499074735547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,7 +108,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 113142
---- !u!114 &-5801239433267363347
+--- !u!114 &-6526366800274282978
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,23 +118,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Player_footsteps_walk_stone
+  m_Name: event:/SFX/Player/Weapons/RifleFire
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Player_footsteps_walk_stone
+  Path: event:/SFX/Player/Weapons/RifleFire
   Guid:
-    Data1: 519369890
-    Data2: 1125655310
-    Data3: -989387620
-    Data4: 302466747
+    Data1: -18261451
+    Data2: 1170630526
+    Data3: 1133213571
+    Data4: -995245189
   Banks:
   - {fileID: -1988538723371890192}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 550
+  Length: 0
 --- !u!114 &-5389624973638177987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,12 +150,12 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Cave.bank
   Name: Cave
   StudioPath: bank:/Cave
-  lastModified: 638129262160737785
+  lastModified: 638129433187512516
   FileSizes:
   - Name: Desktop
     Value: 3007712
   Exists: 1
---- !u!114 &-3853373469120177300
+--- !u!114 &-5018551978141363703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,23 +165,158 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Player_footsteps_sprint_grass
+  m_Name: event:/SFX/UI/ItemInteraction
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Player_footsteps_sprint_grass
+  Path: event:/SFX/UI/ItemInteraction
   Guid:
-    Data1: -446108458
-    Data2: 1147993525
-    Data3: -610458191
-    Data4: -627028968
+    Data1: 1164992165
+    Data2: 1271151541
+    Data3: 1098744217
+    Data4: 96984100
+  Banks:
+  - {fileID: 8626422252569744216}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4798191151856611597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemies/Slime_attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemies/Slime_attack
+  Guid:
+    Data1: -898425742
+    Data2: 1124656390
+    Data3: 1985659583
+    Data4: 2018742531
   Banks:
   - {fileID: -1988538723371890192}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 550
+  Length: 0
+--- !u!114 &-4679443258068493602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemies/Slime_jump
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemies/Slime_jump
+  Guid:
+    Data1: -1888886957
+    Data2: 1124793211
+    Data3: -1811673199
+    Data4: 903412790
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4609032102593249941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/Weapons/PistolFire
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/Weapons/PistolFire
+  Guid:
+    Data1: -2136771390
+    Data2: 1145237751
+    Data3: 1042997941
+    Data4: -2094166611
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4079347753161750378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/OpenChest
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/OpenChest
+  Guid:
+    Data1: 254215438
+    Data2: 1079736219
+    Data3: -1128137087
+    Data4: 1279685668
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3657771670173797807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/Hurt
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/Hurt
+  Guid:
+    Data1: 526043103
+    Data2: 1326619513
+    Data3: 1893372080
+    Data4: 234611981
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3411546643693388285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,38 +332,11 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638129262160757813
+  lastModified: 638129433187532522
   FileSizes:
   - Name: Desktop
     Value: 1486
   Exists: 1
---- !u!114 &-2879566097635981401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/OpenChest
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/OpenChest
-  Guid:
-    Data1: 254215438
-    Data2: 1079736219
-    Data3: -1128137087
-    Data4: 1279685668
-  Banks:
-  - {fileID: -1988538723371890192}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-2273952311991654268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,10 +379,10 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638129262161277910
+  lastModified: 638129433188102653
   FileSizes:
   - Name: Desktop
-    Value: 101824
+    Value: 214624
   Exists: 1
 --- !u!114 &-1594653345179488292
 MonoBehaviour:
@@ -268,28 +430,36 @@ MonoBehaviour:
   - {fileID: -5389624973638177987}
   - {fileID: 8626422252569744216}
   EditorEvents:
-  - {fileID: 4240582672844820393}
-  - {fileID: 7166459143393757376}
-  - {fileID: -5801239433267363347}
   - {fileID: -1594653345179488292}
-  - {fileID: -3853373469120177300}
-  - {fileID: 1874654284659622568}
   - {fileID: -6886060080123610430}
   - {fileID: 2179474476601538497}
   - {fileID: 7044269835125881051}
   - {fileID: -2273952311991654268}
   - {fileID: -6922389499074735547}
-  - {fileID: 2548274966523821445}
-  - {fileID: 3728999951671857789}
-  - {fileID: -2879566097635981401}
+  - {fileID: -5018551978141363703}
+  - {fileID: 7675634216772374491}
+  - {fileID: 3121797782991095181}
+  - {fileID: -4609032102593249941}
+  - {fileID: 9100516720811570531}
+  - {fileID: -7969360210085122475}
+  - {fileID: 5186239335940837828}
+  - {fileID: -6526366800274282978}
+  - {fileID: -4079347753161750378}
+  - {fileID: 1755042228183088977}
+  - {fileID: -4679443258068493602}
+  - {fileID: -4798191151856611597}
+  - {fileID: -8642281764806332498}
+  - {fileID: 6140621083055260621}
+  - {fileID: 5020878137056588351}
+  - {fileID: -3657771670173797807}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3411546643693388285}
   StringsBanks:
   - {fileID: 3057868749645026645}
-  cacheTime: 638129262161657976
+  cacheTime: 638129433188472756
   cacheVersion: 131601
---- !u!114 &1874654284659622568
+--- !u!114 &1755042228183088977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,23 +469,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Player_footsteps_walk_grass
+  m_Name: event:/SFX/Player/Gold_pickup
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Player_footsteps_walk_grass
+  Path: event:/SFX/Player/Gold_pickup
   Guid:
-    Data1: -90711809
-    Data2: 1147359234
-    Data3: 1158498493
-    Data4: 1877438421
+    Data1: -322307314
+    Data2: 1131781687
+    Data3: -1580104015
+    Data4: -749367103
   Banks:
   - {fileID: -1988538723371890192}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 550
+  Length: 0
 --- !u!114 &2179474476601538497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,33 +513,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 121263
---- !u!114 &2548274966523821445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/SelectItem
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/SelectItem
-  Guid:
-    Data1: 1874813044
-    Data2: 1174387823
-    Data3: 219191991
-    Data4: -741620040
-  Banks:
-  - {fileID: 8626422252569744216}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &3057868749645026645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,12 +528,12 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638129262160767789
+  lastModified: 638129433187542524
   FileSizes:
   - Name: Desktop
-    Value: 1664
+    Value: 2056
   Exists: 1
---- !u!114 &3728999951671857789
+--- !u!114 &3121797782991095181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -400,24 +543,51 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/InvSlot_hover
+  m_Name: event:/SFX/Player/Footsteps/Player_footsteps_walk_stone
   m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/InvSlot_hover
+  Path: event:/SFX/Player/Footsteps/Player_footsteps_walk_stone
   Guid:
-    Data1: 1164992165
-    Data2: 1271151541
-    Data3: 1098744217
-    Data4: 96984100
+    Data1: 519369890
+    Data2: 1125655310
+    Data3: -989387620
+    Data4: 302466747
   Banks:
-  - {fileID: 8626422252569744216}
+  - {fileID: -1988538723371890192}
   IsStream: 0
   Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 550
+--- !u!114 &5020878137056588351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemies/Hit
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemies/Hit
+  Guid:
+    Data1: 1696351227
+    Data2: 1094990455
+    Data3: -261795456
+    Data4: 428049525
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4240582672844820393
+--- !u!114 &5186239335940837828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,14 +597,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Gold_pickup
+  m_Name: event:/SFX/Player/Footsteps/Player_footsteps_walk_grass
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Gold_pickup
+  Path: event:/SFX/Player/Footsteps/Player_footsteps_walk_grass
   Guid:
-    Data1: -322307314
-    Data2: 1131781687
-    Data3: -1580104015
-    Data4: -749367103
+    Data1: -90711809
+    Data2: 1147359234
+    Data3: 1158498493
+    Data4: 1877438421
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 550
+--- !u!114 &6140621083055260621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/FallScream
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/FallScream
+  Guid:
+    Data1: -514264018
+    Data2: 1217644821
+    Data3: -1524608878
+    Data4: 133658570
   Banks:
   - {fileID: -1988538723371890192}
   IsStream: 0
@@ -471,7 +668,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 238428
---- !u!114 &7166459143393757376
+--- !u!114 &7675634216772374491
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -481,9 +678,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Player_footsteps_sprint_stone
+  m_Name: event:/SFX/Player/Footsteps/Player_footsteps_sprint_stone
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Player_footsteps_sprint_stone
+  Path: event:/SFX/Player/Footsteps/Player_footsteps_sprint_stone
   Guid:
     Data1: 934359065
     Data2: 1107733622
@@ -513,8 +710,35 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638129262161657976
+  lastModified: 638129433188472756
   FileSizes:
   - Name: Desktop
-    Value: 3437344
+    Value: 3435648
   Exists: 1
+--- !u!114 &9100516720811570531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/EquipItem
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/EquipItem
+  Guid:
+    Data1: 335718099
+    Data2: 1191042356
+    Data3: 1542962593
+    Data4: 779037158
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0

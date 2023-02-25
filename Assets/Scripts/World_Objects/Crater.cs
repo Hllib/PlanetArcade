@@ -34,6 +34,7 @@ public class Crater : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         _playerAnim.SetTrigger("Fall");
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.playerDeath, _player.transform.position);
         _player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         _player.speed = 0f;
         _player.isDead = true;

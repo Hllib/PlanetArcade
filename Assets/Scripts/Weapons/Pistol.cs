@@ -37,6 +37,8 @@ public class Pistol : Weapon
             ammoAmount -= 1;
             _player.UpdateAmmo(ammoAmount);
             UIManager.Instance.DisplayMessage($"Ammo left: {ammoAmount}");
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pistolFire, this.transform.position);
+
             yield return new WaitForSeconds(1f);
         }
     }
