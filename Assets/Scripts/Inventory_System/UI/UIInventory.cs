@@ -20,7 +20,7 @@ public class UIInventory : MonoBehaviour
         for (int i = 0; i < numberOfSlots; i++)
         {
             GameObject instance = Instantiate(slotPrefab);
-            instance.transform.SetParent(slotPanel);
+            instance.transform.SetParent(slotPanel, false);
 
             uiItems.Add(instance.GetComponentInChildren<UIItem>());
         }

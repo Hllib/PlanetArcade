@@ -48,6 +48,11 @@ public class UIManager : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        _soundPanel.SetActive(false);
+    }
+
     public void ShowGameOverScren()
     {
         _gameOverScreen.SetActive(true);

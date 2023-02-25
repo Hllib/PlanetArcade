@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField]
-    private Image _soundButtonImg;
+    private GameObject _soundPanel;
     [SerializeField]
-    private Sprite[] _soundStateSprites;
+    private GameObject _soundPanelBg;
 
     public void LoadScene(string sceneName)
     {
@@ -36,12 +36,9 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.DeleteAll();
     }
 
-    public void SwitchSound()
+    public void ShowSoundSettings()
     {
-        switch(AudioListener.volume)
-        {
-            case 0: AudioListener.volume = 1; _soundButtonImg.sprite = _soundStateSprites[1]; break;
-            case 1: AudioListener.volume = 0; _soundButtonImg.sprite = _soundStateSprites[0]; break;
-        }
+        _soundPanel.SetActive(!_soundPanel.activeSelf);
+        _soundPanelBg.SetActive(!_soundPanelBg.activeSelf);
     }
 }

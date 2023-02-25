@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,14 @@ public class VolumeSlider : MonoBehaviour
     private void Awake()
     {
         volumeSlider = GetComponent<Slider>();
+    }
+
+    private void Start()
+    {
+        AudioManager.Instance.masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1);
+        AudioManager.Instance.musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1);
+        AudioManager.Instance.ambienceVolume = PlayerPrefs.GetFloat("AmbienceVolume", 1);
+        AudioManager.Instance.sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1);
     }
 
     private void Update()
@@ -49,15 +58,19 @@ public class VolumeSlider : MonoBehaviour
         {
             case VolumeType.Master:
                 AudioManager.Instance.masterVolume = volumeSlider.value;
+                PlayerPrefs.SetFloat("MasterVolume", volumeSlider.value);
                 break;
             case VolumeType.Music:
                 AudioManager.Instance.musicVolume = volumeSlider.value;
+                PlayerPrefs.SetFloat("MusicVolume", volumeSlider.value);
                 break;
             case VolumeType.Ambience:
-                AudioManager.Instance.ambienceVolume = volumeSlider.value; 
+                AudioManager.Instance.ambienceVolume = volumeSlider.value;
+                PlayerPrefs.SetFloat("AmbienceVolume", volumeSlider.value);
                 break;
             case VolumeType.SFX:
-                AudioManager.Instance.sfxVolume = volumeSlider.value; 
+                AudioManager.Instance.sfxVolume = volumeSlider.value;
+                PlayerPrefs.SetFloat("SFXVolume", volumeSlider.value);
                 break;
             default: Debug.Log("Unexpected volume type!"); break;
         }
