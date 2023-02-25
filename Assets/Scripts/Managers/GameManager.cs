@@ -40,12 +40,12 @@ public class GameManager : MonoBehaviour
 
         levelFinished = new Dictionary<int, int>()
         {
-            {PlanetID.Earth, PlayerPrefs.GetInt("Earth", 0)},
-            {PlanetID.Moon, PlayerPrefs.GetInt("Moon", 0)},
-            {PlanetID.Mars, PlayerPrefs.GetInt("Mars", 0)}
+            {PlanetID.Earth, PlayerPrefs.GetInt(PlayerSettings.Earth, 0)},
+            {PlanetID.Moon, PlayerPrefs.GetInt(PlayerSettings.Moon, 0)},
+            {PlanetID.Mars, PlayerPrefs.GetInt(PlayerSettings.Mars, 0)}
         };
 
-        TimeInGame = PlayerPrefs.GetFloat("TimeInGame", 0);
+        TimeInGame = PlayerPrefs.GetFloat(PlayerSettings.TimeInGame, 0);
         StartCoroutine(CheckTimeInGame());
     }
 
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             TimeInGame += Time.time;
-            PlayerPrefs.SetFloat("TimeInGame", TimeInGame);
+            PlayerPrefs.SetFloat(PlayerSettings.TimeInGame, TimeInGame);
             PlayerPrefs.Save();
 
             yield return new WaitForSecondsRealtime(15f);
@@ -63,9 +63,9 @@ public class GameManager : MonoBehaviour
 
     public void SavePlayerPrefs()
     {
-        PlayerPrefs.SetInt("Earth", levelFinished[PlanetID.Earth]);
-        PlayerPrefs.SetInt("Moon", levelFinished[PlanetID.Moon]);
-        PlayerPrefs.SetInt("Mars", levelFinished[PlanetID.Mars]);
+        PlayerPrefs.SetInt(PlayerSettings.Earth, levelFinished[PlanetID.Earth]);
+        PlayerPrefs.SetInt(PlayerSettings.Moon, levelFinished[PlanetID.Moon]);
+        PlayerPrefs.SetInt(PlayerSettings.Mars, levelFinished[PlanetID.Mars]);
         PlayerPrefs.Save();
         _player.SaveInventory();
     }

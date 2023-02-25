@@ -19,15 +19,22 @@ public class ButtonMove : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        _layoutGroup.enabled = false;
-        _buttonAnimator.SetTrigger("Enter");
+        if (_layoutGroup != null && _buttonAnimator != null)
+        {
+            _layoutGroup.enabled = false;
+            _buttonAnimator.SetTrigger("Enter");
+        }
+
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonEnter, this.transform.position);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-         _layoutGroup.enabled = true;
-        _buttonAnimator.SetTrigger("Exit");
+        if (_layoutGroup != null && _buttonAnimator != null)
+        {
+            _layoutGroup.enabled = true;
+            _buttonAnimator.SetTrigger("Exit");
+        }
     }
 
     public void PlayClickSound()

@@ -69,7 +69,8 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         _fadeToBlackCave.SetActive(true);
         yield return new WaitForSeconds(3.5f);
-        GameManager.Instance.levelFinished[PlanetID.Moon] = 1; // 1 means the level was finished
+
+        GameManager.Instance.levelFinished[PlanetID.Moon] = PlayerSettings.LevelFinished; 
         GameManager.Instance.SavePlayerPrefs();
         GameManager.Instance.LoadScene("PlanetsMenu");
     }

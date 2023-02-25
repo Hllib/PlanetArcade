@@ -33,12 +33,21 @@ public class MainMenu : MonoBehaviour
 
     public void DeleteSaves()
     {
-        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetFloat(PlayerSettings.Earth, PlayerSettings.NewGame);
+        PlayerPrefs.SetFloat(PlayerSettings.Moon, PlayerSettings.NewGame);
+        PlayerPrefs.SetFloat(PlayerSettings.Mars, PlayerSettings.NewGame);
+        PlayerPrefs.SetFloat(PlayerSettings.Station, PlayerSettings.NewGame);
+        PlayerPrefs.SetFloat(PlayerSettings.TimeInGame, PlayerSettings.NewGame);
     }
 
     public void ShowSoundSettings()
     {
         _soundPanel.SetActive(!_soundPanel.activeSelf);
         _soundPanelBg.SetActive(!_soundPanelBg.activeSelf);
+    }
+
+    private void Start()
+    {
+        _soundPanel.SetActive(false);
     }
 }

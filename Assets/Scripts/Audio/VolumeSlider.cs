@@ -26,10 +26,10 @@ public class VolumeSlider : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.Instance.masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1);
-        AudioManager.Instance.musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1);
-        AudioManager.Instance.ambienceVolume = PlayerPrefs.GetFloat("AmbienceVolume", 1);
-        AudioManager.Instance.sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1);
+        AudioManager.Instance.masterVolume = PlayerPrefs.GetFloat(PlayerSettings.MasterVolume, 1);
+        AudioManager.Instance.musicVolume = PlayerPrefs.GetFloat(PlayerSettings.MusicVolume, 1);
+        AudioManager.Instance.ambienceVolume = PlayerPrefs.GetFloat(PlayerSettings.AmbienceVolume, 1);
+        AudioManager.Instance.sfxVolume = PlayerPrefs.GetFloat(PlayerSettings.SFXVolume, 1);
     }
 
     private void Update()
@@ -58,19 +58,19 @@ public class VolumeSlider : MonoBehaviour
         {
             case VolumeType.Master:
                 AudioManager.Instance.masterVolume = volumeSlider.value;
-                PlayerPrefs.SetFloat("MasterVolume", volumeSlider.value);
+                PlayerPrefs.SetFloat(PlayerSettings.MasterVolume, volumeSlider.value);
                 break;
             case VolumeType.Music:
                 AudioManager.Instance.musicVolume = volumeSlider.value;
-                PlayerPrefs.SetFloat("MusicVolume", volumeSlider.value);
+                PlayerPrefs.SetFloat(PlayerSettings.MusicVolume, volumeSlider.value);
                 break;
             case VolumeType.Ambience:
                 AudioManager.Instance.ambienceVolume = volumeSlider.value;
-                PlayerPrefs.SetFloat("AmbienceVolume", volumeSlider.value);
+                PlayerPrefs.SetFloat(PlayerSettings.AmbienceVolume, volumeSlider.value);
                 break;
             case VolumeType.SFX:
                 AudioManager.Instance.sfxVolume = volumeSlider.value;
-                PlayerPrefs.SetFloat("SFXVolume", volumeSlider.value);
+                PlayerPrefs.SetFloat(PlayerSettings.SFXVolume, volumeSlider.value);
                 break;
             default: Debug.Log("Unexpected volume type!"); break;
         }
