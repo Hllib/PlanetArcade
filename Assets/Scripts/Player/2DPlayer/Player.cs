@@ -60,7 +60,7 @@ public class Player : MonoBehaviour, IDamageable
         var ammoBoxCount = _playerInventory.playerItems.Count(item => item.id == InventoryTypes.Ammo);
         _ammoAmount = ammoBoxCount * (int)_ammoToBullets;
 
-        Health = 4;
+        Health = PlayerSettings.Health;
         _sprintAllowed = true;
     }
 
@@ -264,13 +264,26 @@ public class Player : MonoBehaviour, IDamageable
 
             if (Health <= 0)
             {
-                OnPlayerDeath();
+                if (_playerInventory.playerItems.Any(item => item.id == InventoryTypes.Potion))
+                {
+
+                }
+                else
+                {
+                    OnPlayerDeath();
+                }
             }
             else
             {
                 StartCoroutine(StopOnHit());
             }
         }
+    }
+
+    public void PotionHeal()
+    {
+        Health = 4;
+        UIManager.Instance.UpdateHealthUI(Health);
     }
 
     public void OnPlayerDeath()
@@ -327,7 +340,7 @@ public class Player : MonoBehaviour, IDamageable
         }
         else
         {
-            
+
         }
     }
 }

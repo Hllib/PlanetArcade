@@ -20,4 +20,6 @@ public class PlayerSettings : MonoBehaviour
 
     public const int LevelFinished = 1;
     public const int NewGame = 0;
+
+    public const int Health = 4;
 }

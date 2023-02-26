@@ -75,13 +75,17 @@ public class UIManager : MonoBehaviour
 
     public void UpdateHealthUI(int currentLives)
     {
+        int diff = PlayerSettings.Health - (PlayerSettings.Health - currentLives);
+
         _animator.SetTrigger("Hit");
-        for (int i = 0; i <= currentLives; i++)
+        foreach(var bar in _healthBars)
         {
-            if (i == currentLives)
-            {
-                _healthBars[i].enabled = false;
-            }
+            bar.enabled = false;
+        }
+
+        for(int i = 0; i < diff; i++)
+        {
+            _healthBars[i].enabled = true;
         }
     }
 
