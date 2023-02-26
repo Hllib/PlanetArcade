@@ -251,11 +251,12 @@ public class Player : MonoBehaviour, IDamageable
         {
             ShowFloatingDamage(damage, Color.green);
             _shield.OnDefend();
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.shieldDeflect, transform.position);
         }
         else
         {
             ShowFloatingDamage(damage, Color.red);
-            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.playerHit, transform.position);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hit, this.transform.position);
 
             Health -= damage;
             _animator.OnPlayerHit(LookDirection);

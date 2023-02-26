@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class FinishCaveLevelCollider : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject _teleport;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -20,6 +24,7 @@ public class FinishCaveLevelCollider : MonoBehaviour
                 else
                 {
                     Guide.Instance.CheckLevelFinish_Cave(false);
+                    _teleport.SetActive(true);
                 }
             }
         }

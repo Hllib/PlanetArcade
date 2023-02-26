@@ -19,7 +19,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField]
     public EventReference playerDeath { get; private set; }
     [field: SerializeField]
-    public EventReference playerHit { get; private set; }
+    public EventReference shieldDeflect { get; private set; }
 
     [field: Header("ENEMIES")]
     [field: SerializeField]
@@ -30,6 +30,14 @@ public class FMODEvents : MonoBehaviour
     public EventReference slimeAttack { get; private set; }
     [field: SerializeField]
     public EventReference hit { get; private set; }
+    [field: SerializeField]
+    public EventReference fire { get; private set; }
+    [field: SerializeField]
+    public EventReference fireBig { get; private set; }
+    [field: SerializeField]
+    public EventReference enemyFootstep { get; private set; }
+    [field: SerializeField]
+    public EventReference enemyDeath { get; private set; }
 
     [field: Header("OBJECTS")]
     [field: SerializeField]
@@ -48,12 +56,16 @@ public class FMODEvents : MonoBehaviour
     public EventReference buyItem { get; private set; }
     [field: SerializeField]
     public EventReference notEnoughGold { get; private set; }
+    [field: SerializeField]
+    public EventReference rocketFly { get; private set; }
 
     [field: Header("GENERAL")]
     [field: SerializeField]
     public EventReference ambience { get; private set; }
     [field: SerializeField]
     public EventReference music { get; private set; }
+    [field: SerializeField]
+    public EventReference winMusicCave { get; private set; }
 
     [field: Header("STATION")]
     [field: SerializeField]

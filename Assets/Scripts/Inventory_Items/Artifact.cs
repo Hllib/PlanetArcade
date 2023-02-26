@@ -17,7 +17,10 @@ public class Artifact : MonoBehaviour, IGatherable
 
             switch(_inventoryType)
             {
-                case InventoryTypes.ArtifactMoon: UIManager.Instance.ShowArtifact(); break;
+                case InventoryTypes.ArtifactMoon: 
+                    UIManager.Instance.ShowArtifact();
+                    AudioManager.Instance.PlayOneShot(FMODEvents.Instance.winMusicCave, Vector3.zero);
+                    break;
                 case InventoryTypes.ArtifactMars: break;
             }
 

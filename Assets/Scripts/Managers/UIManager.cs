@@ -70,9 +70,7 @@ public class UIManager : MonoBehaviour
         _fadeToBlackCave.SetActive(true);
         yield return new WaitForSeconds(3.5f);
 
-        GameManager.Instance.levelFinished[PlanetID.Moon] = PlayerSettings.LevelFinished; 
-        GameManager.Instance.SavePlayerPrefs();
-        GameManager.Instance.LoadScene("PlanetsMenu");
+        GameManager.Instance.FinishCaveLevel();
     }
 
     public void UpdateHealthUI(int currentLives)

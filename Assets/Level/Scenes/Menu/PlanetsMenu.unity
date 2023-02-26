@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 15543051}
   - component: {fileID: 15543050}
   - component: {fileID: 15543048}
+  - component: {fileID: 15543053}
   m_Layer: 5
   m_Name: Moon
   m_TagString: Untagged
@@ -223,12 +224,24 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 429285083}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: GoToLocation
+        m_MethodName: CheckLocationAccessibility
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 15543053}
+        m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -271,6 +284,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15543046}
   m_CullTransparentMesh: 1
+--- !u!114 &15543053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15543046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04a2464faeca3d4686e9fd85768aebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layoutGroup: {fileID: 0}
 --- !u!1 &55710369
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +310,7 @@ GameObject:
   - component: {fileID: 55710374}
   - component: {fileID: 55710373}
   - component: {fileID: 55710371}
+  - component: {fileID: 55710376}
   m_Layer: 5
   m_Name: Mars
   m_TagString: Untagged
@@ -371,12 +398,24 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 429285083}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: GoToLocation
+        m_MethodName: CheckLocationAccessibility
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 55710376}
+        m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -419,6 +458,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55710369}
   m_CullTransparentMesh: 1
+--- !u!114 &55710376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55710369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04a2464faeca3d4686e9fd85768aebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layoutGroup: {fileID: 0}
 --- !u!1 &260914981
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,6 +518,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260914981}
   m_CullTransparentMesh: 1
+--- !u!1 &314160306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 314160308}
+  - component: {fileID: 314160307}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &314160307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314160306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 349b80fe3d84c5c449f2f18e483f365a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 1
+  musicVolume: 1
+  ambienceVolume: 1
+  sfxVolume: 1
+--- !u!4 &314160308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314160306}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 485396723}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &368641936
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +624,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: efe6ce32a6a4408489775c70e5d32f11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -548,7 +649,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &429285081
 GameObject:
@@ -580,7 +681,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &429285083
 MonoBehaviour:
@@ -597,6 +698,260 @@ MonoBehaviour:
   _pauseMenu: {fileID: 950887322}
   _rocketAnimator: {fileID: 2018147866}
   _player: {fileID: 0}
+--- !u!1 &485396722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 485396723}
+  - component: {fileID: 485396724}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &485396723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485396722}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 314160308}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &485396724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485396722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11008a4ba8cb12041b6011fa31b40946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <playerFootstepsWalk>k__BackingField:
+    Guid:
+      Data1: 519369890
+      Data2: 1125655310
+      Data3: -989387620
+      Data4: 302466747
+    Path: event:/SFX/Player/Footsteps/Player_footsteps_walk_stone
+  <playerFootstepsSprint>k__BackingField:
+    Guid:
+      Data1: 934359065
+      Data2: 1107733622
+      Data3: 309286022
+      Data4: 795008787
+    Path: event:/SFX/Player/Footsteps/Player_footsteps_sprint_stone
+  <goldCollected>k__BackingField:
+    Guid:
+      Data1: -322307314
+      Data2: 1131781687
+      Data3: -1580104015
+      Data4: -749367103
+    Path: event:/SFX/Player/Gold_pickup
+  <pistolFire>k__BackingField:
+    Guid:
+      Data1: -2136771390
+      Data2: 1145237751
+      Data3: 1042997941
+      Data4: -2094166611
+    Path: event:/SFX/Player/Weapons/PistolFire
+  <rifleFire>k__BackingField:
+    Guid:
+      Data1: -18261451
+      Data2: 1170630526
+      Data3: 1133213571
+      Data4: -995245189
+    Path: event:/SFX/Player/Weapons/RifleFire
+  <playerDeath>k__BackingField:
+    Guid:
+      Data1: -514264018
+      Data2: 1217644821
+      Data3: -1524608878
+      Data4: 133658570
+    Path: event:/SFX/Player/FallScream
+  <shieldDeflect>k__BackingField:
+    Guid:
+      Data1: -1751600466
+      Data2: 1327232813
+      Data3: 1163978900
+      Data4: -180412043
+    Path: event:/SFX/Player/ShieldDeflect
+  <slimeJump>k__BackingField:
+    Guid:
+      Data1: -1888886957
+      Data2: 1124793211
+      Data3: -1811673199
+      Data4: 903412790
+    Path: event:/SFX/Enemies/Slime_jump
+  <slimeDeath>k__BackingField:
+    Guid:
+      Data1: -1490046994
+      Data2: 1231221515
+      Data3: 298800047
+      Data4: -2032441238
+    Path: event:/SFX/Enemies/Slime_death
+  <slimeAttack>k__BackingField:
+    Guid:
+      Data1: -898425742
+      Data2: 1124656390
+      Data3: 1985659583
+      Data4: 2018742531
+    Path: event:/SFX/Enemies/Slime_attack
+  <hit>k__BackingField:
+    Guid:
+      Data1: 1696351227
+      Data2: 1094990455
+      Data3: -261795456
+      Data4: 428049525
+    Path: event:/SFX/Enemies/Hit
+  <fire>k__BackingField:
+    Guid:
+      Data1: -12455069
+      Data2: 1120515781
+      Data3: -1244397135
+      Data4: 549391832
+    Path: event:/SFX/Enemies/EnemyFire
+  <fireBig>k__BackingField:
+    Guid:
+      Data1: 1282276656
+      Data2: 1305112678
+      Data3: -152108133
+      Data4: -1428590723
+    Path: event:/SFX/Enemies/EnemyFire2
+  <enemyFootstep>k__BackingField:
+    Guid:
+      Data1: -131510322
+      Data2: 1225871871
+      Data3: -991538000
+      Data4: 1236443909
+    Path: event:/SFX/Enemies/EnemyFootstep
+  <enemyDeath>k__BackingField:
+    Guid:
+      Data1: 1156399731
+      Data2: 1270869689
+      Data3: 1244796057
+      Data4: 1184083084
+    Path: event:/SFX/Enemies/EnemyDeath
+  <chestOpen>k__BackingField:
+    Guid:
+      Data1: 254215438
+      Data2: 1079736219
+      Data3: -1128137087
+      Data4: 1279685668
+    Path: event:/SFX/Player/OpenChest
+  <buttonEnter>k__BackingField:
+    Guid:
+      Data1: 1898462042
+      Data2: 1262695259
+      Data3: -2134346835
+      Data4: 1828201455
+    Path: event:/SFX/UI/ButtonEnter
+  <buttonClick>k__BackingField:
+    Guid:
+      Data1: 957308390
+      Data2: 1284203019
+      Data3: 192856223
+      Data4: -841462014
+    Path: event:/SFX/UI/ButtonClick
+  <itemInteraction>k__BackingField:
+    Guid:
+      Data1: 1164992165
+      Data2: 1271151541
+      Data3: 1098744217
+      Data4: 96984100
+    Path: event:/SFX/UI/ItemInteraction
+  <itemEquip>k__BackingField:
+    Guid:
+      Data1: 335718099
+      Data2: 1191042356
+      Data3: 1542962593
+      Data4: 779037158
+    Path: event:/SFX/Player/EquipItem
+  <buyItem>k__BackingField:
+    Guid:
+      Data1: 1958555770
+      Data2: 1149726937
+      Data3: -2101282419
+      Data4: -385783406
+    Path: event:/SFX/UI/Buy
+  <notEnoughGold>k__BackingField:
+    Guid:
+      Data1: 449418891
+      Data2: 1133282087
+      Data3: -468345180
+      Data4: 225897218
+    Path: event:/SFX/UI/NotEnoughGold
+  <rocketFly>k__BackingField:
+    Guid:
+      Data1: 2034877862
+      Data2: 1247106623
+      Data3: 2093203120
+      Data4: 792264967
+    Path: event:/SFX/UI/RocketFly
+  <ambience>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <music>k__BackingField:
+    Guid:
+      Data1: -289937760
+      Data2: 1243847247
+      Data3: -1487694714
+      Data4: -1854391593
+    Path: event:/Music/PlanetsMenuMusic
+  <winMusicCave>k__BackingField:
+    Guid:
+      Data1: -1877448776
+      Data2: 1175020105
+      Data3: 1581957274
+      Data4: -1584884013
+    Path: event:/Music/FinishCaveLevel
+  <stationDoor>k__BackingField:
+    Guid:
+      Data1: 2065841622
+      Data2: 1196678877
+      Data3: -429287271
+      Data4: -1176711745
+    Path: event:/SFX/Station/Door
+  <stationGateway>k__BackingField:
+    Guid:
+      Data1: -1532919809
+      Data2: 1147951550
+      Data3: 719700895
+      Data4: 2056146182
+    Path: event:/SFX/Station/Gateway
+  <eButton>k__BackingField:
+    Guid:
+      Data1: 212371746
+      Data2: 1221901040
+      Data3: 967253665
+      Data4: -1528439620
+    Path: event:/SFX/Station/InteractionBtAppear
+  <footsteps>k__BackingField:
+    Guid:
+      Data1: 782723445
+      Data2: 1215235022
+      Data3: -647229512
+      Data4: -206202692
+    Path: event:/SFX/Station/Footstep
 --- !u!1 &659732653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,6 +1856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1254340334}
   - component: {fileID: 1254340333}
+  - component: {fileID: 1254340335}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1566,6 +1922,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1254340335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254340331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 808585774}
 --- !u!1 &1345440968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,6 +1948,7 @@ GameObject:
   - component: {fileID: 1345440971}
   - component: {fileID: 1345440970}
   - component: {fileID: 1345440974}
+  - component: {fileID: 1345440975}
   m_Layer: 5
   m_Name: Earth
   m_TagString: Untagged
@@ -1652,8 +2022,20 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 429285083}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: GoToLocation
+        m_MethodName: CheckLocationAccessibility
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1345440975}
+        m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1714,6 +2096,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _planetDatabase: {fileID: 1966356548}
   _id: 0
+--- !u!114 &1345440975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345440968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04a2464faeca3d4686e9fd85768aebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layoutGroup: {fileID: 0}
 --- !u!1 &1382095080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,6 +2122,7 @@ GameObject:
   - component: {fileID: 1382095083}
   - component: {fileID: 1382095082}
   - component: {fileID: 1382095085}
+  - component: {fileID: 1382095086}
   m_Layer: 5
   m_Name: Station
   m_TagString: Untagged
@@ -1800,12 +2196,24 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 429285083}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: GoToLocation
+        m_MethodName: CheckLocationAccessibility
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1382095086}
+        m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1862,6 +2270,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _planetDatabase: {fileID: 1966356548}
   _id: 3
+--- !u!114 &1382095086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382095080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04a2464faeca3d4686e9fd85768aebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layoutGroup: {fileID: 0}
 --- !u!1 &1455391665
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,7 +3094,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ddcac1fac1f5c8943a30c2ef6b724062, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2698,7 +3119,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2146947969
 GameObject:

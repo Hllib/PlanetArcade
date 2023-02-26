@@ -1,3 +1,5 @@
+using FMOD;
+using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -52,6 +54,7 @@ public class AstronautEnemy : Enemy, IDamageable
         Health -= damage;
         UpdateHealthBar(Health * 100 / _initialHealth);
         ShowFloatingDamage(damage);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hit, this.transform.position);
 
         if (Health <= 0)
         {
@@ -59,7 +62,7 @@ public class AstronautEnemy : Enemy, IDamageable
             {
                 DropLoot();
             }
-
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.enemyDeath, this.transform.position);
             isDead = true;
             Destroy(gameObject);
             UIManager.Instance.DisplayMessage("Enemy astronaut destroyed!");
@@ -120,8 +123,21 @@ public class AstronautEnemy : Enemy, IDamageable
         }
         switch (_shotCounter)
         {
-            case < 3: Instantiate(_smallBulletPrefab, transform.position, Quaternion.Euler(0f, bulletRotationY, 0));  _shotCounter++; break;
-            case >= 3: Instantiate(_bigBulletPrefab, transform.position, Quaternion.Euler(0f, bulletRotationY, 0)); _shotCounter = 0; break;
+            case < 3:
+                Instantiate(_smallBulletPrefab, transform.position, Quaternion.Euler(0f, bulletRotationY, 0));
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fire, this.transform.position);
+                _shotCounter++;
+                break;
+            case >= 3:
+                Instantiate(_bigBulletPrefab, transform.position, Quaternion.Euler(0f, bulletRotationY, 0));
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fireBig, this.transform.position);
+                _shotCounter = 0;
+                break;
         }
+    }
+
+    public void StepSound()
+    {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.enemyFootstep, this.transform.position);
     }
 }

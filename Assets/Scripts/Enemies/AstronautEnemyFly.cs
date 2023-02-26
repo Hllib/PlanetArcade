@@ -62,6 +62,7 @@ public class AstronautEnemyFly : Enemy, IDamageable
         Health -= damage;
         UpdateHealthBar(Health * 100 / _initialHealth);
         ShowFloatingDamage(damage);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hit, this.transform.position);
 
         if (Health <= 0)
         {
@@ -69,7 +70,7 @@ public class AstronautEnemyFly : Enemy, IDamageable
             {
                 DropLoot();
             }
-
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.enemyDeath, this.transform.position);
             isDead = true;
             Destroy(gameObject);
             UIManager.Instance.DisplayMessage("Enemy astronaut destroyed!");
@@ -108,7 +109,7 @@ public class AstronautEnemyFly : Enemy, IDamageable
         if (distance > attackRadius && _isAlerted)
         {
             isInCombat = false;
-            currentTarget = previousTarget;
+            //currentTarget = previousTarget;
             _isAlerted = false;
         }
     }
@@ -124,8 +125,16 @@ public class AstronautEnemyFly : Enemy, IDamageable
         }
         switch (_shotCounter)
         {
-            case < 3: Instantiate(_smallBulletPrefab, transform.position, Quaternion.Euler(0f, bulletRotationY, 0)); _shotCounter++; break;
-            case >= 3: Instantiate(_bigBulletPrefab, transform.position, Quaternion.Euler(0f, bulletRotationY, 0)); _shotCounter = 0; break;
+            case < 3: 
+                Instantiate(_smallBulletPrefab, transform.position, Quaternion.Euler(0f, bulletRotationY, 0));
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fire, this.transform.position);               
+                _shotCounter++; 
+                break;
+            case >= 3: 
+                Instantiate(_bigBulletPrefab, transform.position, Quaternion.Euler(0f, bulletRotationY, 0));
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fireBig, this.transform.position);
+                _shotCounter = 0; 
+                break;
         }
     }
 }

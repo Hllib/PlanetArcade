@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8124737773148155643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/PlanetsMenuMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Music/PlanetsMenuMusic
+  Guid:
+    Data1: -289937760
+    Data2: 1243847247
+    Data3: -1487694714
+    Data4: -1854391593
+  Banks:
+  - {fileID: 8877163766806020761}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 271056
 --- !u!114 &-7969360210085122475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,6 +81,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 550
+--- !u!114 &-7348756133296336629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemies/EnemyDeath
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemies/EnemyDeath
+  Guid:
+    Data1: 1156399731
+    Data2: 1270869689
+    Data3: 1244796057
+    Data4: 1184083084
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7214100099984308462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemies/EnemyFire
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemies/EnemyFire
+  Guid:
+    Data1: -12455069
+    Data2: 1120515781
+    Data3: -1244397135
+    Data4: 549391832
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7140941715362972624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,11 +258,38 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Cave.bank
   Name: Cave
   StudioPath: bank:/Cave
-  lastModified: 638129992315564154
+  lastModified: 638130144328751467
   FileSizes:
   - Name: Desktop
     Value: 1558528
   Exists: 1
+--- !u!114 &-5222459390379664145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/ShieldDeflect
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/ShieldDeflect
+  Guid:
+    Data1: -1751600466
+    Data2: 1327232813
+    Data3: 1163978900
+    Data4: -180412043
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5018551978141363703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +391,33 @@ MonoBehaviour:
     Data4: -2094166611
   Banks:
   - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4484414126556524165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/FinishCaveLevel
+  m_EditorClassIdentifier: 
+  Path: event:/Music/FinishCaveLevel
+  Guid:
+    Data1: -1877448776
+    Data2: 1175020105
+    Data3: 1581957274
+    Data4: -1584884013
+  Banks:
+  - {fileID: 8877163766806020761}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -398,27 +533,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-3411546643693388285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638129992315584160
-  FileSizes:
-  - Name: Desktop
-    Value: 1486
-  Exists: 1
---- !u!114 &-2354545911575411039
+--- !u!114 &-3447437630378743129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -445,6 +560,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 276285
+--- !u!114 &-3411546643693388285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638130144328771466
+  FileSizes:
+  - Name: Desktop
+    Value: 1486
+  Exists: 1
 --- !u!114 &-2273952311991654268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,38 +622,11 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638129992315914238
+  lastModified: 638130144330331816
   FileSizes:
   - Name: Desktop
-    Value: 214624
+    Value: 458336
   Exists: 1
---- !u!114 &-1594653345179488292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Portla_idle
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Portla_idle
-  Guid:
-    Data1: -654181691
-    Data2: 1283671040
-    Data3: -538455620
-    Data4: 1867755998
-  Banks:
-  - {fileID: -1988538723371890192}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 5136
 --- !u!114 &-1351122887853415126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,7 +703,6 @@ MonoBehaviour:
   - {fileID: 5373373332110290172}
   - {fileID: 8877163766806020761}
   EditorEvents:
-  - {fileID: -1594653345179488292}
   - {fileID: 2179474476601538497}
   - {fileID: 7044269835125881051}
   - {fileID: -2273952311991654268}
@@ -625,15 +732,79 @@ MonoBehaviour:
   - {fileID: 3636040613940548689}
   - {fileID: -481138135393914638}
   - {fileID: -7140941715362972624}
-  - {fileID: -2354545911575411039}
-  - {fileID: 5011247136807593903}
+  - {fileID: 3861278999579805168}
+  - {fileID: -7214100099984308462}
+  - {fileID: 8307417103621244629}
+  - {fileID: -5222459390379664145}
+  - {fileID: 6015084041915626427}
+  - {fileID: -7348756133296336629}
+  - {fileID: 1651251645533289339}
+  - {fileID: 1563126375363264643}
+  - {fileID: -3447437630378743129}
+  - {fileID: 7421345633492665611}
+  - {fileID: -8124737773148155643}
+  - {fileID: -4484414126556524165}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3411546643693388285}
   StringsBanks:
   - {fileID: 3057868749645026645}
-  cacheTime: 638129992317574605
+  cacheTime: 638130144331292126
   cacheVersion: 131601
+--- !u!114 &1563126375363264643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/RocketFly
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/RocketFly
+  Guid:
+    Data1: 2034877862
+    Data2: 1247106623
+    Data3: 2093203120
+    Data4: 792264967
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1651251645533289339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemies/EnemyFly
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemies/EnemyFly
+  Guid:
+    Data1: -561946905
+    Data2: 1231554226
+    Data3: 1342575542
+    Data4: 1934359085
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 917
 --- !u!114 &1755042228183088977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,10 +875,10 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638129992315594158
+  lastModified: 638130144328781473
   FileSizes:
   - Name: Desktop
-    Value: 2646
+    Value: 3028
   Exists: 1
 --- !u!114 &3121797782991095181
 MonoBehaviour:
@@ -763,7 +934,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 700
---- !u!114 &5011247136807593903
+--- !u!114 &3861278999579805168
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -773,23 +944,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/MoonMusic
+  m_Name: event:/SFX/Enemies/EnemyFire2
   m_EditorClassIdentifier: 
-  Path: event:/Music/MoonMusic
+  Path: event:/SFX/Enemies/EnemyFire2
   Guid:
-    Data1: -1669921906
-    Data2: 1109358923
-    Data3: -381188938
-    Data4: -107571492
+    Data1: 1282276656
+    Data2: 1305112678
+    Data3: -152108133
+    Data4: -1428590723
   Banks:
-  - {fileID: 8877163766806020761}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 154285
+  Length: 0
 --- !u!114 &5020878137056588351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,7 +1030,7 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638129992316994482
+  lastModified: 638130144328561416
   FileSizes:
   - Name: Desktop
     Value: 3009152
@@ -891,6 +1062,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &6015084041915626427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/TeleportSound
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/TeleportSound
+  Guid:
+    Data1: -654181691
+    Data2: 1283671040
+    Data3: -538455620
+    Data4: 1867755998
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5136
 --- !u!114 &6140621083055260621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,7 +1131,7 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Station.bank
   Name: Station
   StudioPath: bank:/Station
-  lastModified: 638129992316374437
+  lastModified: 638130144330902001
   FileSizes:
   - Name: Desktop
     Value: 6377760
@@ -994,6 +1192,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 458285
+--- !u!114 &7421345633492665611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MoonMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Music/MoonMusic
+  Guid:
+    Data1: -1669921906
+    Data2: 1109358923
+    Data3: -381188938
+    Data4: -107571492
+  Banks:
+  - {fileID: 8877163766806020761}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 154285
 --- !u!114 &7675634216772374491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1021,6 +1246,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 550
+--- !u!114 &8307417103621244629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemies/EnemyFootstep
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemies/EnemyFootstep
+  Guid:
+    Data1: -131510322
+    Data2: 1225871871
+    Data3: -991538000
+    Data4: 1236443909
+  Banks:
+  - {fileID: -1988538723371890192}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8626422252569744216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1036,7 +1288,7 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638129992316744416
+  lastModified: 638130144331292126
   FileSizes:
   - Name: Desktop
     Value: 3464704
@@ -1056,10 +1308,10 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638129992317574605
+  lastModified: 638130144329571653
   FileSizes:
   - Name: Desktop
-    Value: 11193088
+    Value: 14886176
   Exists: 1
 --- !u!114 &9100516720811570531
 MonoBehaviour:
