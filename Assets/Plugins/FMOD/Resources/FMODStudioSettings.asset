@@ -317,7 +317,9 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Ambience
   - Cave
+  - Music
   - SFX
   - Station
   - UI

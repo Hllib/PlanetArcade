@@ -9720,7 +9720,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1817546173}
   m_HandleRect: {fileID: 1817546171}
   m_Direction: 2
-  m_Value: 0.8568875
+  m_Value: 0.85688734
   m_Size: 0.58920795
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -11909,11 +11909,11 @@ MonoBehaviour:
     Path: event:/SFX/Station/InteractionBtAppear
   <footsteps>k__BackingField:
     Guid:
-      Data1: 170448865
-      Data2: 1324552717
-      Data3: 242349481
-      Data4: -1711845174
-    Path: event:/SFX/Station/Footsteps
+      Data1: 782723445
+      Data2: 1215235022
+      Data3: -647229512
+      Data4: -206202692
+    Path: event:/SFX/Station/Footstep
 --- !u!1001 &929508060148492847
 PrefabInstance:
   m_ObjectHideFlags: 0

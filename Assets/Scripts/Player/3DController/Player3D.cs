@@ -37,7 +37,6 @@ public class Player3D : MonoBehaviour
 
     void Start()
     {
-        _playerFootsteps = AudioManager.Instance.CreateEventInstance(FMODEvents.Instance.footsteps);
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Player3DAnimator>();
         _playerInventory = GetComponent<Inventory>();
@@ -51,6 +50,8 @@ public class Player3D : MonoBehaviour
                 goldAmount += 1;
             }
         }
+
+        _playerFootsteps = AudioManager.Instance.CreateEventInstance(FMODEvents.Instance.footsteps);
     }
 
     void Update()
