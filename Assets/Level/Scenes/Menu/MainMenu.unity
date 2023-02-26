@@ -1461,13 +1461,13 @@ MonoBehaviour:
       Data3: -1524608878
       Data4: 133658570
     Path: event:/SFX/Player/FallScream
-  <playerHit>k__BackingField:
+  <shieldDeflect>k__BackingField:
     Guid:
-      Data1: 526043103
-      Data2: 1326619513
-      Data3: 1893372080
-      Data4: 234611981
-    Path: event:/SFX/Player/Hurt
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <slimeJump>k__BackingField:
     Guid:
       Data1: -1888886957
@@ -1496,6 +1496,34 @@ MonoBehaviour:
       Data3: -261795456
       Data4: 428049525
     Path: event:/SFX/Enemies/Hit
+  <fire>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <fireBig>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <enemyFootstep>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <enemyDeath>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <chestOpen>k__BackingField:
     Guid:
       Data1: 254215438
@@ -1531,6 +1559,27 @@ MonoBehaviour:
       Data3: 1542962593
       Data4: 779037158
     Path: event:/SFX/Player/EquipItem
+  <buyItem>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <notEnoughGold>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <rocketFly>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <ambience>k__BackingField:
     Guid:
       Data1: 0
@@ -1545,6 +1594,41 @@ MonoBehaviour:
       Data3: 335103404
       Data4: 1449349578
     Path: event:/Music/MainMenuMusic
+  <winMusicCave>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <stationDoor>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <stationGateway>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <eButton>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <footsteps>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &602969523
 GameObject:
   m_ObjectHideFlags: 0
@@ -3212,7 +3296,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: efe6ce32a6a4408489775c70e5d32f11, type: 3}
   m_Color: {r: 0, g: 1, b: 0.8367977, a: 1}
   m_FlipX: 0

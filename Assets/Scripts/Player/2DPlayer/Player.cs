@@ -190,7 +190,7 @@ public class Player : MonoBehaviour, IDamageable
         }
         if (Input.GetMouseButtonUp(0) && _hasFired)
         {
-            speed = 3.0f;
+            speed = _isSprinting ? 3.0f * 2 : 3.0f;
             HideWeaponGraphic();
             _animator.CeaseFire();
             _hasFired = false;

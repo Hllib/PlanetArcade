@@ -335,13 +335,13 @@ MonoBehaviour:
       Data3: -1524608878
       Data4: 133658570
     Path: event:/SFX/Player/FallScream
-  <playerHit>k__BackingField:
+  <shieldDeflect>k__BackingField:
     Guid:
-      Data1: 526043103
-      Data2: 1326619513
-      Data3: 1893372080
-      Data4: 234611981
-    Path: event:/SFX/Player/Hurt
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <slimeJump>k__BackingField:
     Guid:
       Data1: -1888886957
@@ -370,6 +370,34 @@ MonoBehaviour:
       Data3: -261795456
       Data4: 428049525
     Path: event:/SFX/Enemies/Hit
+  <fire>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <fireBig>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <enemyFootstep>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <enemyDeath>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <chestOpen>k__BackingField:
     Guid:
       Data1: 254215438
@@ -419,6 +447,13 @@ MonoBehaviour:
       Data3: -468345180
       Data4: 225897218
     Path: event:/SFX/UI/NotEnoughGold
+  <rocketFly>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <ambience>k__BackingField:
     Guid:
       Data1: -2035131218
@@ -433,6 +468,13 @@ MonoBehaviour:
       Data3: 1661932977
       Data4: -708366773
     Path: event:/Music/EarthMusic
+  <winMusicCave>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <stationDoor>k__BackingField:
     Guid:
       Data1: 2065841622
@@ -8778,6 +8820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 542050244037268713, guid: 9f78a026a4924954ba4323f8d4d07226, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 542050244037268717, guid: 9f78a026a4924954ba4323f8d4d07226, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -9537,6 +9583,10 @@ PrefabInstance:
       propertyPath: _quickSelections.Array.data[2]
       value: 
       objectReference: {fileID: 2111224956}
+    - target: {fileID: 5804475461191794488, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
 --- !u!114 &2413558930165084867 stripped
