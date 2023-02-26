@@ -319,6 +319,7 @@ MonoBehaviour:
   Banks:
   - Cave
   - SFX
+  - Station
   - UI
   BanksToLoad: []
   LiveUpdatePort: 9264

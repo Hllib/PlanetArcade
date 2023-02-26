@@ -46,4 +46,9 @@ public class Gateway : InteractableDoor
         
         player.BlockMovement = false;
     }
+
+    public void OpenCloseSound()
+    {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.stationGateway, this.transform.position);
+    }
 }

@@ -18,6 +18,7 @@ public class Merchant : MonoBehaviour
     private TextMeshProUGUI[] _itemsTitles;
     [SerializeField]
     private TextMeshProUGUI _goldAmount;
+    private bool _playerInRange;
 
     private void Start()
     {
@@ -27,7 +28,7 @@ public class Merchant : MonoBehaviour
 
     private void Update()
     {
-        if (TradeMode && Input.GetKeyDown(KeyCode.E))
+        if (TradeMode && Input.GetKeyDown(KeyCode.E) && _playerInRange)
         {
             _visualCue.SetActive(false);
             _shopPanel.SetActive(true);
@@ -39,7 +40,9 @@ public class Merchant : MonoBehaviour
     {
         if (other.CompareTag("Player") && TradeMode)
         {
+            _playerInRange = true;
             _visualCue.SetActive(true);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.eButton, Vector3.zero);
         }
     }
 
@@ -47,6 +50,7 @@ public class Merchant : MonoBehaviour
     {
         if (other.CompareTag("Player") && TradeMode)
         {
+            _playerInRange = false;
             _visualCue.SetActive(false);
         }
     }
@@ -107,9 +111,13 @@ public class Merchant : MonoBehaviour
                 {
                     _player.GetComponent<Inventory>().RemoveItem(InventoryTypes.Gold);
                 }
+
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buyItem, Vector3.zero);
             }
             else
             {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.notEnoughGold, Vector3.zero);
+
                 return;
             }
         }

@@ -72,7 +72,7 @@ public class Player : MonoBehaviour, IDamageable
 
     private void GetInventory()
     {
-        string inventoryIdString = PlayerPrefs.GetString("Inventory", string.Empty);
+        string inventoryIdString = PlayerPrefs.GetString(PlayerSettings.Inventory, string.Empty);
 
         if (!string.IsNullOrEmpty(inventoryIdString))
         {

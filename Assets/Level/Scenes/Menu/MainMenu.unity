@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1440,6 +1440,97 @@ MonoBehaviour:
       Data3: -1580104015
       Data4: -749367103
     Path: event:/SFX/Player/Gold_pickup
+  <pistolFire>k__BackingField:
+    Guid:
+      Data1: -2136771390
+      Data2: 1145237751
+      Data3: 1042997941
+      Data4: -2094166611
+    Path: event:/SFX/Player/Weapons/PistolFire
+  <rifleFire>k__BackingField:
+    Guid:
+      Data1: -18261451
+      Data2: 1170630526
+      Data3: 1133213571
+      Data4: -995245189
+    Path: event:/SFX/Player/Weapons/RifleFire
+  <playerDeath>k__BackingField:
+    Guid:
+      Data1: -514264018
+      Data2: 1217644821
+      Data3: -1524608878
+      Data4: 133658570
+    Path: event:/SFX/Player/FallScream
+  <playerHit>k__BackingField:
+    Guid:
+      Data1: 526043103
+      Data2: 1326619513
+      Data3: 1893372080
+      Data4: 234611981
+    Path: event:/SFX/Player/Hurt
+  <slimeJump>k__BackingField:
+    Guid:
+      Data1: -1888886957
+      Data2: 1124793211
+      Data3: -1811673199
+      Data4: 903412790
+    Path: event:/SFX/Enemies/Slime_jump
+  <slimeDeath>k__BackingField:
+    Guid:
+      Data1: -1490046994
+      Data2: 1231221515
+      Data3: 298800047
+      Data4: -2032441238
+    Path: event:/SFX/Enemies/Slime_death
+  <slimeAttack>k__BackingField:
+    Guid:
+      Data1: -898425742
+      Data2: 1124656390
+      Data3: 1985659583
+      Data4: 2018742531
+    Path: event:/SFX/Enemies/Slime_attack
+  <hit>k__BackingField:
+    Guid:
+      Data1: 1696351227
+      Data2: 1094990455
+      Data3: -261795456
+      Data4: 428049525
+    Path: event:/SFX/Enemies/Hit
+  <chestOpen>k__BackingField:
+    Guid:
+      Data1: 254215438
+      Data2: 1079736219
+      Data3: -1128137087
+      Data4: 1279685668
+    Path: event:/SFX/Player/OpenChest
+  <buttonEnter>k__BackingField:
+    Guid:
+      Data1: 1898462042
+      Data2: 1262695259
+      Data3: -2134346835
+      Data4: 1828201455
+    Path: event:/SFX/UI/ButtonEnter
+  <buttonClick>k__BackingField:
+    Guid:
+      Data1: 957308390
+      Data2: 1284203019
+      Data3: 192856223
+      Data4: -841462014
+    Path: event:/SFX/UI/ButtonClick
+  <itemInteraction>k__BackingField:
+    Guid:
+      Data1: 1164992165
+      Data2: 1271151541
+      Data3: 1098744217
+      Data4: 96984100
+    Path: event:/SFX/UI/ItemInteraction
+  <itemEquip>k__BackingField:
+    Guid:
+      Data1: 335718099
+      Data2: 1191042356
+      Data3: 1542962593
+      Data4: 779037158
+    Path: event:/SFX/Player/EquipItem
   <ambience>k__BackingField:
     Guid:
       Data1: 0
@@ -1454,62 +1545,6 @@ MonoBehaviour:
       Data3: 335103404
       Data4: 1449349578
     Path: event:/Music/MainMenuMusic
-  <buttonEnter>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <buttonClick>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <itemInteraction>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <chestOpen>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <itemEquip>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <pistolFire>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <rifleFire>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <slimeJump>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
 --- !u!1 &602969523
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ public class PlayerSettings : MonoBehaviour
     public const string AmbienceVolume = "AmbienceVolume";
     public const string SFXVolume = "SFXVolume";
 
+    public const string Inventory = "Inventory";
+
     public const int LevelFinished = 1;
     public const int NewGame = 0;
 }

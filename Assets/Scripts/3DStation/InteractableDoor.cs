@@ -46,6 +46,7 @@ public abstract class InteractableDoor : MonoBehaviour
             }
             if (Time.time > canInteractTime)
             {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.eButton, Vector3.zero);
                 visualCue.SetActive(true);
             }
         }

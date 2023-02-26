@@ -249,6 +249,176 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 24.99143, y: 0.43702412}
   m_EdgeRadius: 0
+--- !u!1 &183288177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 183288178}
+  - component: {fileID: 183288179}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &183288178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183288177}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1796146162}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &183288179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183288177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11008a4ba8cb12041b6011fa31b40946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <playerFootstepsWalk>k__BackingField:
+    Guid:
+      Data1: 519369890
+      Data2: 1125655310
+      Data3: -989387620
+      Data4: 302466747
+    Path: event:/SFX/Player/Footsteps/Player_footsteps_walk_stone
+  <playerFootstepsSprint>k__BackingField:
+    Guid:
+      Data1: 934359065
+      Data2: 1107733622
+      Data3: 309286022
+      Data4: 795008787
+    Path: event:/SFX/Player/Footsteps/Player_footsteps_sprint_stone
+  <goldCollected>k__BackingField:
+    Guid:
+      Data1: -322307314
+      Data2: 1131781687
+      Data3: -1580104015
+      Data4: -749367103
+    Path: event:/SFX/Player/Gold_pickup
+  <pistolFire>k__BackingField:
+    Guid:
+      Data1: -2136771390
+      Data2: 1145237751
+      Data3: 1042997941
+      Data4: -2094166611
+    Path: event:/SFX/Player/Weapons/PistolFire
+  <rifleFire>k__BackingField:
+    Guid:
+      Data1: -18261451
+      Data2: 1170630526
+      Data3: 1133213571
+      Data4: -995245189
+    Path: event:/SFX/Player/Weapons/RifleFire
+  <playerDeath>k__BackingField:
+    Guid:
+      Data1: -514264018
+      Data2: 1217644821
+      Data3: -1524608878
+      Data4: 133658570
+    Path: event:/SFX/Player/FallScream
+  <playerHit>k__BackingField:
+    Guid:
+      Data1: 526043103
+      Data2: 1326619513
+      Data3: 1893372080
+      Data4: 234611981
+    Path: event:/SFX/Player/Hurt
+  <slimeJump>k__BackingField:
+    Guid:
+      Data1: -1888886957
+      Data2: 1124793211
+      Data3: -1811673199
+      Data4: 903412790
+    Path: event:/SFX/Enemies/Slime_jump
+  <slimeDeath>k__BackingField:
+    Guid:
+      Data1: -1490046994
+      Data2: 1231221515
+      Data3: 298800047
+      Data4: -2032441238
+    Path: event:/SFX/Enemies/Slime_death
+  <slimeAttack>k__BackingField:
+    Guid:
+      Data1: -898425742
+      Data2: 1124656390
+      Data3: 1985659583
+      Data4: 2018742531
+    Path: event:/SFX/Enemies/Slime_attack
+  <hit>k__BackingField:
+    Guid:
+      Data1: 1696351227
+      Data2: 1094990455
+      Data3: -261795456
+      Data4: 428049525
+    Path: event:/SFX/Enemies/Hit
+  <chestOpen>k__BackingField:
+    Guid:
+      Data1: 254215438
+      Data2: 1079736219
+      Data3: -1128137087
+      Data4: 1279685668
+    Path: event:/SFX/Player/OpenChest
+  <buttonEnter>k__BackingField:
+    Guid:
+      Data1: 1898462042
+      Data2: 1262695259
+      Data3: -2134346835
+      Data4: 1828201455
+    Path: event:/SFX/UI/ButtonEnter
+  <buttonClick>k__BackingField:
+    Guid:
+      Data1: 957308390
+      Data2: 1284203019
+      Data3: 192856223
+      Data4: -841462014
+    Path: event:/SFX/UI/ButtonClick
+  <itemInteraction>k__BackingField:
+    Guid:
+      Data1: 1164992165
+      Data2: 1271151541
+      Data3: 1098744217
+      Data4: 96984100
+    Path: event:/SFX/UI/ItemInteraction
+  <itemEquip>k__BackingField:
+    Guid:
+      Data1: 335718099
+      Data2: 1191042356
+      Data3: 1542962593
+      Data4: 779037158
+    Path: event:/SFX/Player/EquipItem
+  <ambience>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <music>k__BackingField:
+    Guid:
+      Data1: 1154553212
+      Data2: 1166188650
+      Data3: 335103404
+      Data4: 1449349578
+    Path: event:/Music/MainMenuMusic
 --- !u!1 &220789097
 GameObject:
   m_ObjectHideFlags: 0
@@ -2785,7 +2955,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1606178722}
-  - {fileID: 1074591894}
+  - {fileID: 1796146162}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2869,55 +3039,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1074591893
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1074591894}
-  - component: {fileID: 1074591895}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1074591894
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1074591893}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2073426003}
-  m_Father: {fileID: 933267653}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1074591895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1074591893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 349b80fe3d84c5c449f2f18e483f365a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  masterVolume: 1
-  musicVolume: 1
-  ambienceVolume: 1
-  sfxVolume: 1
 --- !u!1 &1133045168
 GameObject:
   m_ObjectHideFlags: 0
@@ -3269,6 +3390,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2413558930649294450, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
   m_PrefabInstance: {fileID: 2413558930165084866}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1796146161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1796146162}
+  - component: {fileID: 1796146163}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1796146162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796146161}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 183288178}
+  m_Father: {fileID: 933267653}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1796146163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796146161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 349b80fe3d84c5c449f2f18e483f365a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 1
+  musicVolume: 1
+  ambienceVolume: 1
+  sfxVolume: 1
 --- !u!1 &1806466859
 GameObject:
   m_ObjectHideFlags: 0
@@ -8252,162 +8422,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5455953006385953856, guid: b46b63f920f14ba4a967ed57ea346492, type: 3}
   m_PrefabInstance: {fileID: 2047948105}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2073426002
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2073426003}
-  - component: {fileID: 2073426004}
-  m_Layer: 0
-  m_Name: FMODEvents
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2073426003
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2073426002}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1074591894}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2073426004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2073426002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11008a4ba8cb12041b6011fa31b40946, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <playerFootstepsWalk>k__BackingField:
-    Guid:
-      Data1: -90711809
-      Data2: 1147359234
-      Data3: 1158498493
-      Data4: 1877438421
-    Path: event:/SFX/Player/Footsteps/Player_footsteps_walk_grass
-  <playerFootstepsSprint>k__BackingField:
-    Guid:
-      Data1: -446108458
-      Data2: 1147993525
-      Data3: -610458191
-      Data4: -627028968
-    Path: event:/SFX/Player/Footsteps/Player_footsteps_sprint_grass
-  <goldCollected>k__BackingField:
-    Guid:
-      Data1: -322307314
-      Data2: 1131781687
-      Data3: -1580104015
-      Data4: -749367103
-    Path: event:/SFX/Player/Gold_pickup
-  <ambience>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <music>k__BackingField:
-    Guid:
-      Data1: 2121433385
-      Data2: 1164980593
-      Data3: 263622846
-      Data4: -1768545192
-    Path: event:/Music/CaveMusic
-  <buttonEnter>k__BackingField:
-    Guid:
-      Data1: 1898462042
-      Data2: 1262695259
-      Data3: -2134346835
-      Data4: 1828201455
-    Path: event:/SFX/UI/ButtonEnter
-  <buttonClick>k__BackingField:
-    Guid:
-      Data1: 957308390
-      Data2: 1284203019
-      Data3: 192856223
-      Data4: -841462014
-    Path: event:/SFX/UI/ButtonClick
-  <itemInteraction>k__BackingField:
-    Guid:
-      Data1: 1164992165
-      Data2: 1271151541
-      Data3: 1098744217
-      Data4: 96984100
-    Path: event:/SFX/UI/ItemInteraction
-  <chestOpen>k__BackingField:
-    Guid:
-      Data1: 254215438
-      Data2: 1079736219
-      Data3: -1128137087
-      Data4: 1279685668
-    Path: event:/SFX/Player/OpenChest
-  <itemEquip>k__BackingField:
-    Guid:
-      Data1: 335718099
-      Data2: 1191042356
-      Data3: 1542962593
-      Data4: 779037158
-    Path: event:/SFX/Player/EquipItem
-  <pistolFire>k__BackingField:
-    Guid:
-      Data1: -2136771390
-      Data2: 1145237751
-      Data3: 1042997941
-      Data4: -2094166611
-    Path: event:/SFX/Player/Weapons/PistolFire
-  <rifleFire>k__BackingField:
-    Guid:
-      Data1: -18261451
-      Data2: 1170630526
-      Data3: 1133213571
-      Data4: -995245189
-    Path: event:/SFX/Player/Weapons/RifleFire
-  <slimeJump>k__BackingField:
-    Guid:
-      Data1: -1888886957
-      Data2: 1124793211
-      Data3: -1811673199
-      Data4: 903412790
-    Path: event:/SFX/Enemies/Slime_jump
-  <slimeDeath>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <slimeAttack>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <hit>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
 --- !u!1 &2106718190
 GameObject:
   m_ObjectHideFlags: 0

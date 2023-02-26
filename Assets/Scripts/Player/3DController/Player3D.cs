@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class Player3D : MonoBehaviour
     [SerializeField]
     private CharacterController _characterController;
     private Player3DAnimator _animator;
+    private EventInstance _playerFootsteps;
 
     [SerializeField]
     private float _speed;
@@ -35,6 +37,7 @@ public class Player3D : MonoBehaviour
 
     void Start()
     {
+        _playerFootsteps = AudioManager.Instance.CreateEventInstance(FMODEvents.Instance.footsteps);
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Player3DAnimator>();
         _playerInventory = GetComponent<Inventory>();
@@ -59,6 +62,7 @@ public class Player3D : MonoBehaviour
 
         MovePlayer();
         MoveCamera();
+        UpdateSound();
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -135,4 +139,20 @@ public class Player3D : MonoBehaviour
         _animator.Move(horizontalInput, verticalInput);
     }
 
+    public void UpdateSound()
+    {
+        if ((Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0) && _characterController.isGrounded)
+        {
+            PLAYBACK_STATE playbackState;
+            _playerFootsteps.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                _playerFootsteps.start();
+            }
+        }
+        else if ((Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0) || !_characterController.isGrounded)
+        {
+            _playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+    }
 }

@@ -52,6 +52,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.eButton, this.transform.position);
             _playerInRange = true;
         }
     }
