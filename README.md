@@ -17,4 +17,5 @@ The game presents a wide variaty of working with UI:
   - immersive inventory system with hover-tooltips and drag-and-drops of elements
   - various menus and panels, dynamic interactable buttons and shop system
 
-The game also uses Ink - narrative scripting language, thus were created a dialogue system with the possibility of branching options
+The game also uses Ink - narrative scripting language, thus were created a dialogue system with the possibility of branching options.
+FMOD sound effect engine is used for managing all of the augio in the project.
