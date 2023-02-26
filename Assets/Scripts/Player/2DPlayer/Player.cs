@@ -62,6 +62,9 @@ public class Player : MonoBehaviour, IDamageable
 
         Health = PlayerSettings.Health;
         _sprintAllowed = true;
+
+        _playerInventory.GiveItem(InventoryTypes.Potion);
+        _playerInventory.GiveItem(InventoryTypes.EnhancedShield);
     }
 
     public void HasShield(bool state)
@@ -89,6 +92,10 @@ public class Player : MonoBehaviour, IDamageable
                 _playerInventory.GiveItem(indexes[i]);
             }
         }
+
+        _hasShield = _playerInventory.playerItems.Any(item => item.id == InventoryTypes.Shield)
+            || _playerInventory.playerItems.Any(item => item.id == InventoryTypes.EnhancedShield) ?
+            true : false;
     }
 
     public void SaveInventory()
@@ -266,7 +273,7 @@ public class Player : MonoBehaviour, IDamageable
             {
                 if (_playerInventory.playerItems.Any(item => item.id == InventoryTypes.Potion))
                 {
-
+                    PotionHeal();
                 }
                 else
                 {
@@ -282,8 +289,11 @@ public class Player : MonoBehaviour, IDamageable
 
     public void PotionHeal()
     {
-        Health = 4;
+        Health = PlayerSettings.Health;
         UIManager.Instance.UpdateHealthUI(Health);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.potionHeal, this.transform.position);
+        _playerInventory.RemoveItem(InventoryTypes.Potion);
+        UIManager.Instance.DisplayMessage("Potion used to restore health!");
     }
 
     public void OnPlayerDeath()

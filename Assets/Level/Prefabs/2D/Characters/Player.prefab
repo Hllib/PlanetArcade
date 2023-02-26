@@ -98,7 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a9824f1ce1fba4383e430d3121390e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 2413558930649294449}
   _deflectTolerance: 0
+  _regularShield: {fileID: 21300000, guid: df9487cd6b06c4347ad318e49a8bab66, type: 3}
+  _enhancedShield: {fileID: 21300000, guid: 9b2933d8b61f156479086dde0a4e24b0, type: 3}
 --- !u!95 &495236268
 Animator:
   serializedVersion: 5
@@ -468,6 +471,7 @@ MonoBehaviour:
   _shield: {fileID: 495236267}
   speed: 3
   _currentSpeed: 0
+  _isSprinting: 0
 --- !u!114 &2413558930649294454
 MonoBehaviour:
   m_ObjectHideFlags: 0

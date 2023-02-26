@@ -20,6 +20,8 @@ public class FMODEvents : MonoBehaviour
     public EventReference playerDeath { get; private set; }
     [field: SerializeField]
     public EventReference shieldDeflect { get; private set; }
+    [field: SerializeField]
+    public EventReference potionHeal { get; private set; }
 
     [field: Header("ENEMIES")]
     [field: SerializeField]
