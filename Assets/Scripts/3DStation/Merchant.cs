@@ -23,13 +23,13 @@ public class Merchant : MonoBehaviour
     private void Start()
     {
         TradeMode = false;
-        _goldAmount.text = _player.goldAmount.ToString();
     }
 
     private void Update()
     {
         if (TradeMode && Input.GetKeyDown(KeyCode.E) && _playerInRange)
         {
+            _goldAmount.text = _player.goldAmount.ToString();
             _visualCue.SetActive(false);
             _shopPanel.SetActive(true);
             _player.BlockMovement = true;
@@ -58,13 +58,15 @@ public class Merchant : MonoBehaviour
     enum SelectedItem
     {
         Potion = 0,
-        Shield = 1
+        Shield = 1,
+        Rifle = 2
     }
 
     enum SelectedCost
     {
         Potion = 2,
-        Shield = 5,
+        Shield = 6,
+        Rifle = 3
     }
 
     public int currentSelectedItem;
@@ -76,13 +78,24 @@ public class Merchant : MonoBehaviour
         {
             case 0:
                 _itemsTitles[0].color = Color.green;
+                _itemsTitles[1].color = Color.white;
+                _itemsTitles[2].color = Color.white;
                 currentSelectedItem = (int)SelectedItem.Potion;
                 currentSelectedCost = (int)SelectedCost.Potion;
                 break;
             case 1:
+                _itemsTitles[0].color = Color.white;
                 _itemsTitles[1].color = Color.green;
+                _itemsTitles[2].color = Color.white;
                 currentSelectedItem = (int)SelectedItem.Shield;
                 currentSelectedCost = (int)SelectedCost.Shield;
+                break;
+            case 2:
+                _itemsTitles[0].color = Color.white;
+                _itemsTitles[1].color = Color.white;
+                _itemsTitles[2].color = Color.green;
+                currentSelectedItem = (int)SelectedItem.Rifle;
+                currentSelectedCost = (int)SelectedCost.Rifle;
                 break;
             default: break;
         }
@@ -94,22 +107,27 @@ public class Merchant : MonoBehaviour
         {
             if (_player.goldAmount >= currentSelectedCost)
             {
-                switch (currentSelectedItem)
-                {
-                    case (int)SelectedItem.Potion:
-                        _player.GetComponent<Inventory>().GiveItem(InventoryTypes.Potion);
-                        break;
-                    case (int)SelectedItem.Shield:
-                        _player.GetComponent<Inventory>().GiveItem(InventoryTypes.EnhancedShield);
-                        break;
-                }
-
                 _player.goldAmount -= currentSelectedCost;
                 _goldAmount.text = _player.goldAmount.ToString();
 
+                Inventory playerInv = _player.GetComponent<Inventory>();
+
                 for (int i = 0; i < currentSelectedCost; i++)
                 {
-                    _player.GetComponent<Inventory>().RemoveItem(InventoryTypes.Gold);
+                    playerInv.RemoveItem(InventoryTypes.Gold);
+                }
+
+                switch (currentSelectedItem)
+                {
+                    case (int)SelectedItem.Potion:
+                        playerInv.GiveItem(InventoryTypes.Potion);
+                        break;
+                    case (int)SelectedItem.Shield:
+                        playerInv.GiveItem(InventoryTypes.EnhancedShield);
+                        break;
+                    case (int)SelectedItem.Rifle:
+                        playerInv.GiveItem(InventoryTypes.Rifle);
+                        break;
                 }
 
                 AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buyItem, Vector3.zero);

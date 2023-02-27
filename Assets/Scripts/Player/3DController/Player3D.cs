@@ -42,7 +42,17 @@ public class Player3D : MonoBehaviour
         _playerInventory = GetComponent<Inventory>();
 
         GetInventory();
-
+        _playerInventory.GiveItem("Gold");
+        _playerInventory.GiveItem("Gold");
+        _playerInventory.GiveItem("Gold");
+        _playerInventory.GiveItem("Gold");
+        _playerInventory.GiveItem("Gold");
+        _playerInventory.GiveItem("Gold");
+        _playerInventory.GiveItem("Gold");
+        _playerInventory.GiveItem("Gold");
+        _playerInventory.GiveItem("Gold");
+        _playerInventory.GiveItem("Gold");
+        _playerInventory.GiveItem("Gold");
         for (int i = 0; i < _playerInventory.playerItems.Count; i++)
         {
             if (_playerInventory.playerItems[i].id == InventoryTypes.Gold)

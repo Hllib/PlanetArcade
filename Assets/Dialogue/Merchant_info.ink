@@ -9,7 +9,7 @@ Oh, hello! Elon told me about you! Welcome!
 My name's Jesper. I am an engineer here on the station. My job is to ensure all systems work as intended. During my work I created some interesting things that may be useful to you. I can offer you them for a modest fee.
 *[What do you want in return?]
 -> fee
-*[Can't I get them for free? We're on the mission, after all...]
+*[Can't I get them for free?]
 -> deny
 
 === fee ===
