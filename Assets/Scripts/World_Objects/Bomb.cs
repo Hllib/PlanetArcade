@@ -5,8 +5,11 @@ using UnityEngine;
 public class Bomb : MonoBehaviour, IDamageable
 {
     public int Health { get; set; }
-    [SerializeField]
     private Animator _anim;
+    private CircleCollider2D _circleCollider;
+    private bool _canExplode;
+    private int _explosionDamage = 50;
+    private bool _hasDamaged;
 
     public void Damage(int damage)
     {
@@ -15,7 +18,7 @@ public class Bomb : MonoBehaviour, IDamageable
         if (Health <= 0)
         {
             _anim.SetTrigger("Explode");
-            DealDamageAround(50);
+            DealDamageAround();
             Destroy(gameObject, 0.5f);
         }
     }
@@ -23,11 +26,28 @@ public class Bomb : MonoBehaviour, IDamageable
     void Start()
     {
         _anim = GetComponent<Animator>();
+        _circleCollider = GetComponent<CircleCollider2D>();
+
         Health = 1;
     }
 
-    private void DealDamageAround(int damage)
+    private void DealDamageAround()
     {
+        _canExplode = true;
+        _circleCollider.radius *= 4;
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (_canExplode)
+        {
+            IDamageable hit = collision.GetComponent<IDamageable>();
+
+            if (hit != null && !_hasDamaged)
+            {
+                hit.Damage(_explosionDamage);
+                _hasDamaged = true;
+            }
+        }
     }
 }

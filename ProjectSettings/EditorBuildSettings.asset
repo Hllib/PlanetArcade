@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/Planets/Cave.unity
     guid: 7428c20db2a560a43a4b644406763097
+  - enabled: 1
+    path: Assets/Level/Scenes/Planets/Mars.unity
+    guid: 8c21512cfd667cc4d88cf48d06b5535d
   m_configObjects: {}
