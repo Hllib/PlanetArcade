@@ -55,10 +55,11 @@ public abstract class Enemy : MonoBehaviour
         healthBarImg.fillAmount = percentage / 100;
     }
 
-    protected void ShowFloatingDamage(int damage)
+    protected void ShowFloatingDamage(int damage, Color color)
     {
         GameObject damageText = Instantiate(damageReceivedTextPrefab, transform.position, Quaternion.identity) as GameObject;
         damageText.GetComponent<TextMeshProUGUI>().text = damage.ToString();
+        damageText.GetComponent<TextMeshProUGUI>().color = color;
         damageText.transform.SetParent(gameObject.GetComponentInChildren<Canvas>().GetComponentsInChildren<Image>()[1].transform);
     }
 

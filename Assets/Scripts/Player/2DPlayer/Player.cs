@@ -55,6 +55,12 @@ public class Player : MonoBehaviour, IDamageable
         _animator = GetComponent<PlayerAnimator>();
         _playerInventory = GetComponent<Inventory>();
         _weaponGraphicControllers = GetComponentsInChildren<WeaponGraphicController>();
+
+        _playerInventory.GiveItem(InventoryTypes.Potion);
+        _playerInventory.GiveItem(InventoryTypes.Potion);
+        _playerInventory.GiveItem(InventoryTypes.Potion);
+        _playerInventory.GiveItem(InventoryTypes.EnhancedShield);
+
         GetInventory();
 
         var ammoBoxCount = _playerInventory.playerItems.Count(item => item.id == InventoryTypes.Ammo);
@@ -62,9 +68,6 @@ public class Player : MonoBehaviour, IDamageable
 
         Health = PlayerSettings.Health;
         _sprintAllowed = true;
-
-        _playerInventory.GiveItem(InventoryTypes.Potion);
-        _playerInventory.GiveItem(InventoryTypes.EnhancedShield);
     }
 
     public void HasShield(bool state)

@@ -25,7 +25,7 @@ public class Slime : Enemy, IDamageable
         Health -= damage;
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hit, this.transform.position);
         UpdateHealthBar(Health * 100 / _initialHealth);
-        ShowFloatingDamage(damage);
+        ShowFloatingDamage(damage, Color.red);
 
         if (Health <= 0)
         {

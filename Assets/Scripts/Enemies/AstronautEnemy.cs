@@ -53,7 +53,7 @@ public class AstronautEnemy : Enemy, IDamageable
 
         Health -= damage;
         UpdateHealthBar(Health * 100 / _initialHealth);
-        ShowFloatingDamage(damage);
+        ShowFloatingDamage(damage, Color.red);
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hit, this.transform.position);
 
         if (Health <= 0)
