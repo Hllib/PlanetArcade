@@ -109,7 +109,6 @@ public class AstronautEnemyFly : Enemy, IDamageable
         if (distance > attackRadius && _isAlerted)
         {
             isInCombat = false;
-            //currentTarget = previousTarget;
             _isAlerted = false;
         }
     }
