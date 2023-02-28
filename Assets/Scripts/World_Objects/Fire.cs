@@ -21,8 +21,14 @@ public class Fire : MonoBehaviour
             }
         }
     }
-    
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            StopAllCoroutines();
+        }
+    }
 
     private void Start()
     {
@@ -36,8 +42,8 @@ public class Fire : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(1.5f);
             hit.Damage(_damage);
+            yield return new WaitForSeconds(1.5f);
         }
     }
 }

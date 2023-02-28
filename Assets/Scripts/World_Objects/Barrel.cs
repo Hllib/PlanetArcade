@@ -5,6 +5,7 @@ using UnityEngine;
 public class Barrel : MonoBehaviour, IDamageable
 {
     public int Health { get; set; }
+    private Animator _barrelAnim;
 
     public void Damage(int damage)
     {
@@ -12,13 +13,16 @@ public class Barrel : MonoBehaviour, IDamageable
 
         if (Health <= 0)
         {
+            _barrelAnim.SetTrigger("Fire");
             ActivateFire();
+            Destroy(gameObject, 10.0f);
         }
     }
 
     void Start()
     {
         Health = 1;
+        _barrelAnim = GetComponent<Animator>();
     }
 
     private void ActivateFire()

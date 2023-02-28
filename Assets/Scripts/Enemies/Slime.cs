@@ -47,7 +47,7 @@ public class Slime : Enemy, IDamageable
 
         speed = 2;
         health = 20;
-        Health = base.health;
+        Health = this.health;
         _initialHealth = Health;
         tempSpeed = speed;
     }
