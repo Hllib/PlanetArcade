@@ -64,7 +64,7 @@ public class RobotBoss : Enemy, IDamageable
         }
 
         isDead = true;
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 1f);
     }
 
     private void OnShield(int damage)

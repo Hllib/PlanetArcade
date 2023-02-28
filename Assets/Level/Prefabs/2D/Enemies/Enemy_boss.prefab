@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1886847311
 Transform:
   m_ObjectHideFlags: 0
@@ -328,10 +328,10 @@ GameObject:
   - component: {fileID: 3519711001625116820}
   - component: {fileID: 3519711001625116823}
   - component: {fileID: 3519711001625116821}
-  - component: {fileID: 3519711001625116826}
   - component: {fileID: 146776073}
   - component: {fileID: 146776078}
-  - component: {fileID: 146776084}
+  - component: {fileID: 3519711001481699476}
+  - component: {fileID: 3519711001481699477}
   m_Layer: 0
   m_Name: Enemy_boss
   m_TagString: Untagged
@@ -428,27 +428,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &3519711001625116826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3519711001625116822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ee5a808e7d9ce540b9f1c4f9337428d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  speed: 0
-  pointA: {fileID: 0}
-  pointB: {fileID: 0}
-  healthBarImg: {fileID: 3519711000634244230}
-  damageReceivedTextPrefab: {fileID: 4177831865770034744, guid: 2fd9291ca114ec84bbcb89cf9d821568, type: 3}
-  lootPrefab: {fileID: 0}
-  _firePillarPrefab: {fileID: 414861115337591644, guid: c5d20a5547850de40a91622375cba5bf, type: 3}
-  _fireHandPrefab: {fileID: 3208129017005803310, guid: b034ef7dafbfa804dbc8be9da5728ba7, type: 3}
 --- !u!60 &146776073
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -503,7 +482,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &146776084
+--- !u!114 &3519711001481699476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3519711001625116822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ee5a808e7d9ce540b9f1c4f9337428d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  speed: 0
+  pointA: {fileID: 0}
+  pointB: {fileID: 0}
+  healthBarImg: {fileID: 3519711000634244230}
+  damageReceivedTextPrefab: {fileID: 4177831865770034744, guid: 2fd9291ca114ec84bbcb89cf9d821568, type: 3}
+  lootPrefab: {fileID: 0}
+  _firePillarPrefab: {fileID: 414861115337591644, guid: c5d20a5547850de40a91622375cba5bf, type: 3}
+  _fireHandPrefab: {fileID: 3208129017005803310, guid: b034ef7dafbfa804dbc8be9da5728ba7, type: 3}
+  _shield: {fileID: 1886847310}
+--- !u!114 &3519711001481699477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
