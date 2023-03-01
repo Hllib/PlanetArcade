@@ -56,11 +56,6 @@ public class Player : MonoBehaviour, IDamageable
         _playerInventory = GetComponent<Inventory>();
         _weaponGraphicControllers = GetComponentsInChildren<WeaponGraphicController>();
 
-        _playerInventory.GiveItem(InventoryTypes.Potion);
-        _playerInventory.GiveItem(InventoryTypes.Potion);
-        _playerInventory.GiveItem(InventoryTypes.Potion);
-        _playerInventory.GiveItem(InventoryTypes.EnhancedShield);
-
         GetInventory();
 
         var ammoBoxCount = _playerInventory.playerItems.Count(item => item.id == InventoryTypes.Ammo);
@@ -111,7 +106,7 @@ public class Player : MonoBehaviour, IDamageable
             stringOfId.Append(" ");
         }
 
-        PlayerPrefs.SetString("Inventory", stringOfId.ToString());
+        PlayerPrefs.SetString(PlayerSettings.Inventory, stringOfId.ToString());
         PlayerPrefs.Save();
     }
 

@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/Planets/Mars.unity
     guid: 8c21512cfd667cc4d88cf48d06b5535d
+  - enabled: 1
+    path: Assets/Level/Scenes/Planets/BossFight.unity
+    guid: 2484ab7094cc03542b351b868df50f28
   m_configObjects: {}

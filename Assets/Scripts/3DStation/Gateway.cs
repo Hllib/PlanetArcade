@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,6 +32,17 @@ public class Gateway : InteractableDoor
 
     public void Depart()
     {
+        StringBuilder stringOfId = new StringBuilder();
+
+        foreach (var item in player.playerInventory.playerItems)
+        {
+            stringOfId.Append(item.id);
+            stringOfId.Append(" ");
+        }
+
+        PlayerPrefs.SetString(PlayerSettings.Inventory, stringOfId.ToString());
+        PlayerPrefs.Save();
+
         animator.SetBool("Open", !animator.GetBool("Open"));
         player.BlockMovement = true;
         StartCoroutine(LeaveTheStation());

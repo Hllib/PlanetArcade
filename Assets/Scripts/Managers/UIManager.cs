@@ -70,7 +70,7 @@ public class UIManager : MonoBehaviour
         _fadeToBlackCave.SetActive(true);
         yield return new WaitForSeconds(3.5f);
 
-        GameManager.Instance.FinishCaveLevel();
+        GameManager.Instance.Moon();
     }
 
     public void UpdateHealthUI(int currentLives)

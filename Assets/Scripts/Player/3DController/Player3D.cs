@@ -31,7 +31,7 @@ public class Player3D : MonoBehaviour
     public bool HasInteracted { get; set; }
     public bool BlockMovement { get; set; }
 
-    public Inventory _playerInventory;
+    public Inventory playerInventory;
 
     public int goldAmount;
 
@@ -39,23 +39,13 @@ public class Player3D : MonoBehaviour
     {
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Player3DAnimator>();
-        _playerInventory = GetComponent<Inventory>();
+        playerInventory = GetComponent<Inventory>();
 
         GetInventory();
-        _playerInventory.GiveItem("Gold");
-        _playerInventory.GiveItem("Gold");
-        _playerInventory.GiveItem("Gold");
-        _playerInventory.GiveItem("Gold");
-        _playerInventory.GiveItem("Gold");
-        _playerInventory.GiveItem("Gold");
-        _playerInventory.GiveItem("Gold");
-        _playerInventory.GiveItem("Gold");
-        _playerInventory.GiveItem("Gold");
-        _playerInventory.GiveItem("Gold");
-        _playerInventory.GiveItem("Gold");
-        for (int i = 0; i < _playerInventory.playerItems.Count; i++)
+
+        for (int i = 0; i < playerInventory.playerItems.Count; i++)
         {
-            if (_playerInventory.playerItems[i].id == InventoryTypes.Gold)
+            if (playerInventory.playerItems[i].id == InventoryTypes.Gold)
             {
                 goldAmount += 1;
             }
@@ -97,7 +87,7 @@ public class Player3D : MonoBehaviour
             }
             for (int i = 0; i < indexes.Count; i++)
             {
-                _playerInventory.GiveItem(indexes[i]);
+                playerInventory.GiveItem(indexes[i]);
             }
         }
     }

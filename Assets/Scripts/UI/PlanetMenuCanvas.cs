@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlanetMenuCanvas : MonoBehaviour
 {
     [SerializeField]
+    private GameObject _soundPanel;
+    [SerializeField]
     private GameObject[] _checkMarks;
     [SerializeField]
     private GameObject[] _pointers;
@@ -15,9 +17,15 @@ public class PlanetMenuCanvas : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
+        _soundPanel.SetActive(false);
 
-       SetCheckMarks();
+        SetCheckMarks();
         ChooseCurrentHint();
+    }
+
+    public void ShowSoundPanel()
+    {
+        _soundPanel.SetActive(!_soundPanel.activeSelf);
     }
 
     private void SetCheckMarks()
