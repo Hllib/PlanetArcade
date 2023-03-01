@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
+    [SerializeField]
     private int _damage = 1;
     [SerializeField]
     private float _destroyTime = 10.0f;
+    [SerializeField]
+    private bool _isConst = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -31,7 +34,10 @@ public class Fire : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, _destroyTime);
+        if (!_isConst)
+        {
+            Destroy(gameObject, _destroyTime);
+        }
     }
 
     IEnumerator DealDamage(IDamageable hit)

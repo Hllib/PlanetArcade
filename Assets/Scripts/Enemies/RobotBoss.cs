@@ -10,16 +10,22 @@ public class RobotBoss : Enemy, IDamageable
     private float _canAttack = 0.0f;
     private float _attackRate = 3.0f;
     private float _attackRadius = 10.0f;
+    private float _closeCombatRadius = 5.0f;
 
     private bool _powerAttackEnabled;
     private int _abilityCountdown;
+    private bool _fireRingActivated;
 
     [SerializeField]
     private GameObject _firePillarPrefab;
     [SerializeField]
     private GameObject _fireHandPrefab;
     [SerializeField]
+    private GameObject _meteorPrefab;
+    [SerializeField]
     private GameObject _shield;
+    [SerializeField]
+    private GameObject[] _fireRings;
 
     private bool _isShieldActive;
 
@@ -92,8 +98,34 @@ public class RobotBoss : Enemy, IDamageable
 
     public override void CalculateMovement()
     {
+
+    }
+
+    public override void Update()
+    {
         CheckInCombatDirection();
         CheckAttackZone(_attackRadius);
+        CheckCloseCombat();
+    }
+
+    private void CheckCloseCombat()
+    {
+        float distance = Vector3.Distance(this.transform.localPosition, player.transform.localPosition);
+
+        if (distance < _closeCombatRadius)
+        {
+            foreach (var fireRing in _fireRings)
+            {
+                fireRing.SetActive(true);
+            }
+        }
+        else
+        {
+            foreach (var fireRing in _fireRings)
+            {
+                fireRing.SetActive(false);
+            }
+        }
     }
 
     private void CheckAttackZone(float attackRadius)
@@ -167,19 +199,23 @@ public class RobotBoss : Enemy, IDamageable
 
     private void PowerAttack()
     {
-        int fireHandAmount = 10;
+        _animator.FireHandAttack();
+        StartCoroutine(SpawnMeteor());
+    }
 
+    IEnumerator SpawnMeteor()
+    {
+        int fireHandAmount = 5;
         for (int i = 0; i < fireHandAmount; i++)
         {
             int offsetX = Random.Range(1, 7);
-            int offsetY = Random.Range(-1, 6);
+            int offsetY = Random.Range(3, 7);
 
-            GameObject instance = Instantiate(_fireHandPrefab, this.transform, false);
+            GameObject instance = Instantiate(_meteorPrefab, this.transform, false);
             instance.transform.position = new Vector3(transform.position.x + offsetX,
                 transform.position.y + offsetY, transform.position.z);
+            yield return new WaitForSeconds(0.3f);
         }
-
-        _animator.FireHandAttack();
     }
 
     IEnumerator AbilityActivation()
