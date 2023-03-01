@@ -103,6 +103,8 @@ public class RobotBoss : Enemy, IDamageable
 
     public override void Update()
     {
+        if (player.isDead)
+        { return; }
         CheckInCombatDirection();
         CheckAttackZone(_attackRadius);
         CheckCloseCombat();
