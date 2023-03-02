@@ -5727,18 +5727,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1606178723}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: MainMenu
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 542050244478868417}
         m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
         m_MethodName: PlayClickSound
@@ -5749,6 +5737,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1606178723}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1083940464
@@ -5801,6 +5801,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 704056474}
     m_Modifications:
+    - target: {fileID: 7681624781430349700, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: quickSelectorSlots.Array.data[0]
+      value: 
+      objectReference: {fileID: 1513318680}
+    - target: {fileID: 7681624781430349700, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: quickSelectorSlots.Array.data[1]
+      value: 
+      objectReference: {fileID: 980229279}
+    - target: {fileID: 7681624781430349700, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: quickSelectorSlots.Array.data[2]
+      value: 
+      objectReference: {fileID: 2111224956}
     - target: {fileID: 7681624781435444470, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -7391,18 +7403,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1606178723}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Mars
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 542050244183269776}
         m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
         m_MethodName: PlayClickSound
@@ -7413,6 +7413,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1606178723}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Earth
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1519952814
@@ -7711,6 +7723,7 @@ MonoBehaviour:
   _foundArtifactPanel: {fileID: 0}
   _fadeToBlackCave: {fileID: 0}
   _soundPanel: {fileID: 1922023268}
+  _player: {fileID: 2413558930165084867}
 --- !u!95 &1618010904
 Animator:
   serializedVersion: 5
@@ -15682,6 +15695,10 @@ PrefabInstance:
       propertyPath: _slime
       value: 
       objectReference: {fileID: 1804730723567810834}
+    - target: {fileID: 960564090, guid: 61a594120fcbe3244b219b90f6137e20, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 2413558930165084867}
     - target: {fileID: 960564090, guid: 61a594120fcbe3244b219b90f6137e20, type: 3}
       propertyPath: _guideText
       value: 

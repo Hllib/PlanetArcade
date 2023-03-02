@@ -93,7 +93,7 @@ public class RobotBoss : Enemy, IDamageable
     {
         base.Init();
 
-        health = 20;
+        health = 200;
         Health = health;
         _initialHealth = Health;
         speed = 0;

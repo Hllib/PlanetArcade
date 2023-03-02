@@ -21,6 +21,8 @@ public class Guide : MonoBehaviour
     private GameObject _slime;
     [SerializeField]
     private Text _okButtonText;
+    [SerializeField]
+    private Player _player;
 
     public bool HasFinishedTutorial { get; set; }
 
@@ -82,6 +84,15 @@ public class Guide : MonoBehaviour
 
     public void ShowPanel()
     {
+        if (_guidePanel.activeSelf == true) //closing the panel
+        {
+            _player.FireBlocked = false;
+        }
+        else //opening the panel
+        {
+            _player.FireBlocked = true;
+        }
+
         _guidePanel.SetActive(!_guidePanel.activeSelf);
     }
 

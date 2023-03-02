@@ -10,11 +10,15 @@ public class CaveEntrance : MonoBehaviour
     [SerializeField]
     private GameObject _enterCavePanel;
     private Inventory _playerInv;
+    private Player _player;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            _player = collision.GetComponent<Player>();
+            _player.FireBlocked = true;
+
             _playerInv = collision.GetComponent<Inventory>();
             _enterCavePanel.SetActive(true);
         }
@@ -33,5 +37,6 @@ public class CaveEntrance : MonoBehaviour
     public void Leave()
     {
         _enterCavePanel.SetActive(false);
+        _player.FireBlocked = false;
     }
 }

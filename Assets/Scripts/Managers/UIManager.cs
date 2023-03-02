@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    private float _timeInGame;
-
     [SerializeField]
     private Image[] _healthBars;
     [SerializeField]
@@ -23,6 +21,8 @@ public class UIManager : MonoBehaviour
     private GameObject _fadeToBlackCave;
     [SerializeField]
     private GameObject _soundPanel;
+    [SerializeField]
+    private Player _player;
 
     private Animator _animator;
 
@@ -55,6 +55,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowGameOverScren()
     {
+        _player.FireBlocked = true;
         _gameOverScreen.SetActive(true);
     }
 
@@ -129,6 +130,14 @@ public class UIManager : MonoBehaviour
 
     public void ShowSoundPanel()
     {
+        if (_soundPanel.activeSelf == true) //closing the panel
+        {
+            _player.FireBlocked = false; 
+        }
+        else //opening the panel
+        {
+            _player.FireBlocked = true;
+        }
         _soundPanel.SetActive(!_soundPanel.activeSelf);
     }
 }

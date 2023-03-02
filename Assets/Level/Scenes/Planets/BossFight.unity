@@ -4894,6 +4894,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 542050243479673222}
     m_Modifications:
+    - target: {fileID: 7681624781430349700, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: quickSelectorSlots.Array.data[0]
+      value: 
+      objectReference: {fileID: 542050244850973700}
+    - target: {fileID: 7681624781430349700, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: quickSelectorSlots.Array.data[1]
+      value: 
+      objectReference: {fileID: 542050243238103427}
+    - target: {fileID: 7681624781430349700, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: quickSelectorSlots.Array.data[2]
+      value: 
+      objectReference: {fileID: 542050244219939168}
     - target: {fileID: 7681624781435444470, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -10060,6 +10072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fade: {fileID: 865347203}
   _sceneName: Final
+  _player: {fileID: 0}
 --- !u!4 &1633092086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 339418257420674681, guid: 6e104be0bacdb254ead68d6836b6d689, type: 3}
@@ -27290,6 +27303,7 @@ MonoBehaviour:
   _foundArtifactPanel: {fileID: 1681648592}
   _fadeToBlackCave: {fileID: 0}
   _soundPanel: {fileID: 542050244443875960}
+  _player: {fileID: 0}
 --- !u!1 &542050244679104014
 GameObject:
   m_ObjectHideFlags: 0

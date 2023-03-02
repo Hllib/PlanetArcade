@@ -154,7 +154,6 @@ public class Player : MonoBehaviour, IDamageable
     public void UpdateAmmo(int ammount)
     {
         _ammoAmount = ammount;
-        Debug.Log("AMMO AMOUNT: " + _ammoAmount);
 
         var currentBoxexCount = _ammoAmount / _ammoToBullets;
         var ammoBoxesInInventory = _playerInventory.playerItems.Count(item => item.id == InventoryTypes.Ammo);

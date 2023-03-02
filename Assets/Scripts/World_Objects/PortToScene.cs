@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PortToScene : MonoBehaviour
@@ -9,11 +10,15 @@ public class PortToScene : MonoBehaviour
 
     [SerializeField]
     private string _sceneName;
+    [SerializeField]
+    private Player _player;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
         {
+            _player = collision.GetComponent<Player>();
+
             switch(_sceneName)
             {
                 case "BossFight": StartCoroutine(MoveToBoss()); break;   
@@ -24,6 +29,13 @@ public class PortToScene : MonoBehaviour
 
     IEnumerator MoveToBoss()
     {
+        Inventory playerInv = _player.GetComponent<Inventory>();
+
+        if (playerInv.playerItems.Any(item => item.id == InventoryTypes.Key))
+        {
+            playerInv.RemoveItem(InventoryTypes.Key);
+        }
+
         _fade.SetActive(true);
         yield return new WaitForSeconds(1);
         GameManager.Instance.MoveToFinalBoss();
