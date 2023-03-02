@@ -15,6 +15,8 @@ public class Inventory : MonoBehaviour
     private UIInventory _uiInventory;
     [SerializeField]
     private GameObject[] _quickSelections;
+    [SerializeField]
+    private GameObject _scrollBar;
 
     [SerializeField]
     public InventoryItem SelectedItem { get; private set; }
@@ -91,6 +93,7 @@ public class Inventory : MonoBehaviour
         }
 
         _uiInventory.gameObject.SetActive(false);
+        _scrollBar.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -98,6 +101,7 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             _uiInventory.gameObject.SetActive(!_uiInventory.gameObject.activeSelf);
+            _scrollBar.gameObject.SetActive(!_scrollBar.gameObject.activeSelf);
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, Vector3.zero);
         }
 
