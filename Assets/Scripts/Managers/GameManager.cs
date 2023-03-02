@@ -73,6 +73,12 @@ public class GameManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        StartCoroutine(LoadSceneShortDelay(sceneName));
+    }
+
+    IEnumerator LoadSceneShortDelay(string sceneName)
+    {
+        yield return new WaitForSeconds(1);
         StopPause();
         SceneManager.LoadScene(sceneName);
     }

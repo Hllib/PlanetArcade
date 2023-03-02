@@ -2,16 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortToBoss : MonoBehaviour
+public class PortToScene : MonoBehaviour
 {
     [SerializeField]
     private GameObject _fade;
+
+    [SerializeField]
+    private string _sceneName;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
         {
-            StartCoroutine(MoveToBoss());
+            switch(_sceneName)
+            {
+                case "BossFight": StartCoroutine(MoveToBoss()); break;   
+                case "Final": StartCoroutine(MoveToBoss()); break;   
+            }
         }
     }
 
@@ -20,5 +27,11 @@ public class PortToBoss : MonoBehaviour
         _fade.SetActive(true);
         yield return new WaitForSeconds(1);
         GameManager.Instance.MoveToFinalBoss();
+    }
+
+    IEnumerator MoveToFinal()
+    {
+        _fade.SetActive(true);
+        yield return new WaitForSeconds(1);
     }
 }

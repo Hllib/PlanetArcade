@@ -14,7 +14,6 @@ public class RobotBoss : Enemy, IDamageable
 
     private bool _powerAttackEnabled;
     private int _abilityCountdown;
-    private bool _fireRingActivated;
 
     [SerializeField]
     private GameObject _firePillarPrefab;
@@ -26,6 +25,8 @@ public class RobotBoss : Enemy, IDamageable
     private GameObject _shield;
     [SerializeField]
     private GameObject[] _fireRings;
+    [SerializeField]
+    private GameObject _portalToFinal;
 
     private bool _isShieldActive;
 
@@ -63,8 +64,11 @@ public class RobotBoss : Enemy, IDamageable
     private void OnDeath()
     {
         _animator.OnDeath();
+
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.bossDeath, this.transform.position);
         MarsManager.Instance.StopFightMusic();
+        _portalToFinal.SetActive(true);
+
         if (lootPrefab != null)
         {
             DropLoot();

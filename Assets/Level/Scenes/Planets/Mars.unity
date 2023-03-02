@@ -4919,6 +4919,41 @@ MonoBehaviour:
       Data3: -1128137087
       Data4: 1279685668
     Path: event:/SFX/Player/OpenChest
+  <fireHandLand>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <firePillar>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <meteor>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bossHit>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bossDeath>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <buttonEnter>k__BackingField:
     Guid:
       Data1: 1898462042
@@ -4983,6 +5018,13 @@ MonoBehaviour:
       Data4: -107571492
     Path: event:/Music/MoonMusic
   <winMusicCave>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <winMusicBossFight>k__BackingField:
     Guid:
       Data1: 0
       Data2: 0
@@ -7026,6 +7068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fade: {fileID: 3991409082914623622}
+  _sceneName: BossFight
 --- !u!1001 &804109781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28637,7 +28680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _planetDatabase: {fileID: 373064588}
-  _planetId: 1
+  _planetId: 2
   _planetInfoText: {fileID: 542050244901806646}
 --- !u!224 &542050244411988112
 RectTransform:

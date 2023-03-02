@@ -7138,7 +7138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _planetDatabase: {fileID: 0}
-  _planetId: 0
+  _planetId: 3
   _planetInfoText: {fileID: 1010640773}
 --- !u!114 &1220320572
 MonoBehaviour:
@@ -12246,6 +12246,41 @@ MonoBehaviour:
       Data3: -1128137087
       Data4: 1279685668
     Path: event:/SFX/Player/OpenChest
+  <fireHandLand>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <firePillar>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <meteor>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bossHit>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bossDeath>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <buttonEnter>k__BackingField:
     Guid:
       Data1: 1898462042
@@ -12310,6 +12345,13 @@ MonoBehaviour:
       Data4: -529762881
     Path: event:/Music/StationMusic
   <winMusicCave>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <winMusicBossFight>k__BackingField:
     Guid:
       Data1: 0
       Data2: 0
