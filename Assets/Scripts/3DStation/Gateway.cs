@@ -18,7 +18,7 @@ public class Gateway : InteractableDoor
             if (player.HasInteracted && playerInRange)
             {
                 player.HasInteracted = false;
-
+                player.BlockMovement = true;
                 _leavePanel.SetActive(true);
                 visualCue.SetActive(false);
             }
@@ -27,6 +27,7 @@ public class Gateway : InteractableDoor
 
     public void CancelDeparture()
     {
+        player.BlockMovement = false;
         _leavePanel.SetActive(false);
     }
 

@@ -130,13 +130,16 @@ public class UIManager : MonoBehaviour
 
     public void ShowSoundPanel()
     {
-        if (_soundPanel.activeSelf == true) //closing the panel
+        if(_player != null)
         {
-            _player.FireBlocked = false; 
-        }
-        else //opening the panel
-        {
-            _player.FireBlocked = true;
+            if (_soundPanel.activeSelf == true) //closing the panel
+            {
+                _player.FireBlocked = false;
+            }
+            else //opening the panel
+            {
+                _player.FireBlocked = true;
+            }
         }
         _soundPanel.SetActive(!_soundPanel.activeSelf);
     }

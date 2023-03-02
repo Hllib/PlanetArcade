@@ -1876,9 +1876,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1611952642}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowSoundPanel
+      - m_Target: {fileID: 337620901}
+        m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1888,9 +1888,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 337620901}
-        m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
-        m_MethodName: PlayClickSound
+      - m_Target: {fileID: 1611952642}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ShowSoundPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6372,18 +6372,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: PlanetsMenu
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1045133541}
         m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
         m_MethodName: PlayClickSound
@@ -6394,6 +6382,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 651370001}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PlanetsMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1045133543
@@ -7302,9 +7302,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Resume
+      - m_Target: {fileID: 1226237133}
+        m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7314,9 +7314,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1226237133}
-        m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
-        m_MethodName: PlayClickSound
+      - m_Target: {fileID: 651370001}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8553,7 +8553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: -31.17001}
+  m_AnchoredPosition: {x: -4, y: -43.669243}
   m_SizeDelta: {x: 669.4752, y: 212.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1511863429
@@ -9706,8 +9706,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1817546173}
   m_HandleRect: {fileID: 1817546171}
   m_Direction: 2
-  m_Value: 0.8568875
-  m_Size: 0.589208
+  m_Value: 0.99999994
+  m_Size: 0.5892079
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9974,6 +9974,7 @@ MonoBehaviour:
   _foundArtifactPanel: {fileID: 0}
   _fadeToBlackCave: {fileID: 0}
   _soundPanel: {fileID: 324146365}
+  _player: {fileID: 0}
 --- !u!1 &1701498020
 GameObject:
   m_ObjectHideFlags: 0
@@ -10636,9 +10637,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1611952642}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowSoundPanel
+      - m_Target: {fileID: 1962339860}
+        m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10648,9 +10649,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1962339860}
-        m_TargetAssemblyTypeName: ButtonMove, Assembly-CSharp
-        m_MethodName: PlayClickSound
+      - m_Target: {fileID: 1611952642}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ShowSoundPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11191,6 +11192,10 @@ PrefabInstance:
     - target: {fileID: 7681624781960630462, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681624782630183608, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -156.91629
       objectReference: {fileID: 0}
     - target: {fileID: 7681624782834380188, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
       propertyPath: m_AnchorMax.x
