@@ -7,6 +7,26 @@ public class MarsManager : MonoBehaviour
     [SerializeField]
     private Player _player;
 
+    private static MarsManager _instance;
+
+    public static MarsManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                Debug.LogError("Mars Manager is NULL! :: AudioManager.cs");
+            }
+
+            return _instance;
+        }
+    }
+
+    private void Awake()
+    {
+        _instance = this;
+    }
+
     void Start()
     {
         StartCoroutine(SaveInv());
@@ -24,5 +44,11 @@ public class MarsManager : MonoBehaviour
     public void SetInventoryToMarsState()
     {
         PlayerPrefs.SetString(PlayerSettings.Inventory, PlayerPrefs.GetString(PlayerSettings.WhenOnMarsInventory));
+    }
+
+    public void StopFightMusic()
+    {
+        AudioManager.Instance.StopMusic();
+        AudioManager.Instance.InitMusic(FMODEvents.Instance.winMusicBossFight);
     }
 }

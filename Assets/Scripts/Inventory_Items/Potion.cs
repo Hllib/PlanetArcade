@@ -10,6 +10,7 @@ public class Potion : MonoBehaviour, IGatherable
     {
         if(other.CompareTag("Player"))
         {
+            PlayerInventory= other.GetComponent<Inventory>();
             PlayerInventory.GiveItem(InventoryTypes.Potion);
             Destroy(gameObject);
         }

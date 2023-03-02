@@ -58,9 +58,20 @@ public class UIManager : MonoBehaviour
         _gameOverScreen.SetActive(true);
     }
 
-    public void ShowArtifact()
+    public void ShowArtifact(int type)
     {
-        StartCoroutine(FinishCave());
+        switch(type)
+        {
+            case InventoryTypes.ArtifactMoon: StartCoroutine(FinishCave());  break;
+            case InventoryTypes.ArtifactMars: StartCoroutine(FinishMars()); break;
+        }
+    }
+
+    IEnumerator FinishMars()
+    {
+        _foundArtifactPanel.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        _foundArtifactPanel.SetActive(false);
     }
 
     IEnumerator FinishCave()
@@ -70,7 +81,7 @@ public class UIManager : MonoBehaviour
         _fadeToBlackCave.SetActive(true);
         yield return new WaitForSeconds(3.5f);
 
-        GameManager.Instance.Moon();
+        GameManager.Instance.FinishMoon();
     }
 
     public void UpdateHealthUI(int currentLives)

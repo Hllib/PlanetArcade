@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6972227305610489474}
   - component: {fileID: 8664908912559843443}
   - component: {fileID: 8664908912559843444}
+  - component: {fileID: 1310941312}
+  - component: {fileID: 1310941320}
   m_Layer: 11
   m_Name: Enemy_astronaut_fly
   m_TagString: Untagged
@@ -76,10 +78,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 17
+  m_SortingOrder: 56
   m_Sprite: {fileID: 21300000, guid: 6a6d2aec31e2f480d931bcb855a4e267, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5.12, y: 5.12}
@@ -146,16 +148,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7abd10360240947b54fc66639472a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  speed: 0
+  health: 30
+  speed: 0.2
   pointA: {fileID: 0}
   pointB: {fileID: 0}
-  healthBarImg: {fileID: 0}
-  damageReceivedTextPrefab: {fileID: 0}
-  lootPrefab: {fileID: 0}
-  _smallBulletPrefab: {fileID: 0}
-  _bigBulletPrefab: {fileID: 0}
-  lookDirection: 0
+  healthBarImg: {fileID: 6972227306111122349}
+  damageReceivedTextPrefab: {fileID: 4177831865770034744, guid: 2fd9291ca114ec84bbcb89cf9d821568, type: 3}
+  lootPrefab: {fileID: 612314535027208336, guid: 3b86b6abf21d2ae4384a9bcac93683aa, type: 3}
+  _smallBulletPrefab: {fileID: 232917027881927301, guid: 4d48fdec0d0e79841bb2fa51d0748e1a, type: 3}
+  _bigBulletPrefab: {fileID: 783551306762296344, guid: 44656a7a45eb7b149ad359bbf5c8ed3f, type: 3}
+  lookDirection: 1
+--- !u!114 &1310941312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4362118957876233303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -561946905
+      Data2: 1231554226
+      Data3: 1342575542
+      Data4: 1934359085
+    Path: event:/SFX/Enemies/EnemyFly
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10
+--- !u!50 &1310941320
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4362118957876233303}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6972227305500245989
 GameObject:
   m_ObjectHideFlags: 0

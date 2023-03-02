@@ -177,7 +177,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Moon()
+    public void FinishMoon()
     {
         GameManager.Instance.levelFinished[PlanetID.Moon] = PlayerSettings.LevelFinished;
         GameManager.Instance.SavePlayerPrefs();

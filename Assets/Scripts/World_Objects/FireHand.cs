@@ -23,4 +23,9 @@ public class FireHand : MonoBehaviour
             fireElement.SetActive(true);
         }
     }
+
+    public void PlayLandSound()
+    {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fireHandLand, this.transform.position);
+    }
 }

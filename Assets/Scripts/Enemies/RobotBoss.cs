@@ -8,7 +8,7 @@ public class RobotBoss : Enemy, IDamageable
     private int _initialHealth;
 
     private float _canAttack = 0.0f;
-    private float _attackRate = 3.0f;
+    private float _attackRate = 4.0f;
     private float _attackRadius = 10.0f;
     private float _closeCombatRadius = 5.0f;
 
@@ -52,8 +52,8 @@ public class RobotBoss : Enemy, IDamageable
 
     private void OnDamage(int damage)
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.bossHit, this.transform.position);
         Health -= damage;
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hit, this.transform.position);
         UpdateHealthBar(Health * 100 / _initialHealth);
         ShowFloatingDamage(damage, Color.red);
         _animator.OnDamage();
@@ -63,7 +63,8 @@ public class RobotBoss : Enemy, IDamageable
     private void OnDeath()
     {
         _animator.OnDeath();
-
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.bossDeath, this.transform.position);
+        MarsManager.Instance.StopFightMusic();
         if (lootPrefab != null)
         {
             DropLoot();
@@ -88,7 +89,7 @@ public class RobotBoss : Enemy, IDamageable
     {
         base.Init();
 
-        health = 200;
+        health = 20;
         Health = health;
         _initialHealth = Health;
         speed = 0;
@@ -139,7 +140,7 @@ public class RobotBoss : Enemy, IDamageable
             if (Time.time > _canAttack)
             {
                 Attack();
-                _canAttack += _attackRate;
+                _canAttack = Time.time + _attackRate;
             }
             isInCombat = true;
         }
@@ -186,6 +187,7 @@ public class RobotBoss : Enemy, IDamageable
             transform.position.y + offsetY, transform.position.z);
 
         _animator.FireHandAttack();
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.firePillar, this.transform.position);
     }
 
     private void FirePillarAttack()
@@ -197,6 +199,7 @@ public class RobotBoss : Enemy, IDamageable
             transform.position.y, transform.position.z);
 
         _animator.FirePillarAttack();
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.firePillar, this.transform.position);
     }
 
     private void PowerAttack()
@@ -207,6 +210,7 @@ public class RobotBoss : Enemy, IDamageable
 
     IEnumerator SpawnMeteor()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.meteor, this.transform.position);
         int fireHandAmount = 5;
         for (int i = 0; i < fireHandAmount; i++)
         {

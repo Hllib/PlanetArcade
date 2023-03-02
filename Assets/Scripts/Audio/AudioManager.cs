@@ -61,7 +61,7 @@ public class AudioManager : MonoBehaviour
         }
         if (!FMODEvents.Instance.music.IsNull)
         {
-            InitMusic(FMODEvents.Instance.music);
+           InitMusic(FMODEvents.Instance.music);
         }
     }
 
@@ -106,9 +106,15 @@ public class AudioManager : MonoBehaviour
         ambienceInstance.start();
     }
 
-    private void InitMusic(EventReference musicRef)
+    public void InitMusic(EventReference musicRef)
     {
         musicInstance = CreateEventInstance(musicRef);
         musicInstance.start();
+    }
+
+    public void StopMusic()
+    {
+        musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        musicInstance.release();
     }
 }

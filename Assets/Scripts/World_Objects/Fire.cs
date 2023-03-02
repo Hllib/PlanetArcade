@@ -48,4 +48,9 @@ public class Fire : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
         }
     }
+
+    public void PlayExplosionSound()
+    {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fireHandLand, this.transform.position);
+    }
 }

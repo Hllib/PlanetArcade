@@ -14,7 +14,7 @@ public class WoodWall : MonoBehaviour, IDamageable
         if (Health <= 0)
         {
             _anim.SetTrigger("Destroy");
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject, 1.5f);
         }
     }
 

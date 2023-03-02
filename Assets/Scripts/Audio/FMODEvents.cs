@@ -44,7 +44,20 @@ public class FMODEvents : MonoBehaviour
     [field: Header("OBJECTS")]
     [field: SerializeField]
     public EventReference chestOpen { get; private set; }
-    
+
+
+    [field: Header("FINAL BOSS")]
+    [field: SerializeField]
+    public EventReference fireHandLand { get; private set; }
+    [field: SerializeField]
+    public EventReference firePillar{ get; private set; }
+    [field: SerializeField]
+    public EventReference meteor { get; private set; }
+    [field: SerializeField]
+    public EventReference bossHit { get; private set; }
+    [field: SerializeField]
+    public EventReference bossDeath { get; private set; }
+
     [field: Header("UI")]
     [field: SerializeField]
     public EventReference buttonEnter { get; private set; }
@@ -68,6 +81,8 @@ public class FMODEvents : MonoBehaviour
     public EventReference music { get; private set; }
     [field: SerializeField]
     public EventReference winMusicCave { get; private set; }
+    [field: SerializeField]
+    public EventReference winMusicBossFight { get; private set; }
 
     [field: Header("STATION")]
     [field: SerializeField]
