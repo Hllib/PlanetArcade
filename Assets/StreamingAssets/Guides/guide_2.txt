@@ -1,1 +1,5 @@
-"Great! To open any chest like this in the future you're gonna need to find a key first. Now, you've got yourself a pistol! But you would also need ammo to shoot.Search the are, it's gotta be somewhere around.
+Great! In chests you may found ammo, weapons, gold and other useful stuff. Grab that pistol from the chest.
+Now, to equip it, open your inventory by pressing 'I' button, then drag your new fancy pistol to one of the slots in the left bottom corner.
+From there just press 1, 2 or 3 to select the weapon and you're good to go.
+Oh, yes, you're gonna need some ammo to shoot, of course. I definetely saw a box with ammo here some time ago. 
+Look around, it has to be somewhere here.

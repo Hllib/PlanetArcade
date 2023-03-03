@@ -1,1 +1,2 @@
-        _guides.Add(GuideName.KilledSlime, "OK, fine! That wasn't too difficult. It seemes like you`re ready! Good luck!");
+Great, that wasn't too difficult, was it? I am pretty confident you'll be okay.
+Good luck! Now you're ready to go on your own. And don't forget to visit me and Jesper at the Station! 

@@ -1,1 +1,4 @@
-Congratulations, you've found it! To open your inventory, press 'I'. You will how many ammo you have. Now, to fire, press 'Space'. Don't waste all of the ammo! You'll gonna need it. I want you to go North. There is a training slime from that escaped from our laboratory and needs to be destroyed! Be careful!");
+Congratulations, you've found it! If you managed to select your weapon, just click the LEFT MOUSE BUTTON anywhere on the screen.
+And if you have any trouble with previous steps, open PAUSE MENU by clicking ESC to look through some information.
+It's time to check your combat skills. North of here we released a slime. 
+One of our laboratories... Nevermind. Be careful, it's definetely in a bad mood today!
