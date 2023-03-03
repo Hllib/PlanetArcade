@@ -6,15 +6,19 @@ public class WoodWall : MonoBehaviour, IDamageable
 {
     public int Health { get; set; }
     private Animator _anim;
+    private bool _isDead;
 
     public void Damage(int damage)
     {
+        if (_isDead) return;
+
         Health -= damage;
 
         if (Health <= 0)
         {
             _anim.SetTrigger("Destroy");
-            Destroy(gameObject, 1.5f);
+            Destroy(gameObject, 0.5f);
+            _isDead = true;
         }
     }
 

@@ -6,7 +6,9 @@ public class MarsManager : MonoBehaviour
 {
     [SerializeField]
     private Player _player;
-    
+    [SerializeField]
+    private bool _isOnMars;
+
     private static MarsManager _instance;
 
     public static MarsManager Instance
@@ -29,7 +31,10 @@ public class MarsManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SaveInv());
+        if (_isOnMars)
+        {
+            StartCoroutine(SaveInv());
+        }
     }
 
     IEnumerator SaveInv()

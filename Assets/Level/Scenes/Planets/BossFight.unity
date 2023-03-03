@@ -2253,7 +2253,7 @@ Tilemap:
       - {fileID: 21300054, guid: b4e370d0696dc324a90580c5fe15ae03, type: 3}
       - {fileID: 21300056, guid: b4e370d0696dc324a90580c5fe15ae03, type: 3}
       - {fileID: 21300058, guid: b4e370d0696dc324a90580c5fe15ae03, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 4, y: -5, z: 0}
@@ -2361,7 +2361,7 @@ Tilemap:
       - {fileID: 21300054, guid: 9aa07529c535de040a7226e72c57b3e2, type: 3}
       - {fileID: 21300056, guid: 9aa07529c535de040a7226e72c57b3e2, type: 3}
       - {fileID: 21300058, guid: 9aa07529c535de040a7226e72c57b3e2, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 6, y: 3, z: 0}
@@ -6870,6 +6870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1696896179}
+  _isOnMars: 0
 --- !u!1001 &835219295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24364,8 +24365,8 @@ RectTransform:
   - {fileID: 542050245041032882}
   - {fileID: 542050244818884384}
   - {fileID: 542050243833203245}
-  - {fileID: 287603077}
   - {fileID: 1137847659}
+  - {fileID: 287603077}
   m_Father: {fileID: 542050244679104010}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26797,7 +26798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _planetDatabase: {fileID: 373064588}
-  _planetId: 1
+  _planetId: 2
   _planetInfoText: {fileID: 542050244901806646}
 --- !u!224 &542050244411988112
 RectTransform:

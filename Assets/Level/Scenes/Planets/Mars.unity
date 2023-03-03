@@ -10132,6 +10132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1696896179}
+  _isOnMars: 1
 --- !u!1001 &1441516382
 PrefabInstance:
   m_ObjectHideFlags: 0

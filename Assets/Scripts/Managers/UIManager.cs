@@ -58,7 +58,6 @@ public class UIManager : MonoBehaviour
 
     public void ShowGameOverScren()
     {
-        _player.FireBlocked = true;
         _gameOverScreen.SetActive(true);
     }
 
