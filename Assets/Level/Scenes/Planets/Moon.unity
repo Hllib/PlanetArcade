@@ -36523,6 +36523,8 @@ MonoBehaviour:
   _planetDatabase: {fileID: 373064588}
   _planetId: 1
   _planetInfoText: {fileID: 542050244901806646}
+  _levelDescription: {fileID: 542050244954701393}
+  _sceneName: Moon
 --- !u!224 &542050244411988112
 RectTransform:
   m_ObjectHideFlags: 0

@@ -4858,14 +4858,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864019016}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.32529107, w: 0.945614}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 493396009}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 37.966}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 130, y: -130}
@@ -4891,9 +4891,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b4b4ae590b1a940258067f0f0d045a47, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8d1d4f28a7c50f649a0843ca940b4f65, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -6135,7 +6135,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Leave the planet
+  m_Text: Main Menu
 --- !u!222 &1027568648
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6341,7 +6341,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: PlanetsMenu
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1045133543
@@ -7210,6 +7210,8 @@ MonoBehaviour:
   _planetDatabase: {fileID: 1574416076}
   _planetId: 3
   _planetInfoText: {fileID: 1010640773}
+  _levelDescription: {fileID: 1823559707}
+  _sceneName: Station3D
 --- !u!114 &1220320572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9808,7 +9810,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1817546173}
   m_HandleRect: {fileID: 1817546171}
   m_Direction: 2
-  m_Value: 0.99999976
+  m_Value: 0.99999994
   m_Size: 0.5892079
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -10425,7 +10427,7 @@ GameObject:
   - component: {fileID: 1823559708}
   - component: {fileID: 1823559707}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: LevelDesc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10478,15 +10480,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Welcome to planet Earth. Before going on a journey full of danger and
-    unexpected challenges you''d better finish this tutorial. Here are your first
-    objectives:'
+  m_Text: 
 --- !u!222 &1823559708
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12239,6 +12239,27 @@ MonoBehaviour:
       Data3: -1128137087
       Data4: 1279685668
     Path: event:/SFX/Player/OpenChest
+  <cactusHit>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bomb>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <woodCrack>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <fireHandLand>k__BackingField:
     Guid:
       Data1: 0

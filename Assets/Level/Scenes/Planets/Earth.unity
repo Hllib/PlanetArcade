@@ -13178,6 +13178,8 @@ MonoBehaviour:
   _planetDatabase: {fileID: 373064588}
   _planetId: 0
   _planetInfoText: {fileID: 1429944106}
+  _levelDescription: {fileID: 1342319437}
+  _sceneName: Earth
 --- !u!1 &1922023268
 GameObject:
   m_ObjectHideFlags: 0
