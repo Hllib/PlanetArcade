@@ -36,7 +36,6 @@ public class Pistol : Weapon
             Instantiate(_bulletPrefab, transform.position, Quaternion.Euler(0f, bulletRotationY, bulletRotationZ));
             ammoAmount -= 1;
             _player.UpdateAmmo(ammoAmount);
-            UIManager.Instance.DisplayMessage($"Ammo left: {ammoAmount}");
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pistolFire, this.transform.position);
 
             yield return new WaitForSeconds(1f);

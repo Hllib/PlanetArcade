@@ -60,6 +60,7 @@ public class Player : MonoBehaviour, IDamageable
 
         var ammoBoxCount = _playerInventory.playerItems.Count(item => item.id == InventoryTypes.Ammo);
         _ammoAmount = ammoBoxCount * (int)_ammoToBullets;
+        UIManager.Instance.UpdateAmmoCount(_ammoAmount);
 
         Health = PlayerSettings.Health;
         _sprintAllowed = true;
@@ -149,6 +150,7 @@ public class Player : MonoBehaviour, IDamageable
     public void AddToAmmo()
     {
         _ammoAmount += (int)_ammoToBullets;
+        UIManager.Instance.UpdateAmmoCount(_ammoAmount);
     }
 
     public void UpdateAmmo(int ammount)
@@ -161,6 +163,8 @@ public class Player : MonoBehaviour, IDamageable
         {
             _playerInventory.RemoveItem(InventoryTypes.Ammo);
         }
+
+        UIManager.Instance.UpdateAmmoCount(_ammoAmount);
     }
 
     void CheckShield()

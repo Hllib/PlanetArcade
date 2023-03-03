@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,6 +22,8 @@ public class UIManager : MonoBehaviour
     private GameObject _fadeToBlackCave;
     [SerializeField]
     private GameObject _soundPanel;
+    [SerializeField]
+    private TextMeshProUGUI _ammoText;
     [SerializeField]
     private Player _player;
 
@@ -142,5 +145,10 @@ public class UIManager : MonoBehaviour
             }
         }
         _soundPanel.SetActive(!_soundPanel.activeSelf);
+    }
+
+    public void UpdateAmmoCount(int amount)
+    {
+        _ammoText.text = amount.ToString();
     }
 }
