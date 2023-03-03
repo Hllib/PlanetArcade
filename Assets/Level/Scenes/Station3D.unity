@@ -593,6 +593,34 @@ PrefabInstance:
       propertyPath: _inventoryItemDatabase
       value: 
       objectReference: {fileID: 1701498021}
+    - target: {fileID: 737600386, guid: c9d027a5f737e3c40b2a02da07dc1c2a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.7361381
+      objectReference: {fileID: 0}
+    - target: {fileID: 737600386, guid: c9d027a5f737e3c40b2a02da07dc1c2a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2867791
+      objectReference: {fileID: 0}
+    - target: {fileID: 737600386, guid: c9d027a5f737e3c40b2a02da07dc1c2a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.6342146
+      objectReference: {fileID: 0}
+    - target: {fileID: 737600386, guid: c9d027a5f737e3c40b2a02da07dc1c2a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.8258381
+      objectReference: {fileID: 0}
+    - target: {fileID: 737600386, guid: c9d027a5f737e3c40b2a02da07dc1c2a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0075903228
+      objectReference: {fileID: 0}
+    - target: {fileID: 737600386, guid: c9d027a5f737e3c40b2a02da07dc1c2a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.56383044
+      objectReference: {fileID: 0}
+    - target: {fileID: 737600386, guid: c9d027a5f737e3c40b2a02da07dc1c2a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.005388551
+      objectReference: {fileID: 0}
     - target: {fileID: 7967763639070406714, guid: c9d027a5f737e3c40b2a02da07dc1c2a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3821,6 +3849,7 @@ MonoBehaviour:
   _pauseMenu: {fileID: 1220320569}
   _rocketAnimator: {fileID: 0}
   _player: {fileID: 0}
+  _player3D: {fileID: 157660108}
 --- !u!4 &651370002
 Transform:
   m_ObjectHideFlags: 0
@@ -4194,6 +4223,8 @@ PlayableDirector:
     value: {fileID: 2106002402}
   - key: {fileID: 1530111073047148992, guid: 84211537e3de5014987ec2c90969521e, type: 2}
     value: {fileID: 708295997}
+  - key: {fileID: 6405778957393839522, guid: 84211537e3de5014987ec2c90969521e, type: 2}
+    value: {fileID: 2109371322}
   m_ExposedReferences:
     m_References:
     - 4ea719080bec73043bee5aa49183b001: {fileID: 0}
@@ -11963,6 +11994,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2109371320}
   - component: {fileID: 2109371321}
+  - component: {fileID: 2109371322}
   m_Layer: 0
   m_Name: StationManager
   m_TagString: Untagged
@@ -12000,6 +12032,37 @@ MonoBehaviour:
   _cutsceneHolder: {fileID: 2106002402}
   _cameraSpot: {fileID: 691367199}
   _camera: {fileID: 1107346093}
+  _player: {fileID: 157660108}
+--- !u!114 &2109371322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109371319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 9b5467e9bb34dae44911d7e3dec22e8f, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2109371321}
+          m_TargetAssemblyTypeName: StationManager, Assembly-CSharp
+          m_MethodName: UnblockMovement
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2117489250
 GameObject:
   m_ObjectHideFlags: 0

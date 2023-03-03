@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private Animator _rocketAnimator;
     [SerializeField]
     private Player _player;
+    [SerializeField]
+    private Player3D _player3D;
 
     public bool IsPlayerDead { get; set; }
     public bool IsPaused { get; private set; }
@@ -136,10 +138,19 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         IsPaused = false;
+
+        if (_player3D != null)
+        {
+            _player3D.BlockMovement = false;
+        }
     }
 
     private void StartPause()
     {
+        if (_player3D != null)
+        {
+            _player3D.BlockMovement = true;
+        }
         Time.timeScale = 0f;
         IsPaused = true;
     }

@@ -13,6 +13,8 @@ public class StationManager : MonoBehaviour
     private Transform _cameraSpot;
     [SerializeField]
     private Transform _camera;
+    [SerializeField]
+    private Player3D _player;
 
     private static StationManager _instance;
 
@@ -49,6 +51,13 @@ public class StationManager : MonoBehaviour
         else
         {
             _cutsceneHolder.SetActive(true);
+            _player.BlockMovement = true;
         }
+    }
+
+    //called from timeLine through a signal
+    public void UnblockMovement()
+    {
+        _player.BlockMovement = false;
     }
 }
