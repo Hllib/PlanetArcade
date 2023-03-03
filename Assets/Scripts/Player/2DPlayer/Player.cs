@@ -279,7 +279,7 @@ public class Player : MonoBehaviour, IDamageable
             }
             else
             {
-                StartCoroutine(StopOnHit());
+                //StartCoroutine(StopOnHit());
             }
         }
     }
@@ -303,17 +303,6 @@ public class Player : MonoBehaviour, IDamageable
         isDead = true;
         GameManager.Instance.IsPlayerDead = true;
         Destroy(gameObject, 2f);
-    }
-
-    IEnumerator StopOnHit()
-    {
-        float localSpeed = _currentSpeed;
-
-        _sprintAllowed = false;
-        speed = 0;
-        yield return new WaitForSeconds(0.3f);
-        speed = localSpeed;
-        _sprintAllowed = true;
     }
 
     public void UpdateSound()
