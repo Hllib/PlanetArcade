@@ -42,7 +42,6 @@ public class UIInventory : MonoBehaviour
 
         if (indexOfItem == -1)
         {
-            Debug.Log("Deleting item from quick selector!");
             for (int i = 0; i < quickSelectorSlots.Length; i++)
             {
                 if (quickSelectorSlots[i].GetComponentInChildren<UIItem>().item == item)
