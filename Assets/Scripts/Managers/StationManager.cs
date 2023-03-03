@@ -34,11 +34,17 @@ public class StationManager : MonoBehaviour
         _instance = this;
         HasPlayerVisited = PlayerPrefs.GetInt(PlayerSettings.Station, 0) == 1 ? true : false;
         HasPlayerTalkedToAll = HasPlayerVisited;
+    }
 
+    private void Start()
+    {
         if (HasPlayerVisited)
         {
             _cutsceneHolder.SetActive(false);
             _camera = _cameraSpot;
+
+            AudioManager.Instance.StopMusic();
+            AudioManager.Instance.InitMusic(FMODEvents.Instance.musicOptional);
         }
         else
         {

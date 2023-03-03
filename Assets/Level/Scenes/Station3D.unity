@@ -12340,6 +12340,13 @@ MonoBehaviour:
       Data3: 569531532
       Data4: -529762881
     Path: event:/Music/StationMusic
+  <musicOptional>k__BackingField:
+    Guid:
+      Data1: -873377822
+      Data2: 1308563191
+      Data3: -608349807
+      Data4: 1723575766
+    Path: event:/Music/StationMusic_NoIntro
   <winMusicCave>k__BackingField:
     Guid:
       Data1: 0

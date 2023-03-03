@@ -80,6 +80,8 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField]
     public EventReference music { get; private set; }
     [field: SerializeField]
+    public EventReference musicOptional { get; private set; }
+    [field: SerializeField]
     public EventReference winMusicCave { get; private set; }
     [field: SerializeField]
     public EventReference winMusicBossFight { get; private set; }
