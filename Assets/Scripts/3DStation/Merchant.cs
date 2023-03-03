@@ -22,7 +22,8 @@ public class Merchant : MonoBehaviour
 
     private void Start()
     {
-        TradeMode = false;
+        TradeMode = StationManager.Instance.HasPlayerVisited;
+        currentSelectedCost = 100;
     }
 
     private void Update()

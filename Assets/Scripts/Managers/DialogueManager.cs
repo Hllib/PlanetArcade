@@ -140,6 +140,5 @@ public class DialogueManager : MonoBehaviour
     {
         HasSubmitted = true;
         _currentStory.ChooseChoiceIndex(choiceIndex);
-        Debug.Log("CALLED");
     }
 }

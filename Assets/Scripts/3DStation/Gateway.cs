@@ -33,21 +33,29 @@ public class Gateway : InteractableDoor
 
     public void Depart()
     {
-        StringBuilder stringOfId = new StringBuilder();
-
-        foreach (var item in player.playerInventory.playerItems)
+        if(StationManager.Instance.HasPlayerTalkedToAll)
         {
-            stringOfId.Append(item.id);
-            stringOfId.Append(" ");
+            PlayerPrefs.SetInt(PlayerSettings.Station, 1); //meaning player has visited the station
+
+            StringBuilder stringOfId = new StringBuilder();
+            foreach (var item in player.playerInventory.playerItems)
+            {
+                stringOfId.Append(item.id);
+                stringOfId.Append(" ");
+            }
+            PlayerPrefs.SetString(PlayerSettings.Inventory, stringOfId.ToString());
+            PlayerPrefs.Save();
+
+            animator.SetBool("Open", !animator.GetBool("Open"));
+            player.BlockMovement = true;
+            StartCoroutine(LeaveTheStation());
+            _leavePanel.SetActive(false);
         }
-
-        PlayerPrefs.SetString(PlayerSettings.Inventory, stringOfId.ToString());
-        PlayerPrefs.Save();
-
-        animator.SetBool("Open", !animator.GetBool("Open"));
-        player.BlockMovement = true;
-        StartCoroutine(LeaveTheStation());
-        _leavePanel.SetActive(false);
+        else
+        {
+            UIManager.Instance.DisplayMessage("Talk to crew members first!");
+            CancelDeparture();
+        }
     }
 
     IEnumerator LeaveTheStation()

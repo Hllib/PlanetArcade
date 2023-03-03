@@ -13,7 +13,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField]
     private TextAsset _inkJSON;
 
-    public bool HasTalked;
+    public bool HasVisited;
 
 
     private void Awake()
@@ -24,23 +24,25 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Start()
     {
-        HasTalked = PlayerPrefs.GetInt(PlayerSettings.TalkToGuideState, 0) == 1 ? true : false;
+        HasVisited = StationManager.Instance.HasPlayerVisited;
     }
 
     private void Update()
     {
-        if (_playerInRange && !DialogueManager.Instance.IsDialogueDisplayed && !HasTalked)
+        if (_playerInRange && !DialogueManager.Instance.IsDialogueDisplayed && !HasVisited)
         {
             _visualCue.SetActive(true);
             if (_player.HasInteracted)
             {
                 DialogueManager.Instance.StartDialogueMode(_inkJSON);
                 _player.HasInteracted = false;
-                HasTalked = true;
+                HasVisited = true;
+
                 if (GetComponentInParent<Merchant>() != null)
                 {
                     Merchant merchant = GetComponentInParent<Merchant>();
                     merchant.TradeMode = true;
+                    StationManager.Instance.HasPlayerTalkedToAll = true;
 
                     this.enabled = false;
                     _visualCue.SetActive(false);

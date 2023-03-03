@@ -105,6 +105,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &691367198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 691367199}
+  m_Layer: 0
+  m_Name: CameraPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &691367199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691367198}
+  m_LocalRotation: {x: -0.16897795, y: 0.013894232, z: -0.0023823162, w: -0.98551905}
+  m_LocalPosition: {x: -0.007904053, y: 0.2955588, z: -0.28949273}
+  m_LocalScale: {x: 0.012500002, y: 0.012499998, z: 0.012499999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7967763639070406714}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &737600385
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +146,8 @@ GameObject:
   m_Component:
   - component: {fileID: 737600386}
   - component: {fileID: 737600388}
-  - component: {fileID: 737600387}
+  - component: {fileID: 1107346089}
+  - component: {fileID: 1107346092}
   m_Layer: 0
   m_Name: Main Camera (2)
   m_TagString: MainCamera
@@ -130,14 +162,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737600385}
-  m_LocalRotation: {x: 0.07265799, y: -0, z: -0, w: 0.9973569}
-  m_LocalPosition: {x: 0, y: 0.20500006, z: -0.27300003}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalRotation: {x: -0.16897795, y: 0.013894232, z: -0.0023823162, w: -0.98551905}
+  m_LocalPosition: {x: -0.007904053, y: 0.2955588, z: -0.28949273}
+  m_LocalScale: {x: 0.012500002, y: 0.012499998, z: 0.012499999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7967763639070406714}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 8.333, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &737600388
 Camera:
   m_ObjectHideFlags: 0
@@ -181,14 +213,53 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &737600387
-AudioListener:
+--- !u!114 &1107346089
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737600385}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1107346092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737600385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 7967763639070827546}
 --- !u!1 &7967763639070827520
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,6 +716,7 @@ Transform:
   - {fileID: 7967763639070406662}
   - {fileID: 737600386}
   - {fileID: 187955756}
+  - {fileID: 691367199}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -704,7 +776,8 @@ MonoBehaviour:
   _gravity: -9.81
   _sensitivity: 3
   _camera: {fileID: 737600386}
-  _playerInventory: {fileID: 0}
+  playerInventory: {fileID: 0}
+  goldAmount: 0
 --- !u!114 &2078475047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,6 +835,7 @@ MonoBehaviour:
   _inventoryItemDatabase: {fileID: 0}
   _uiInventory: {fileID: 0}
   _quickSelections: []
+  _scrollBar: {fileID: 0}
 --- !u!1 &7967763639070827548
 GameObject:
   m_ObjectHideFlags: 0

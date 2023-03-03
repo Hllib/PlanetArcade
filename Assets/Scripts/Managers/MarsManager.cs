@@ -6,7 +6,7 @@ public class MarsManager : MonoBehaviour
 {
     [SerializeField]
     private Player _player;
-
+    
     private static MarsManager _instance;
 
     public static MarsManager Instance
@@ -15,7 +15,7 @@ public class MarsManager : MonoBehaviour
         {
             if (_instance == null)
             {
-                Debug.LogError("Mars Manager is NULL! :: AudioManager.cs");
+                Debug.LogError("Mars Manager is NULL! :: MarsManager.cs");
             }
 
             return _instance;

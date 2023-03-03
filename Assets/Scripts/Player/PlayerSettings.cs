@@ -9,7 +9,6 @@ public class PlayerSettings : MonoBehaviour
     public const string Moon = "Moon";
     public const string Mars = "Mars";
     public const string Station = "Station";
-    public const string TalkToGuideState = "TalkToGuideState";
 
     public const string MasterVolume = "MasterVolume";
     public const string MusicVolume = "MusicVolume";
