@@ -12,6 +12,7 @@ public class WoodWall : MonoBehaviour, IDamageable
     {
         if (_isDead) return;
 
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.woodCrack, Vector3.zero);
         Health -= damage;
 
         if (Health <= 0)

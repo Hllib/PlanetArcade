@@ -538,18 +538,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <playerFootstepsWalk>k__BackingField:
     Guid:
-      Data1: 519369890
-      Data2: 1125655310
-      Data3: -989387620
-      Data4: 302466747
-    Path: event:/SFX/Player/Footsteps/Player_footsteps_walk_stone
+      Data1: -90711809
+      Data2: 1147359234
+      Data3: 1158498493
+      Data4: 1877438421
+    Path: event:/SFX/Player/Footsteps/Player_footsteps_walk_grass
   <playerFootstepsSprint>k__BackingField:
     Guid:
-      Data1: 934359065
-      Data2: 1107733622
-      Data3: 309286022
-      Data4: 795008787
-    Path: event:/SFX/Player/Footsteps/Player_footsteps_sprint_stone
+      Data1: -446108458
+      Data2: 1147993525
+      Data3: -610458191
+      Data4: -627028968
+    Path: event:/SFX/Player/Footsteps/Player_footsteps_sprint_grass
   <goldCollected>k__BackingField:
     Guid:
       Data1: -322307314
@@ -655,6 +655,27 @@ MonoBehaviour:
       Data3: -1128137087
       Data4: 1279685668
     Path: event:/SFX/Player/OpenChest
+  <cactusHit>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bomb>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <woodCrack>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <fireHandLand>k__BackingField:
     Guid:
       Data1: 0

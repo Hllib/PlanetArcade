@@ -13,6 +13,7 @@ public class Barrel : MonoBehaviour, IDamageable
 
         if (Health <= 0)
         {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fireHandLand, this.transform.position);
             _barrelAnim.SetTrigger("Fire");
             ActivateFire();
             Destroy(gameObject, 10.0f);

@@ -44,7 +44,12 @@ public class FMODEvents : MonoBehaviour
     [field: Header("OBJECTS")]
     [field: SerializeField]
     public EventReference chestOpen { get; private set; }
-
+    [field: SerializeField]
+    public EventReference cactusHit { get; private set; }
+    [field: SerializeField]
+    public EventReference bomb { get; private set; }
+    [field: SerializeField]
+    public EventReference woodCrack { get; private set; }
 
     [field: Header("FINAL BOSS")]
     [field: SerializeField]

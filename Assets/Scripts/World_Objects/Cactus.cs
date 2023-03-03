@@ -12,6 +12,8 @@ public class Cactus : MonoBehaviour
         if (hit != null)
         {
             hit.Damage(_damage);
+
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.cactusHit, Vector3.zero);
         }
     }
 }

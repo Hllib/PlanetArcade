@@ -2795,7 +2795,7 @@ Tilemap:
       - {fileID: 21300054, guid: 1817f3536777e174ab581ebfe271fdb6, type: 3}
       - {fileID: 21300056, guid: 1817f3536777e174ab581ebfe271fdb6, type: 3}
       - {fileID: 21300058, guid: 1817f3536777e174ab581ebfe271fdb6, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: -3, z: 0}
@@ -2915,7 +2915,7 @@ Tilemap:
       - {fileID: 21300006, guid: 7994f094b625c2649a471791de71a1d9, type: 3}
       - {fileID: 21300008, guid: 7994f094b625c2649a471791de71a1d9, type: 3}
       - {fileID: 21300010, guid: 7994f094b625c2649a471791de71a1d9, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: -1, z: 0}
@@ -3635,7 +3635,7 @@ Tilemap:
       - {fileID: 21300006, guid: 1817f3536777e174ab581ebfe271fdb6, type: 3}
       - {fileID: 21300008, guid: 1817f3536777e174ab581ebfe271fdb6, type: 3}
       - {fileID: 21300010, guid: 1817f3536777e174ab581ebfe271fdb6, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 13, y: 15, z: 0}
@@ -3731,7 +3731,7 @@ Tilemap:
       - {fileID: 21300038, guid: 9aa07529c535de040a7226e72c57b3e2, type: 3}
       - {fileID: 21300040, guid: 9aa07529c535de040a7226e72c57b3e2, type: 3}
       - {fileID: 21300042, guid: 9aa07529c535de040a7226e72c57b3e2, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 24, y: 18, z: 0}
@@ -5058,7 +5058,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.008503, y: 12.315249, z: -10}
+  m_LocalPosition: {x: -23.014736, y: 12.315216, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6059,11 +6059,15 @@ PrefabInstance:
     - target: {fileID: 8664908912559843444, guid: cd103994595a53d4db27b796c4433ecb, type: 3}
       propertyPath: lootPrefab
       value: 
-      objectReference: {fileID: 612314535027208336, guid: 3b86b6abf21d2ae4384a9bcac93683aa, type: 3}
+      objectReference: {fileID: 4205873235056903673, guid: fabf44e6ac138554a8a9c322a07f0143, type: 3}
     - target: {fileID: 8664908912559843444, guid: cd103994595a53d4db27b796c4433ecb, type: 3}
       propertyPath: healthBarImg
       value: 
       objectReference: {fileID: 1002120573}
+    - target: {fileID: 8664908912559843444, guid: cd103994595a53d4db27b796c4433ecb, type: 3}
+      propertyPath: lookDirection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8664908912559843444, guid: cd103994595a53d4db27b796c4433ecb, type: 3}
       propertyPath: _bigBulletPrefab
       value: 
@@ -20104,7 +20108,7 @@ Tilemap:
       - {fileID: 21300022, guid: 9aa07529c535de040a7226e72c57b3e2, type: 3}
       - {fileID: 21300024, guid: 9aa07529c535de040a7226e72c57b3e2, type: 3}
       - {fileID: 21300026, guid: 9aa07529c535de040a7226e72c57b3e2, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -17, y: 0, z: 0}
@@ -41406,6 +41410,27 @@ MonoBehaviour:
       Data3: -1128137087
       Data4: 1279685668
     Path: event:/SFX/Player/OpenChest
+  <cactusHit>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bomb>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <woodCrack>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <fireHandLand>k__BackingField:
     Guid:
       Data1: 0
@@ -47810,11 +47835,15 @@ PrefabInstance:
     - target: {fileID: 8664908912559843444, guid: cd103994595a53d4db27b796c4433ecb, type: 3}
       propertyPath: lootPrefab
       value: 
-      objectReference: {fileID: 612314535027208336, guid: 3b86b6abf21d2ae4384a9bcac93683aa, type: 3}
+      objectReference: {fileID: 4205873235056903673, guid: fabf44e6ac138554a8a9c322a07f0143, type: 3}
     - target: {fileID: 8664908912559843444, guid: cd103994595a53d4db27b796c4433ecb, type: 3}
       propertyPath: healthBarImg
       value: 
       objectReference: {fileID: 4951334694941305894}
+    - target: {fileID: 8664908912559843444, guid: cd103994595a53d4db27b796c4433ecb, type: 3}
+      propertyPath: lookDirection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8664908912559843444, guid: cd103994595a53d4db27b796c4433ecb, type: 3}
       propertyPath: _bigBulletPrefab
       value: 

@@ -17,6 +17,7 @@ public class Bomb : MonoBehaviour, IDamageable
 
         if (Health <= 0)
         {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.bomb, this.transform.position);
             _anim.SetTrigger("Explode");
             DealDamageAround();
             Destroy(gameObject, 0.5f);

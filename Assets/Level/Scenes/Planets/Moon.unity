@@ -7562,11 +7562,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3635205646728716045, guid: cd103269875b57d448e8fc966f8f4fbd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.51
+      value: -26.62
       objectReference: {fileID: 0}
     - target: {fileID: 3635205646728716045, guid: cd103269875b57d448e8fc966f8f4fbd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.76
+      value: -7.48
       objectReference: {fileID: 0}
     - target: {fileID: 3635205646728716045, guid: cd103269875b57d448e8fc966f8f4fbd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7607,7 +7607,7 @@ PrefabInstance:
     - target: {fileID: 8951437415232827801, guid: cd103269875b57d448e8fc966f8f4fbd, type: 3}
       propertyPath: _lootPrefab
       value: 
-      objectReference: {fileID: 8210920437852124606, guid: 698e451610a875549945f7d44c6a86d9, type: 3}
+      objectReference: {fileID: 3980814921683199245, guid: 4c1ebfe558b67744ca704f8821282303, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd103269875b57d448e8fc966f8f4fbd, type: 3}
 --- !u!4 &452592402 stripped
@@ -8017,6 +8017,27 @@ MonoBehaviour:
       Data3: -1128137087
       Data4: 1279685668
     Path: event:/SFX/Player/OpenChest
+  <cactusHit>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <bomb>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <woodCrack>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <fireHandLand>k__BackingField:
     Guid:
       Data1: 0
@@ -9392,11 +9413,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3635205646728716045, guid: cd103269875b57d448e8fc966f8f4fbd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.73
+      value: 18.23
       objectReference: {fileID: 0}
     - target: {fileID: 3635205646728716045, guid: cd103269875b57d448e8fc966f8f4fbd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.83
+      value: -6.2
       objectReference: {fileID: 0}
     - target: {fileID: 3635205646728716045, guid: cd103269875b57d448e8fc966f8f4fbd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11120,7 +11141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352623d3246e58e4e81fce04f1d5e4f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lootPrefab: {fileID: 3980814921683199245, guid: 4c1ebfe558b67744ca704f8821282303, type: 3}
+  _lootPrefab: {fileID: 8210920437852124606, guid: 698e451610a875549945f7d44c6a86d9, type: 3}
 --- !u!1001 &1325471592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11998,6 +12019,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 542050243479673222}
     m_Modifications:
+    - target: {fileID: 5247551848981724881, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5247551848986820003, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
       propertyPath: quickSelectorSlots.Array.data[0]
       value: 
@@ -12010,6 +12035,18 @@ PrefabInstance:
       propertyPath: quickSelectorSlots.Array.data[2]
       value: 
       objectReference: {fileID: 542050244219939168}
+    - target: {fileID: 5247551849856094139, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247551849856094139, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247551849856094139, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5247551850595103385, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12097,6 +12134,30 @@ PrefabInstance:
     - target: {fileID: 5247551850595103390, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
       propertyPath: m_Name
       value: Inventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247551850606048104, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247551850606048104, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247551850606048104, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247551850606048104, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247551850606048104, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247551850606048104, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48fc9b5cad9442d4eb19ac987b6c7082, type: 3}
