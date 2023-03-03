@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static float TimeInGame { get; private set; }
     [SerializeField]
     private GameObject _pauseMenu;
     [SerializeField]
@@ -45,21 +44,6 @@ public class GameManager : MonoBehaviour
             {PlanetID.Moon, PlayerPrefs.GetInt(PlayerSettings.Moon, 0)},
             {PlanetID.Mars, PlayerPrefs.GetInt(PlayerSettings.Mars, 0)}
         };
-
-        TimeInGame = PlayerPrefs.GetFloat(PlayerSettings.TimeInGame, 0);
-        StartCoroutine(CheckTimeInGame());
-    }
-
-    IEnumerator CheckTimeInGame()
-    {
-        while (true)
-        {
-            TimeInGame += Time.time;
-            PlayerPrefs.SetFloat(PlayerSettings.TimeInGame, TimeInGame);
-            PlayerPrefs.Save();
-
-            yield return new WaitForSecondsRealtime(15f);
-        }
     }
 
     public void SavePlayerPrefs()

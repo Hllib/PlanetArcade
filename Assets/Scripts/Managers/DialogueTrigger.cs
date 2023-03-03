@@ -22,6 +22,11 @@ public class DialogueTrigger : MonoBehaviour
         _visualCue.SetActive(false);
     }
 
+    private void Start()
+    {
+        HasTalked = PlayerPrefs.GetInt(PlayerSettings.TalkToGuideState, 0) == 1 ? true : false;
+    }
+
     private void Update()
     {
         if (_playerInRange && !DialogueManager.Instance.IsDialogueDisplayed && !HasTalked)

@@ -37,7 +37,6 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetFloat(PlayerSettings.Moon, PlayerSettings.NewGame);
         PlayerPrefs.SetFloat(PlayerSettings.Mars, PlayerSettings.NewGame);
         PlayerPrefs.SetFloat(PlayerSettings.Station, PlayerSettings.NewGame);
-        PlayerPrefs.SetFloat(PlayerSettings.TimeInGame, PlayerSettings.NewGame);
         PlayerPrefs.SetString(PlayerSettings.Inventory, string.Empty);
     }
 
