@@ -9,7 +9,7 @@ public class AstronautEnemyFly : Enemy, IDamageable
 
     private float _canAttack = 0.0f;
     private float _attackRate = 2.0f;
-    private float _attackRadius = 5.0f;
+    private float _attackRadius = 6.5f;
     private bool _isAlerted;
 
     [SerializeField]
