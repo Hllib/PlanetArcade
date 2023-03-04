@@ -24,4 +24,5 @@ public class PlayerSettings : MonoBehaviour
     public const int Health = 4;
 
     public const string GameStarted = "GameStarted";
+    public const string GameFinished = "GameFinished";
 }

@@ -36,6 +36,7 @@ public class StationManager : MonoBehaviour
         _instance = this;
         HasPlayerVisited = PlayerPrefs.GetInt(PlayerSettings.Station, 0) == 1 ? true : false;
         HasPlayerTalkedToAll = HasPlayerVisited;
+        GameManager.Instance.CheckGameFinish();
     }
 
     private void Start()

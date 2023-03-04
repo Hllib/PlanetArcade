@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -188,6 +189,12 @@ public class GameManager : MonoBehaviour
         GameManager.Instance.levelFinished[PlanetID.Mars] = PlayerSettings.LevelFinished;
         GameManager.Instance.SavePlayerPrefs();
         GameManager.Instance.LoadScene("Station3D");
+    }
+
+    public void CheckGameFinish()
+    {
+        int state = levelFinished.Keys.All(key => key == PlayerSettings.LevelFinished) ? 1: 0;
+        PlayerPrefs.SetInt(PlayerSettings.GameFinished, state);
     }
 
     public void Resume()

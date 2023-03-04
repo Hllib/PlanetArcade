@@ -23,6 +23,10 @@ public class Merchant : MonoBehaviour
     private void Start()
     {
         TradeMode = StationManager.Instance.HasPlayerVisited;
+        if (StationManager.Instance.HasPlayerVisited)
+        {
+            this.GetComponentInChildren<DialogueTrigger>().enabled = false;
+        }
         currentSelectedCost = 100;
     }
 

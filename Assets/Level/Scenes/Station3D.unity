@@ -2305,6 +2305,18 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 157660108}
+    - target: {fileID: 1879283407, guid: 83a2a89b5b89bbd479d97662a791ad5a, type: 3}
+      propertyPath: _finalDialogJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 66fb33333b5f5c84cae1caeefa032964, type: 3}
+    - target: {fileID: 1879283407, guid: 83a2a89b5b89bbd479d97662a791ad5a, type: 3}
+      propertyPath: _introDialogJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 0fb0309c627ee1c4bb1116baa45564fd, type: 3}
+    - target: {fileID: 1879283407, guid: 83a2a89b5b89bbd479d97662a791ad5a, type: 3}
+      propertyPath: _commonDialogJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 444411bb5dc7d7242b76caeff5945afc, type: 3}
     - target: {fileID: 1397372267804558197, guid: 83a2a89b5b89bbd479d97662a791ad5a, type: 3}
       propertyPath: m_Name
       value: Elon(Guide)_3D
@@ -5483,6 +5495,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 157660108}
+    - target: {fileID: 247076137, guid: 169e4595c6d65434298a80038261a003, type: 3}
+      propertyPath: _introDialogJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 34fef1ccf6556004bb2de93a59296ec6, type: 3}
     - target: {fileID: 963871896, guid: 169e4595c6d65434298a80038261a003, type: 3}
       propertyPath: _player
       value: 
@@ -9683,8 +9699,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1817546173}
   m_HandleRect: {fileID: 1817546171}
   m_Direction: 2
-  m_Value: 0.99999994
-  m_Size: 0.5892079
+  m_Value: 0.99999976
+  m_Size: 0.58920795
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -13194,7 +13210,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5247551848723562962}
   m_HandleRect: {fileID: 5247551848723562963}
   m_Direction: 2
-  m_Value: 0.9999999
+  m_Value: 0.99999976
   m_Size: 0.5239663
   m_NumberOfSteps: 0
   m_OnValueChanged:

@@ -124,17 +124,6 @@ public class Player3D : MonoBehaviour
             _velocity.y -= _gravity * -2f * Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            _speed *= 2;
-            _animator.IsSprinting = true;
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            _speed /= 2;
-            _animator.IsSprinting = false;
-        }
-
         _characterController.Move(movement * _speed * Time.deltaTime);
         _characterController.Move(_velocity * Time.deltaTime);
         _animator.Move(horizontalInput, verticalInput);

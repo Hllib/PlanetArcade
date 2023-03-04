@@ -99,19 +99,4 @@ public class Player3DAnimator : MonoBehaviour
             _player.LookDirection = (int)LookDirection.RF;
         }
     }
-
-    private void DebugLookDirection()
-    {
-        switch (_player.LookDirection)
-        {
-            case (int)LookDirection.Left: Debug.Log("Moving left"); break;
-            case (int)LookDirection.Right: Debug.Log("Moving right"); break;
-            case (int)LookDirection.Back: Debug.Log("Moving up"); break;
-            case (int)LookDirection.Front: Debug.Log("Moving down"); break;
-            case (int)LookDirection.LB: Debug.Log("Moving LB"); break;
-            case (int)LookDirection.RB: Debug.Log("Moving RB"); break;
-            case (int)LookDirection.RF: Debug.Log("Moving RF"); break;
-            case (int)LookDirection.LF: Debug.Log("Moving LF"); break;
-        }
-    }
 }

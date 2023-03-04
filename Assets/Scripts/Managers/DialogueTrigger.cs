@@ -11,10 +11,15 @@ public class DialogueTrigger : MonoBehaviour
     private GameObject _visualCue;
 
     [SerializeField]
-    private TextAsset _inkJSON;
+    private TextAsset _introDialogJSON;
+    [SerializeField]
+    private TextAsset _commonDialogJSON;
+    [SerializeField]
+    private TextAsset _finalDialogJSON;
 
-    public bool HasVisited;
-
+    public bool HasTalkedTo;
+    private bool _isGameFinished;
+    private bool _finalDialogeCompleted;
 
     private void Awake()
     {
@@ -24,34 +29,70 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Start()
     {
-        HasVisited = StationManager.Instance.HasPlayerVisited;
+        HasTalkedTo = StationManager.Instance.HasPlayerVisited;
+        _isGameFinished = PlayerPrefs.GetInt(PlayerSettings.GameFinished, 0) == 1 ? true : false;
+        _isGameFinished = true;
     }
 
     private void Update()
     {
-        if (_playerInRange && !DialogueManager.Instance.IsDialogueDisplayed && !HasVisited)
+        if (!_finalDialogeCompleted)
         {
-            _visualCue.SetActive(true);
-            if (_player.HasInteracted)
+            if (_isGameFinished && _playerInRange && !DialogueManager.Instance.IsDialogueDisplayed)
             {
-                DialogueManager.Instance.StartDialogueMode(_inkJSON);
-                _player.HasInteracted = false;
-                HasVisited = true;
+                CheckForFinalDialoge();
+            }
 
-                if (GetComponentInParent<Merchant>() != null)
-                {
-                    Merchant merchant = GetComponentInParent<Merchant>();
-                    merchant.TradeMode = true;
-                    StationManager.Instance.HasPlayerTalkedToAll = true;
-
-                    this.enabled = false;
-                    _visualCue.SetActive(false);
-                }
+            if (_playerInRange && !DialogueManager.Instance.IsDialogueDisplayed && !HasTalkedTo)
+            {
+                CheckForFirstDialoge();
+            }
+            else if (_playerInRange && !DialogueManager.Instance.IsDialogueDisplayed && HasTalkedTo)
+            {
+                CheckForCommonDialoge();
             }
         }
-        else if (_playerInRange && !DialogueManager.Instance.IsDialogueDisplayed && HasVisited)
+    }
+
+    private void CheckForFirstDialoge()
+    {
+        _visualCue.SetActive(true);
+        if (_player.HasInteracted)
         {
-            _visualCue.SetActive(false);
+            DialogueManager.Instance.StartDialogueMode(_introDialogJSON);
+            _player.HasInteracted = false;
+            HasTalkedTo = true;
+
+            if (GetComponentInParent<Merchant>() != null)
+            {
+                Merchant merchant = GetComponentInParent<Merchant>();
+                merchant.TradeMode = true;
+                StationManager.Instance.HasPlayerTalkedToAll = true;
+
+                _visualCue.SetActive(false);
+                this.enabled = false;
+            }
+        }
+
+    }
+
+    private void CheckForCommonDialoge()
+    {
+        _visualCue.SetActive(true);
+        if (_player.HasInteracted)
+        {
+            DialogueManager.Instance.StartDialogueMode(_commonDialogJSON);
+            _player.HasInteracted = false;
+        }
+    }
+
+    private void CheckForFinalDialoge()
+    {
+        if (!_finalDialogeCompleted)
+        {
+            DialogueManager.Instance.StartDialogueMode(_finalDialogJSON);
+            _player.HasInteracted = false;
+            _finalDialogeCompleted = true;
         }
     }
 

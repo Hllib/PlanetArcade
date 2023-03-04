@@ -18,6 +18,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private Player3D _player;
     [SerializeField]
+    private Animator _playerAnimator;
+    [SerializeField]
     private GameObject[] _choices;
     private TextMeshProUGUI[] _choicesText;
     [SerializeField]
@@ -58,10 +60,13 @@ public class DialogueManager : MonoBehaviour
         {
             _choicesText[i] = _choices[i].GetComponentInChildren<TextMeshProUGUI>();
         }
+        _playerAnimator = _player.GetComponent<Animator>();
     }
 
     public void StartDialogueMode(TextAsset inkJSON)
     {
+        _playerAnimator.SetBool("Idle", true);
+
         _currentStory = new Story(inkJSON.text);
         IsDialogueDisplayed = true;
         _dialoguePanel.SetActive(true);
@@ -71,6 +76,8 @@ public class DialogueManager : MonoBehaviour
 
     private void StopDialogueMode()
     {
+        _playerAnimator.SetBool("Idle", false);
+
         IsDialogueDisplayed = false;
         _dialoguePanel.SetActive(false);
         _dialogueText.text = string.Empty;
