@@ -70,6 +70,7 @@ public class MainMenu : MonoBehaviour
 
     public void DeleteSaves()
     {
+        PlayerPrefs.SetInt(PlayerSettings.GameStarted, PlayerSettings.NewGame);
         PlayerPrefs.SetFloat(PlayerSettings.Earth, PlayerSettings.NewGame);
         PlayerPrefs.SetFloat(PlayerSettings.Moon, PlayerSettings.NewGame);
         PlayerPrefs.SetFloat(PlayerSettings.Mars, PlayerSettings.NewGame);

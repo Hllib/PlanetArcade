@@ -31180,15 +31180,15 @@ PrefabInstance:
     - target: {fileID: 2413558930649294455, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
       propertyPath: _quickSelections.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 985011812}
     - target: {fileID: 2413558930649294455, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
       propertyPath: _quickSelections.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 985011811}
     - target: {fileID: 2413558930649294455, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
       propertyPath: _quickSelections.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 985011810}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
 --- !u!1 &2413558930165084867 stripped

@@ -183,6 +183,13 @@ public class GameManager : MonoBehaviour
         GameManager.Instance.LoadScene("BossFight");
     }
 
+    public void FinishMars()
+    {
+        GameManager.Instance.levelFinished[PlanetID.Mars] = PlayerSettings.LevelFinished;
+        GameManager.Instance.SavePlayerPrefs();
+        GameManager.Instance.LoadScene("Station3D");
+    }
+
     public void Resume()
     {
         _pauseMenu.SetActive(!_pauseMenu.activeSelf);

@@ -3577,7 +3577,7 @@ Tilemap:
       - {fileID: 21300054, guid: 9aa07529c535de040a7226e72c57b3e2, type: 3}
       - {fileID: 21300056, guid: 9aa07529c535de040a7226e72c57b3e2, type: 3}
       - {fileID: 21300058, guid: 9aa07529c535de040a7226e72c57b3e2, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 15, y: -6, z: 0}
@@ -6560,7 +6560,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.396975, y: -1.5813042, z: -10}
+  m_LocalPosition: {x: 9.402733, y: -1.5812687, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30415,15 +30415,15 @@ PrefabInstance:
     - target: {fileID: 2413558930649294455, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
       propertyPath: _quickSelections.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1137847664}
     - target: {fileID: 2413558930649294455, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
       propertyPath: _quickSelections.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1137847663}
     - target: {fileID: 2413558930649294455, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
       propertyPath: _quickSelections.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1137847662}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
 --- !u!1 &2413558930165084867 stripped

@@ -22,7 +22,7 @@ public class PortToScene : MonoBehaviour
             switch(_sceneName)
             {
                 case "BossFight": StartCoroutine(MoveToBoss()); break;   
-                case "Final": StartCoroutine(MoveToBoss()); break;   
+                case "Final": StartCoroutine(MoveToFinal()); break;   
             }
         }
     }
@@ -47,5 +47,6 @@ public class PortToScene : MonoBehaviour
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.teleportSound, Vector3.zero);
         _fade.SetActive(true);
         yield return new WaitForSeconds(1);
+        GameManager.Instance.FinishMars();
     }
 }

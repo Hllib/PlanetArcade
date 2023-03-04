@@ -9,11 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5660070042761442730, guid: 51355d122d0649c4db5b091acbd2fca8, type: 3}
       propertyPath: m_Name
-      value: Pistol_LF
+      value: Pistol_LF Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5660070042761442730, guid: 51355d122d0649c4db5b091acbd2fca8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5660070042761442733, guid: 51355d122d0649c4db5b091acbd2fca8, type: 3}
       propertyPath: _bulletPrefab

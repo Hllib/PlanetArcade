@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5660070042761442730, guid: 51355d122d0649c4db5b091acbd2fca8, type: 3}
       propertyPath: m_Name
-      value: Pistol_front
+      value: Pistol_front Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5660070042761442732, guid: 51355d122d0649c4db5b091acbd2fca8, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
@@ -74,6 +74,26 @@ PrefabInstance:
     - target: {fileID: 5660070042914702233, guid: 51355d122d0649c4db5b091acbd2fca8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970578806529145224, guid: 51355d122d0649c4db5b091acbd2fca8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970578806529145224, guid: 51355d122d0649c4db5b091acbd2fca8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970578806529145224, guid: 51355d122d0649c4db5b091acbd2fca8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970578806529145224, guid: 51355d122d0649c4db5b091acbd2fca8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970578806529145224, guid: 51355d122d0649c4db5b091acbd2fca8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51355d122d0649c4db5b091acbd2fca8, type: 3}

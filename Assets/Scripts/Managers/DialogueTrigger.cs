@@ -49,7 +49,7 @@ public class DialogueTrigger : MonoBehaviour
                 }
             }
         }
-        else
+        else if (_playerInRange && !DialogueManager.Instance.IsDialogueDisplayed && HasVisited)
         {
             _visualCue.SetActive(false);
         }
