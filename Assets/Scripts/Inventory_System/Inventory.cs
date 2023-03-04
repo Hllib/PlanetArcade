@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour
         playerItems.Add(itemToAdd);
         _uiInventory.AddNewItem(itemToAdd);
 
-        if(UIManager.Instance != null)
+        if (UIManager.Instance != null)
             UIManager.Instance.DisplayMessage("Item added: " + itemToAdd.title);
 
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.itemInteraction, Vector3.zero);

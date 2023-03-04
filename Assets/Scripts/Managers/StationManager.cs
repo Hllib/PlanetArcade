@@ -43,7 +43,8 @@ public class StationManager : MonoBehaviour
         if (HasPlayerVisited)
         {
             _cutsceneHolder.SetActive(false);
-            _camera = _cameraSpot;
+            _camera.position = _cameraSpot.position;
+            _camera.rotation = _cameraSpot.rotation;
 
             AudioManager.Instance.StopMusic();
             AudioManager.Instance.InitMusic(FMODEvents.Instance.musicOptional);

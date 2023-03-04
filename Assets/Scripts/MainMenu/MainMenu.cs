@@ -9,11 +9,54 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private GameObject _soundPanel;
     [SerializeField]
-    private GameObject _soundPanelBg;
+    private GameObject _menuCover;
+    [SerializeField]
+    private GameObject _continueMessagePanel;
+    [SerializeField]
+    private GameObject _newGameMessagePanel;
 
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void ContinueGame()
+    {
+        if(PlayerPrefs.GetInt(PlayerSettings.GameStarted, 0) == PlayerSettings.LevelFinished)
+        {
+            LoadScene("PlanetsMenu");
+        }
+        else
+        {
+            _menuCover.SetActive(true);
+            _continueMessagePanel.SetActive(true);
+        }
+    }
+
+    public void NewGame()
+    {
+        if (PlayerPrefs.GetInt(PlayerSettings.GameStarted, 0) == PlayerSettings.NewGame)
+        {
+            DeleteSaves();
+            LoadScene("Station3D");
+        }
+        else
+        {
+            _menuCover.SetActive(true);
+            _newGameMessagePanel.SetActive(true);
+        }
+    }
+
+    public void CloseNewGameWarning()
+    {
+        _newGameMessagePanel.SetActive(false);
+        _menuCover.SetActive(false);
+    }
+
+    public void CloseContinueMessage()
+    {
+        _continueMessagePanel.SetActive(false);
+        _menuCover.SetActive(false);
     }
 
     public void Quit()
@@ -37,7 +80,7 @@ public class MainMenu : MonoBehaviour
     public void ShowSoundSettings()
     {
         _soundPanel.SetActive(!_soundPanel.activeSelf);
-        _soundPanelBg.SetActive(!_soundPanelBg.activeSelf);
+        _menuCover.SetActive(!_menuCover.activeSelf);
     }
 
     private void Start()

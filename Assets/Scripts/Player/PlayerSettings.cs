@@ -8,7 +8,7 @@ public class PlayerSettings : MonoBehaviour
     public const string Earth = "Earth";
     public const string Moon = "Moon";
     public const string Mars = "Mars";
-    public const string Station = "Station";
+    public const string Station = "Station3D";
 
     public const string MasterVolume = "MasterVolume";
     public const string MusicVolume = "MusicVolume";
@@ -22,4 +22,6 @@ public class PlayerSettings : MonoBehaviour
     public const int NewGame = 0;
 
     public const int Health = 4;
+
+    public const string GameStarted = "GameStarted";
 }
