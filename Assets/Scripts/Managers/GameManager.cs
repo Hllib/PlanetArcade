@@ -70,17 +70,17 @@ public class GameManager : MonoBehaviour
         switch (id)
         {
             case PlanetID.Earth:
-                canGo = PlayerPrefs.GetInt(PlayerSettings.Earth) == PlayerSettings.NewGame ? true : false;
+                canGo = PlayerPrefs.GetInt(PlayerSettings.Earth) == PlayerSettings.NotDone ? true : false;
                 break;
             case PlanetID.Moon:
-                canGo = PlayerPrefs.GetInt(PlayerSettings.Moon) == PlayerSettings.NewGame
-                    && PlayerPrefs.GetInt(PlayerSettings.Earth) == PlayerSettings.LevelFinished ?
+                canGo = PlayerPrefs.GetInt(PlayerSettings.Moon) == PlayerSettings.NotDone
+                    && PlayerPrefs.GetInt(PlayerSettings.Earth) == PlayerSettings.Done ?
                     true : false;
                 break;
             case PlanetID.Mars:
-                canGo = PlayerPrefs.GetInt(PlayerSettings.Mars) == PlayerSettings.NewGame
-                    && PlayerPrefs.GetInt(PlayerSettings.Earth) == PlayerSettings.LevelFinished
-                    && PlayerPrefs.GetInt(PlayerSettings.Moon) == PlayerSettings.LevelFinished ?
+                canGo = PlayerPrefs.GetInt(PlayerSettings.Mars) == PlayerSettings.NotDone
+                    && PlayerPrefs.GetInt(PlayerSettings.Earth) == PlayerSettings.Done
+                    && PlayerPrefs.GetInt(PlayerSettings.Moon) == PlayerSettings.Done ?
                     true : false;
                 break;
             case PlanetID.Station3D: canGo = true; break;
@@ -173,7 +173,7 @@ public class GameManager : MonoBehaviour
 
     public void FinishMoon()
     {
-        GameManager.Instance.levelFinished[PlanetID.Moon] = PlayerSettings.LevelFinished;
+        GameManager.Instance.levelFinished[PlanetID.Moon] = PlayerSettings.Done;
         GameManager.Instance.SavePlayerPrefs();
         GameManager.Instance.LoadScene("PlanetsMenu");
     }
@@ -186,14 +186,14 @@ public class GameManager : MonoBehaviour
 
     public void FinishMars()
     {
-        GameManager.Instance.levelFinished[PlanetID.Mars] = PlayerSettings.LevelFinished;
+        GameManager.Instance.levelFinished[PlanetID.Mars] = PlayerSettings.Done;
         GameManager.Instance.SavePlayerPrefs();
         GameManager.Instance.LoadScene("Station3D");
     }
 
     public void CheckGameFinish()
     {
-        int state = levelFinished.Keys.All(key => key == PlayerSettings.LevelFinished) ? 1: 0;
+        int state = levelFinished.Keys.All(key => key == PlayerSettings.Done) ? 1: 0;
         PlayerPrefs.SetInt(PlayerSettings.GameFinished, state);
     }
 

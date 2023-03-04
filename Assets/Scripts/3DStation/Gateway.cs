@@ -35,8 +35,8 @@ public class Gateway : InteractableDoor
     {
         if(StationManager.Instance.HasPlayerTalkedToAll)
         {
-            PlayerPrefs.SetInt(PlayerSettings.Station, PlayerSettings.LevelFinished); //meaning player has visited the station
-            PlayerPrefs.SetInt(PlayerSettings.GameStarted, PlayerSettings.LevelFinished); 
+            PlayerPrefs.SetInt(PlayerSettings.Station, PlayerSettings.Done); //meaning player has visited the station
+            PlayerPrefs.SetInt(PlayerSettings.GameStarted, PlayerSettings.Done); 
 
             StringBuilder stringOfId = new StringBuilder();
             foreach (var item in player.playerInventory.playerItems)

@@ -86,8 +86,9 @@ public class StationManager : MonoBehaviour
         AudioManager.Instance.InitMusic(FMODEvents.Instance.finalMusic);
     }
 
-    public void LoadMainMenu()
+    public void LoadMenuAfterEnd()
     {
+        PlayerPrefs.SetInt(PlayerSettings.ShowAchievement, PlayerSettings.Done);
         GameManager.Instance.LoadScene("MainMenu");
     }
 }

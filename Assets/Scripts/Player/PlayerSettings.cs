@@ -18,11 +18,13 @@ public class PlayerSettings : MonoBehaviour
     public const string Inventory = "Inventory";
     public const string WhenOnMarsInventory = "OnMarsInventory";
 
-    public const int LevelFinished = 1;
-    public const int NewGame = 0;
+    public const int Done = 1;
+    public const int NotDone = 0;
 
     public const int Health = 4;
 
     public const string GameStarted = "GameStarted";
     public const string GameFinished = "GameFinished";
+
+    public const string ShowAchievement = "ShowAchievement";
 }

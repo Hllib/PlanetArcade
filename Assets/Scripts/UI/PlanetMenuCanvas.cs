@@ -49,9 +49,9 @@ public class PlanetMenuCanvas : MonoBehaviour
 
     private void ChooseCurrentHint()
     {
-        int planetIdToChooseAsHint = PlayerPrefs.GetInt(PlayerSettings.Earth) == PlayerSettings.NewGame ? PlanetID.Earth
-            : PlayerPrefs.GetInt(PlayerSettings.Earth) == PlayerSettings.LevelFinished
-            && PlayerPrefs.GetInt(PlayerSettings.Moon) == PlayerSettings.NewGame ? PlanetID.Moon
+        int planetIdToChooseAsHint = PlayerPrefs.GetInt(PlayerSettings.Earth) == PlayerSettings.NotDone ? PlanetID.Earth
+            : PlayerPrefs.GetInt(PlayerSettings.Earth) == PlayerSettings.Done
+            && PlayerPrefs.GetInt(PlayerSettings.Moon) == PlayerSettings.NotDone ? PlanetID.Moon
             : PlanetID.Mars;
 
         switch (planetIdToChooseAsHint)

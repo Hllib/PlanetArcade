@@ -1,3 +1,4 @@
+using FMOD;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,10 @@ public class MainMenu : MonoBehaviour
     private GameObject _continueMessagePanel;
     [SerializeField]
     private GameObject _newGameMessagePanel;
+    [SerializeField]
+    private GameObject _achievementPanel;
+    [SerializeField]
+    private GameObject _aboutPanel;
 
     public void LoadScene(string sceneName)
     {
@@ -22,7 +27,7 @@ public class MainMenu : MonoBehaviour
 
     public void ContinueGame()
     {
-        if(PlayerPrefs.GetInt(PlayerSettings.GameStarted, 0) == PlayerSettings.LevelFinished)
+        if(PlayerPrefs.GetInt(PlayerSettings.GameStarted, 0) == PlayerSettings.Done)
         {
             LoadScene("PlanetsMenu");
         }
@@ -35,7 +40,7 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
-        if (PlayerPrefs.GetInt(PlayerSettings.GameStarted, 0) == PlayerSettings.NewGame)
+        if (PlayerPrefs.GetInt(PlayerSettings.GameStarted, 0) == PlayerSettings.NotDone)
         {
             DeleteSaves();
             LoadScene("Station3D");
@@ -45,6 +50,18 @@ public class MainMenu : MonoBehaviour
             _menuCover.SetActive(true);
             _newGameMessagePanel.SetActive(true);
         }
+    }
+
+    public void ShowAboutPanel()
+    {
+        _menuCover.SetActive(true);
+        _aboutPanel.SetActive(true);
+    }
+
+    public void CloseAboutPanel()
+    {
+        _menuCover.SetActive(false);
+        _aboutPanel.SetActive(false);
     }
 
     public void CloseNewGameWarning()
@@ -70,11 +87,11 @@ public class MainMenu : MonoBehaviour
 
     public void DeleteSaves()
     {
-        PlayerPrefs.SetInt(PlayerSettings.GameStarted, PlayerSettings.NewGame);
-        PlayerPrefs.SetFloat(PlayerSettings.Earth, PlayerSettings.NewGame);
-        PlayerPrefs.SetFloat(PlayerSettings.Moon, PlayerSettings.NewGame);
-        PlayerPrefs.SetFloat(PlayerSettings.Mars, PlayerSettings.NewGame);
-        PlayerPrefs.SetFloat(PlayerSettings.Station, PlayerSettings.NewGame);
+        PlayerPrefs.SetInt(PlayerSettings.GameStarted, PlayerSettings.NotDone);
+        PlayerPrefs.SetFloat(PlayerSettings.Earth, PlayerSettings.NotDone);
+        PlayerPrefs.SetFloat(PlayerSettings.Moon, PlayerSettings.NotDone);
+        PlayerPrefs.SetFloat(PlayerSettings.Mars, PlayerSettings.NotDone);
+        PlayerPrefs.SetFloat(PlayerSettings.Station, PlayerSettings.NotDone);
         PlayerPrefs.SetString(PlayerSettings.Inventory, string.Empty);
     }
 
@@ -84,8 +101,19 @@ public class MainMenu : MonoBehaviour
         _menuCover.SetActive(!_menuCover.activeSelf);
     }
 
+    private void ShowAchievement()
+    {
+        PlayerPrefs.SetInt(PlayerSettings.ShowAchievement, PlayerSettings.NotDone);
+        _achievementPanel.SetActive(true);
+    }
+
     private void Start()
     {
         _soundPanel.SetActive(false);
+
+        if(PlayerPrefs.GetInt(PlayerSettings.ShowAchievement) == PlayerSettings.Done)
+        {
+            ShowAchievement();
+        }
     }
 }
