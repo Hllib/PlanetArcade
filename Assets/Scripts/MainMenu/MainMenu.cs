@@ -1,6 +1,7 @@
 using FMOD;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,6 +20,8 @@ public class MainMenu : MonoBehaviour
     private GameObject _achievementPanel;
     [SerializeField]
     private GameObject _aboutPanel;
+    [SerializeField]
+    private TextMeshProUGUI _continuePanelText;
 
     public void LoadScene(string sceneName)
     {
@@ -27,12 +30,20 @@ public class MainMenu : MonoBehaviour
 
     public void ContinueGame()
     {
-        if(PlayerPrefs.GetInt(PlayerSettings.GameStarted, 0) == PlayerSettings.Done)
+        if (PlayerPrefs.GetInt(PlayerSettings.GameStarted, 0) == 1 && PlayerPrefs.GetInt(PlayerSettings.GameFinished, 0) == 0)
         {
             LoadScene("PlanetsMenu");
         }
         else
         {
+            if (PlayerPrefs.GetInt(PlayerSettings.GameFinished, 0) == 1)
+            {
+                _continuePanelText.text = "You've completed your last playthrough. Start a new game";
+            }
+            else
+            {
+                _continuePanelText.text = "Apparently you have not started any game yet";
+            }
             _menuCover.SetActive(true);
             _continueMessagePanel.SetActive(true);
         }
@@ -78,16 +89,18 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-        #else
-         Application.Quit();
-        #endif
+#else
+        Application.Quit();
+#endif
     }
 
     public void DeleteSaves()
     {
         PlayerPrefs.SetInt(PlayerSettings.GameStarted, PlayerSettings.NotDone);
+        PlayerPrefs.SetInt(PlayerSettings.GameFinished, PlayerSettings.NotDone);
+        PlayerPrefs.SetInt(PlayerSettings.GotAchievement, PlayerSettings.NotDone);
         PlayerPrefs.SetFloat(PlayerSettings.Earth, PlayerSettings.NotDone);
         PlayerPrefs.SetFloat(PlayerSettings.Moon, PlayerSettings.NotDone);
         PlayerPrefs.SetFloat(PlayerSettings.Mars, PlayerSettings.NotDone);
@@ -103,7 +116,7 @@ public class MainMenu : MonoBehaviour
 
     private void ShowAchievement()
     {
-        PlayerPrefs.SetInt(PlayerSettings.ShowAchievement, PlayerSettings.NotDone);
+        PlayerPrefs.SetInt(PlayerSettings.GotAchievement, PlayerSettings.NotDone);
         _achievementPanel.SetActive(true);
     }
 
@@ -111,7 +124,7 @@ public class MainMenu : MonoBehaviour
     {
         _soundPanel.SetActive(false);
 
-        if(PlayerPrefs.GetInt(PlayerSettings.ShowAchievement) == PlayerSettings.Done)
+        if (PlayerPrefs.GetInt(PlayerSettings.GotAchievement) == PlayerSettings.Done)
         {
             ShowAchievement();
         }

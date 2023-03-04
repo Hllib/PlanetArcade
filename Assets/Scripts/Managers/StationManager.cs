@@ -88,7 +88,7 @@ public class StationManager : MonoBehaviour
 
     public void LoadMenuAfterEnd()
     {
-        PlayerPrefs.SetInt(PlayerSettings.ShowAchievement, PlayerSettings.Done);
+        PlayerPrefs.SetInt(PlayerSettings.GotAchievement, PlayerSettings.Done);
         GameManager.Instance.LoadScene("MainMenu");
     }
 }
