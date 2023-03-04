@@ -29,6 +29,8 @@ public class DialogueManager : MonoBehaviour
 
     public bool HasSubmitted { get; private set; }
 
+    public bool FinalDialogeCompleted { get; set; }
+
     private static DialogueManager _instance;
 
     public static DialogueManager Instance
@@ -56,7 +58,7 @@ public class DialogueManager : MonoBehaviour
 
         _choicesText = new TextMeshProUGUI[_choices.Length];
 
-        for(int i = 0; i < _choices.Length; i++)
+        for (int i = 0; i < _choices.Length; i++)
         {
             _choicesText[i] = _choices[i].GetComponentInChildren<TextMeshProUGUI>();
         }
@@ -81,6 +83,11 @@ public class DialogueManager : MonoBehaviour
         IsDialogueDisplayed = false;
         _dialoguePanel.SetActive(false);
         _dialogueText.text = string.Empty;
+
+        if(FinalDialogeCompleted)
+        {
+            StationManager.Instance.PlayerFinishedFinalDialoge = true;
+        }
     }
 
     private void Update()

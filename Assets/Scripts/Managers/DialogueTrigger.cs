@@ -19,7 +19,6 @@ public class DialogueTrigger : MonoBehaviour
 
     public bool HasTalkedTo;
     private bool _isGameFinished;
-    private bool _finalDialogeCompleted;
 
     private void Awake()
     {
@@ -36,7 +35,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (!_finalDialogeCompleted)
+        if (!DialogueManager.Instance.FinalDialogeCompleted)
         {
             if (_isGameFinished && _playerInRange && !DialogueManager.Instance.IsDialogueDisplayed)
             {
@@ -88,11 +87,11 @@ public class DialogueTrigger : MonoBehaviour
 
     private void CheckForFinalDialoge()
     {
-        if (!_finalDialogeCompleted)
+        if (!DialogueManager.Instance.FinalDialogeCompleted)
         {
             DialogueManager.Instance.StartDialogueMode(_finalDialogJSON);
             _player.HasInteracted = false;
-            _finalDialogeCompleted = true;
+            DialogueManager.Instance.FinalDialogeCompleted = true;
         }
     }
 

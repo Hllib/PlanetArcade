@@ -128,6 +128,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 187955755, guid: c9d027a5f737e3c40b2a02da07dc1c2a, type: 3}
   m_PrefabInstance: {fileID: 157660107}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &34080074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34080075}
+  m_Layer: 0
+  m_Name: OutroCutscene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &34080075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34080074}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2124054762}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &76740964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,6 +1561,7 @@ MonoBehaviour:
   _dialoguePanel: {fileID: 1452593597}
   _dialogueText: {fileID: 1511863429}
   _player: {fileID: 157660108}
+  _playerAnimator: {fileID: 0}
   _choices:
   - {fileID: 392703160}
   - {fileID: 1979530814}
@@ -9699,8 +9731,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1817546173}
   m_HandleRect: {fileID: 1817546171}
   m_Direction: 2
-  m_Value: 0.99999976
-  m_Size: 0.58920795
+  m_Value: 0.99999994
+  m_Size: 0.589208
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11887,7 +11919,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42f4cfa431f06408742f77ab46f6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cutsceneHolder: {fileID: 2106002402}
+  _introCutsceneHolder: {fileID: 2106002402}
+  _outroCutsceneHolder: {fileID: 34080074}
   _cameraSpot: {fileID: 691367199}
   _camera: {fileID: 1107346093}
   _player: {fileID: 157660108}
@@ -12335,6 +12368,38 @@ MonoBehaviour:
       Data3: -647229512
       Data4: -206202692
     Path: event:/SFX/Station/Footstep
+--- !u!1 &2124054761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2124054762}
+  m_Layer: 0
+  m_Name: OutroCutSceneHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2124054762
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124054761}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.061758, y: -27.270405, z: 93.19117}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 34080075}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2129015403
 GameObject:
   m_ObjectHideFlags: 0

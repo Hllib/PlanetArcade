@@ -8,13 +8,17 @@ public class StationManager : MonoBehaviour
     public bool HasPlayerTalkedToAll { get; set; }
 
     [SerializeField]
-    private GameObject _cutsceneHolder;
+    private GameObject _introCutsceneHolder;
+    [SerializeField]
+    private GameObject _outroCutsceneHolder;
     [SerializeField]
     private Transform _cameraSpot;
     [SerializeField]
     private Transform _camera;
     [SerializeField]
     private Player3D _player;
+    [SerializeField]
+    public bool PlayerFinishedFinalDialoge { get; set; }
 
     private static StationManager _instance;
 
@@ -43,7 +47,7 @@ public class StationManager : MonoBehaviour
     {
         if (HasPlayerVisited)
         {
-            _cutsceneHolder.SetActive(false);
+            _introCutsceneHolder.SetActive(false);
             _camera.position = _cameraSpot.position;
             _camera.rotation = _cameraSpot.rotation;
 
@@ -52,7 +56,7 @@ public class StationManager : MonoBehaviour
         }
         else
         {
-            _cutsceneHolder.SetActive(true);
+            _introCutsceneHolder.SetActive(true);
             _player.BlockMovement = true;
         }
     }
@@ -61,5 +65,14 @@ public class StationManager : MonoBehaviour
     public void UnblockMovement()
     {
         _player.BlockMovement = false;
+    }
+
+    private void Update()
+    {
+        if (PlayerFinishedFinalDialoge)
+        {
+            Debug.Log("CALLED!");
+            _outroCutsceneHolder.SetActive(true);
+        }
     }
 }
