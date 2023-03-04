@@ -29,6 +29,7 @@ public class PortToScene : MonoBehaviour
 
     IEnumerator MoveToBoss()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.teleportSound, Vector3.zero);
         Inventory playerInv = _player.GetComponent<Inventory>();
 
         if (playerInv.playerItems.Any(item => item.id == InventoryTypes.Key))
@@ -43,6 +44,7 @@ public class PortToScene : MonoBehaviour
 
     IEnumerator MoveToFinal()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.teleportSound, Vector3.zero);
         _fade.SetActive(true);
         yield return new WaitForSeconds(1);
     }

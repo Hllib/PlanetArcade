@@ -12,6 +12,7 @@ public class Teleport : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.teleportSound, Vector3.zero);
             collision.transform.position = _teleportPoint.transform.position;
         }
     }

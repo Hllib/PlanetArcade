@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 414861115337591635}
   - component: {fileID: 414861115337591632}
   - component: {fileID: 1850445625982893646}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePillar 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,4 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322d26897fe74b4438217848b2455f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 1
   _destroyTime: 1
+  _isConst: 0

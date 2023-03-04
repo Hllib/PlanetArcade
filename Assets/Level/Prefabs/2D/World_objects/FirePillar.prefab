@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 414861115337591635}
   - component: {fileID: 414861115337591632}
   - component: {fileID: 1850445625982893646}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

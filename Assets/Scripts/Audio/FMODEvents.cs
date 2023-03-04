@@ -50,6 +50,8 @@ public class FMODEvents : MonoBehaviour
     public EventReference bomb { get; private set; }
     [field: SerializeField]
     public EventReference woodCrack { get; private set; }
+    [field: SerializeField]
+    public EventReference teleportSound { get; private set; }
 
     [field: Header("FINAL BOSS")]
     [field: SerializeField]

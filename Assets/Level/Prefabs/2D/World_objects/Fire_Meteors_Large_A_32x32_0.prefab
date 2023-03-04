@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1202388748}
   - component: {fileID: 1202388752}
   - component: {fileID: 1202388753}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Fire_Meteors_Large_A_32x32_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,6 +181,10 @@ PrefabInstance:
     - target: {fileID: 6168426044031476876, guid: 8ecb77f5dee0c584e9d086a16a4411ab, type: 3}
       propertyPath: m_Name
       value: Fire_floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168426044031476876, guid: 8ecb77f5dee0c584e9d086a16a4411ab, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6168426044031476876, guid: 8ecb77f5dee0c584e9d086a16a4411ab, type: 3}
       propertyPath: m_IsActive

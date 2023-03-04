@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7165012921648351396}
   - component: {fileID: 717170579}
   - component: {fileID: -7228433060482814398}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Fire_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,4 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322d26897fe74b4438217848b2455f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isOneShot: 0
+  _damage: 1
+  _destroyTime: 10
+  _isConst: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2703490470870292784}
   - component: {fileID: 2703490470870292787}
   - component: {fileID: 1000493519}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FireRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 2
   _destroyTime: 1
+  _isConst: 0
 --- !u!58 &1000493519
 CircleCollider2D:
   m_ObjectHideFlags: 0

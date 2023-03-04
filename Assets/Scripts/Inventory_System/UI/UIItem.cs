@@ -60,7 +60,6 @@ public class UIItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
         if (this.item != null)
         {
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.itemInteraction, Vector3.zero);
-
             if (_selectedItem.item != null)
             {
                 InventoryItem clone = new InventoryItem(_selectedItem.item);
@@ -86,8 +85,6 @@ public class UIItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
     {
         if(_player!= null)
         {
-            _player.FireBlocked = true;
-
             if (this.item != null)
             {
                 _tooltip.GenerateTooltip(this.item);
@@ -99,7 +96,6 @@ public class UIItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
     {
         if (_player != null)
         {
-            _player.FireBlocked = false;
             _tooltip.gameObject.SetActive(false);
         }
     }

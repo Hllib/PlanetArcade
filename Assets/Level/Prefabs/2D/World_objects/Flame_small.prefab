@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2487761277090123109}
   - component: {fileID: 4787545662866650608}
   - component: {fileID: 4787545662866650609}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Flame_small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,8 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322d26897fe74b4438217848b2455f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isOneShot: 1
+  _damage: 1
   _destroyTime: 10
+  _isConst: 0
 --- !u!95 &4787545662866650608
 Animator:
   serializedVersion: 5

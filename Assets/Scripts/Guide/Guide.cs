@@ -23,6 +23,8 @@ public class Guide : MonoBehaviour
     private Text _okButtonText;
     [SerializeField]
     private Player _player;
+    [SerializeField]
+    private GameObject _scrollbar;
 
     public bool HasFinishedTutorial { get; set; }
 
@@ -71,6 +73,7 @@ public class Guide : MonoBehaviour
 
     public void GenerateGuide(string fileName)
     {
+        _scrollbar.GetComponent<Scrollbar>().value = 1;
         string readFromFilePath = Application.streamingAssetsPath + "/Guides/" + fileName + ".txt";
 
         List<string> lines = File.ReadAllLines(readFromFilePath).ToList();
