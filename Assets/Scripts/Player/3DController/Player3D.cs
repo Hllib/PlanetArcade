@@ -8,7 +8,7 @@ public class Player3D : MonoBehaviour
     [SerializeField]
     private CharacterController _characterController;
     private Player3DAnimator _animator;
-    private EventInstance _playerFootsteps;
+    public EventInstance playerFootsteps;
 
     [SerializeField]
     private float _speed;
@@ -51,7 +51,7 @@ public class Player3D : MonoBehaviour
             }
         }
 
-        _playerFootsteps = AudioManager.Instance.CreateEventInstance(FMODEvents.Instance.footsteps);
+        playerFootsteps = AudioManager.Instance.CreateEventInstance(FMODEvents.Instance.footsteps);
     }
 
     void Update()
@@ -134,15 +134,15 @@ public class Player3D : MonoBehaviour
         if ((Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0) && _characterController.isGrounded)
         {
             PLAYBACK_STATE playbackState;
-            _playerFootsteps.getPlaybackState(out playbackState);
+            playerFootsteps.getPlaybackState(out playbackState);
             if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
             {
-                _playerFootsteps.start();
+                playerFootsteps.start();
             }
         }
         else if ((Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0) || !_characterController.isGrounded)
         {
-            _playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+            playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
         }
     }
 }

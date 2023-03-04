@@ -57,7 +57,7 @@ public class StationManager : MonoBehaviour
         else
         {
             _introCutsceneHolder.SetActive(true);
-            _player.BlockMovement = true;
+            BlockMovement();
         }
     }
 
@@ -67,12 +67,27 @@ public class StationManager : MonoBehaviour
         _player.BlockMovement = false;
     }
 
+    public void BlockMovement()
+    {
+       _player.BlockMovement = true;
+    }
+
     private void Update()
     {
         if (PlayerFinishedFinalDialoge)
         {
-            Debug.Log("CALLED!");
             _outroCutsceneHolder.SetActive(true);
         }
+    }
+
+    public void StartVictoryMusic()
+    {
+        AudioManager.Instance.StopMusic();
+        AudioManager.Instance.InitMusic(FMODEvents.Instance.finalMusic);
+    }
+
+    public void LoadMainMenu()
+    {
+        GameManager.Instance.LoadScene("MainMenu");
     }
 }

@@ -312,7 +312,7 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Cave.bank
   Name: Cave
   StudioPath: bank:/Cave
-  lastModified: 638135182242646100
+  lastModified: 638135450690936750
   FileSizes:
   - Name: Desktop
     Value: 1558528
@@ -710,7 +710,7 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638135182242656101
+  lastModified: 638135450690956750
   FileSizes:
   - Name: Desktop
     Value: 1486
@@ -784,7 +784,7 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638135182244645007
+  lastModified: 638135450693172289
   FileSizes:
   - Name: Desktop
     Value: 636672
@@ -920,12 +920,13 @@ MonoBehaviour:
   - {fileID: 8328444457245394306}
   - {fileID: -4721823192371788298}
   - {fileID: 5684741790010976043}
+  - {fileID: 6229787299582967490}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3411546643693388285}
   StringsBanks:
   - {fileID: 3057868749645026645}
-  cacheTime: 638135182245445227
+  cacheTime: 638135450694092701
   cacheVersion: 131601
 --- !u!114 &661709978902047583
 MonoBehaviour:
@@ -1132,10 +1133,10 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638135182242676126
+  lastModified: 638135450690966766
   FileSizes:
   - Name: Desktop
-    Value: 3672
+    Value: 3728
   Exists: 1
 --- !u!114 &3121797782991095181
 MonoBehaviour:
@@ -1314,7 +1315,7 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638135182242446086
+  lastModified: 638135450690746703
   FileSizes:
   - Name: Desktop
     Value: 3268864
@@ -1427,6 +1428,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &6229787299582967490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/FinalCutSceneMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Music/FinalCutSceneMusic
+  Guid:
+    Data1: 953102908
+    Data2: 1108093497
+    Data3: 419282078
+    Data4: -2052612863
+  Banks:
+  - {fileID: 8877163766806020761}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 22439
 --- !u!114 &6436487740594367463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1442,7 +1470,7 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Station.bank
   Name: Station
   StudioPath: bank:/Station
-  lastModified: 638135182245065104
+  lastModified: 638135450693707537
   FileSizes:
   - Name: Desktop
     Value: 6377760
@@ -1680,7 +1708,7 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638135182245445227
+  lastModified: 638135450694092701
   FileSizes:
   - Name: Desktop
     Value: 3464704
@@ -1700,10 +1728,10 @@ MonoBehaviour:
   Path: ../../FMOD_projects/PlanetArcade/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638135182243766357
+  lastModified: 638135450692287047
   FileSizes:
   - Name: Desktop
-    Value: 18458656
+    Value: 18760928
   Exists: 1
 --- !u!114 &9100516720811570531
 MonoBehaviour:

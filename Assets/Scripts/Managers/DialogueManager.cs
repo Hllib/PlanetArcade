@@ -68,6 +68,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogueMode(TextAsset inkJSON)
     {
         _playerAnimator.SetBool("Idle", true);
+        _player.playerFootsteps.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
         _currentStory = new Story(inkJSON.text);
         IsDialogueDisplayed = true;

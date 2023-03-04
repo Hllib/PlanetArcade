@@ -102,6 +102,8 @@ public class FMODEvents : MonoBehaviour
     public EventReference eButton { get; private set; }
     [field: SerializeField]
     public EventReference footsteps { get; private set; }
+    [field: SerializeField]
+    public EventReference finalMusic { get; private set; }
 
     private static FMODEvents _instance;
 
