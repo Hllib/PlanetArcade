@@ -2152,7 +2152,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use LEFT MOUSE BUTTON to fire.
+  m_Text: Bring gold to Jesper and improve your equipment
 --- !u!222 &370236275
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3259,7 +3259,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use WASD or ARROWS to move. Use SHIFT to sprint.
+  m_Text: You can buy new items after you talk to Jesper
 --- !u!222 &453648422
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8942,7 +8942,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Get your weapon from the chest. To open a chest you might need a key.
+  m_Text: Talk to Elon to get information about your mission
 --- !u!222 &1472649478
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10140,7 +10140,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1817546171}
   m_Direction: 2
   m_Value: 0.99999994
-  m_Size: 0.5892079
+  m_Size: 0.58920795
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

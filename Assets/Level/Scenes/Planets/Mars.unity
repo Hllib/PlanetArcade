@@ -5710,6 +5710,13 @@ MonoBehaviour:
       Data3: -647229512
       Data4: -206202692
     Path: event:/SFX/Station/Footstep
+  <finalMusic>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!4 &495874509 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3555793456217230760, guid: f111653592152524bb112abe31a95bfb, type: 3}
@@ -26272,7 +26279,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Get your weapon from the chest. To open a chest you might need a key.
+  m_Text: If you fire at a bomb, it will deal great damage at certain radius
 --- !u!222 &542050243133415365
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27730,7 +27737,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use WASD or ARROWS to move. Use SHIFT to sprint.
+  m_Text: You can destroy wooden walls by firing at them
 --- !u!222 &542050243800621822
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28184,7 +28191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 253.37311, y: -133.92345}
+  m_AnchoredPosition: {x: 253.37311, y: -129.08835}
   m_SizeDelta: {x: 431.9, y: 76.4935}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &542050243973578085
@@ -28310,7 +28317,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use LEFT MOUSE BUTTON to fire.
+  m_Text: You can set barrels with oil to fire
 --- !u!222 &542050244089818599
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30015,7 +30022,7 @@ MonoBehaviour:
     m_Top: 30
     m_Bottom: 50
   m_ChildAlignment: 1
-  m_Spacing: 0
+  m_Spacing: -5.07
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0

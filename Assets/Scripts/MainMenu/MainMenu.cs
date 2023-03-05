@@ -1,7 +1,11 @@
 using FMOD;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -26,6 +30,23 @@ public class MainMenu : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+    
+    public void ReadMoreButton()
+    {
+        string fileName = "linkToGit";
+        string readFromFilePath = Application.streamingAssetsPath + "/" + fileName + ".txt";
+        string link = "";
+
+        List<string> lines = File.ReadAllLines(readFromFilePath).ToList();
+        StringBuilder text = new StringBuilder();
+        foreach (string line in lines)
+        {
+            text.AppendLine(line);
+        }
+        link = text.ToString();
+
+        Application.OpenURL(link);
     }
 
     public void ContinueGame()
@@ -89,11 +110,11 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-#else
+        #else
         Application.Quit();
-#endif
+        #endif
     }
 
     public void DeleteSaves()
