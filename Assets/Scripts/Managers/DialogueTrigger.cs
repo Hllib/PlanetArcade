@@ -30,7 +30,6 @@ public class DialogueTrigger : MonoBehaviour
     {
         HasTalkedTo = StationManager.Instance.HasPlayerVisited;
         _isGameFinished = PlayerPrefs.GetInt(PlayerSettings.GameFinished, 0) == 1 ? true : false;
-        _isGameFinished = true;
     }
 
     private void Update()
@@ -42,11 +41,11 @@ public class DialogueTrigger : MonoBehaviour
                 CheckForFinalDialoge();
             }
 
-            if (_playerInRange && !DialogueManager.Instance.IsDialogueDisplayed && !HasTalkedTo)
+            if (_playerInRange && !DialogueManager.Instance.IsDialogueDisplayed && !HasTalkedTo && !_isGameFinished)
             {
                 CheckForFirstDialoge();
             }
-            else if (_playerInRange && !DialogueManager.Instance.IsDialogueDisplayed && HasTalkedTo)
+            else if (_playerInRange && !DialogueManager.Instance.IsDialogueDisplayed && HasTalkedTo && !_isGameFinished)
             {
                 CheckForCommonDialoge();
             }

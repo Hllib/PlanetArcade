@@ -121,7 +121,7 @@ public class MainMenu : MonoBehaviour
     }
 
     private void Start()
-    {
+    {   
         _soundPanel.SetActive(false);
 
         if (PlayerPrefs.GetInt(PlayerSettings.GotAchievement) == PlayerSettings.Done)

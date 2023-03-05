@@ -193,7 +193,7 @@ public class GameManager : MonoBehaviour
 
     public void CheckGameFinish()
     {
-        int state = levelFinished.Keys.All(key => key == PlayerSettings.Done) ? 1: 0;
+        int state = levelFinished.Values.All(key => key == PlayerSettings.Done) ? 1: 0;
         PlayerPrefs.SetInt(PlayerSettings.GameFinished, state);
     }
 

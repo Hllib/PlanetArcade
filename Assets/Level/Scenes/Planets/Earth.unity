@@ -830,6 +830,13 @@ MonoBehaviour:
       Data3: -647229512
       Data4: -206202692
     Path: event:/SFX/Station/Footstep
+  <finalMusic>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &220789097
 GameObject:
   m_ObjectHideFlags: 0
@@ -14704,10 +14711,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 495236264, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2413558930649294445, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -14780,34 +14783,6 @@ PrefabInstance:
       propertyPath: _quickSelections.Array.data[2]
       value: 
       objectReference: {fileID: 2111224956}
-    - target: {fileID: 5804475461142402124, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066567847958247952, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066567849049993762, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066567849196873784, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066567849200622308, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066567849274362428, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066567849347694466, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
 --- !u!114 &2413558930165084867 stripped
