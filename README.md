@@ -6,7 +6,7 @@ The development process involved skills in 2D:
   - creating level designs
   - working with animations 
   - creating motion logic 
-  - setup of artificial intelligence
+  - setup of artificial intelligence<br>
 and in 3D: 
   - layout and construction of 3D locations
   - creating cutscenes and working with Cinemachine Timeline 
