@@ -26,6 +26,6 @@ FMOD Studio is used for managing all of the audio in the project.
 
 The game is production-ready, however there are still many issues to be considered and there's a lot of space for improvement.
 
-Here are some screenshots from "Planet Arcade" v0.1.0: 
-<img src="https://user-images.githubusercontent.com/108517092/223064610-fc6d9f02-d90f-406f-96ba-b7a5c6c20245.jpg" width="200" height="150" />
+Here are some screenshots from "Planet Arcade" v0.1.0: <br>
+<img src="https://user-images.githubusercontent.com/108517092/223064610-fc6d9f02-d90f-406f-96ba-b7a5c6c20245.jpg" width="800" height="600" />
 
