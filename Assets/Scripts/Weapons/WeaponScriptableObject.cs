@@ -22,7 +22,10 @@ public class WeaponScriptableObject : ScriptableObject
 
         if (hit != null)
         {
-            hit.Damage(damage);
+            if (hit.GetType() != typeof(Player))
+            {
+                hit.Damage(damage);
+            }
         }
 
     }
