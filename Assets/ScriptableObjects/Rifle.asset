@@ -15,3 +15,10 @@ MonoBehaviour:
   title: Rifle
   sprite: {fileID: 8333481726314500824, guid: b40d6f6160cb4a149b2e4eb2c0a4ce3c, type: 3}
   damage: 10
+  shootSound:
+    Guid:
+      Data1: -18261451
+      Data2: 1170630526
+      Data3: 1133213571
+      Data4: -995245189
+    Path: event:/SFX/Player/Weapons/RifleFire

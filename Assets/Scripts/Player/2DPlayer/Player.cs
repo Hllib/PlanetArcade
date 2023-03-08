@@ -167,7 +167,7 @@ public class Player : MonoBehaviour, IDamageable
             speed = 0;
             _animator.Fire();
 
-            _playerWeaponController.OnShoot();
+            _playerWeaponController.OnShoot(_ammoAmount);
 
             _canFire = Time.time + _fireRate;
             _hasFired = true;

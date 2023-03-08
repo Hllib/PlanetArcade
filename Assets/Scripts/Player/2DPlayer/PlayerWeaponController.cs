@@ -9,6 +9,8 @@ public class PlayerWeaponController : MonoBehaviour
     private SpriteRenderer _weaponSpriteRenderer;
     [SerializeField]
     private Inventory _playerInventory;
+    [SerializeField]
+    private Player _player;
 
     [SerializeField]
     private WeaponHolderScriptableObject _weaponHolderScriptableObject;
@@ -25,7 +27,7 @@ public class PlayerWeaponController : MonoBehaviour
         Aim();
     }
 
-    public void OnShoot()
+    public void OnShoot(int ammoAmount)
     {
         _weaponScriptableObject = _weaponHolderScriptableObject.weapons.FirstOrDefault(weapon
             => weapon.title == _playerInventory.SelectedItem.title);
@@ -35,13 +37,14 @@ public class PlayerWeaponController : MonoBehaviour
             _weaponSpriteRenderer.sprite = _weaponScriptableObject.sprite;
             _weaponSpriteRenderer.enabled = true;
 
-            _weaponScriptableObject.Shoot();
+            StartCoroutine(ShootRoutine(ammoAmount)); 
         }
     }
 
     public void HideWeapon()
     {
         _weaponSpriteRenderer.enabled = false;
+        StopAllCoroutines();
     }
 
     private void Aim()
@@ -65,5 +68,23 @@ public class PlayerWeaponController : MonoBehaviour
             aimLocalScale.y = +1f;
         }
         _aimTransform.localScale = aimLocalScale;
+    }
+
+    IEnumerator ShootRoutine(int ammoAmount)
+    {
+        while (true)
+        {
+            if (ammoAmount <= 0)
+            {
+                StopAllCoroutines();
+                break;
+            }
+
+            _weaponScriptableObject.Shoot();
+            ammoAmount -= 1;
+            _player.UpdateAmmo(ammoAmount);
+
+            yield return new WaitForSeconds(1f);
+        }
     }
 }

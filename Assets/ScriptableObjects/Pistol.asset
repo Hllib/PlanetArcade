@@ -15,3 +15,10 @@ MonoBehaviour:
   title: Pistol
   sprite: {fileID: 21300000, guid: 37948ef46900e5640bbf90a41bf4faa7, type: 3}
   damage: 5
+  shootSound:
+    Guid:
+      Data1: -2136771390
+      Data2: 1145237751
+      Data3: 1042997941
+      Data4: -2094166611
+    Path: event:/SFX/Player/Weapons/PistolFire

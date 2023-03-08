@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pistol : Weapon
+public class Rifle : Weapon
 {
     public override void Init()
     {
-        this.inventoryType = InventoryTypes.Pistol;
+        this.inventoryType = InventoryTypes.Rifle;
     }
 }
