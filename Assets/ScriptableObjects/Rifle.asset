@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Rifle
   m_EditorClassIdentifier: 
   title: Rifle
-  sprite: {fileID: 8333481726314500824, guid: b40d6f6160cb4a149b2e4eb2c0a4ce3c, type: 3}
+  sprite: {fileID: 21300000, guid: 0d2cda5e262041b4187683118a866309, type: 3}
   damage: 10
+  scaleFactor: 1.5
   shootSound:
     Guid:
       Data1: -18261451

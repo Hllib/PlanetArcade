@@ -35,6 +35,7 @@ public class PlayerWeaponController : MonoBehaviour
         if (_weaponScriptableObject != null)
         {
             _weaponSpriteRenderer.sprite = _weaponScriptableObject.sprite;
+            _weaponSpriteRenderer.transform.localScale = new Vector3(_weaponScriptableObject.scaleFactor, _weaponScriptableObject.scaleFactor, 0);
             _weaponSpriteRenderer.enabled = true;
 
             StartCoroutine(ShootRoutine(ammoAmount)); 
