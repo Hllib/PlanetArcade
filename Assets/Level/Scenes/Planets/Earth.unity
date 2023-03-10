@@ -14738,18 +14738,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 495236264, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1188892699, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1188892699, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 2413558930649294445, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -14822,14 +14810,6 @@ PrefabInstance:
       propertyPath: _quickSelections.Array.data[2]
       value: 
       objectReference: {fileID: 2111224956}
-    - target: {fileID: 6178466549593461791, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0d2cda5e262041b4187683118a866309, type: 3}
-    - target: {fileID: 6178466549593461791, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
 --- !u!114 &2413558930165084867 stripped
@@ -15302,7 +15282,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8303383173915946568, guid: a1c9ec5a76cbb384da550b43ec19f3b8, type: 3}
       propertyPath: m_Name
-      value: ObjectPooler
+      value: BulletPooler
       objectReference: {fileID: 0}
     - target: {fileID: 8303383173915946569, guid: a1c9ec5a76cbb384da550b43ec19f3b8, type: 3}
       propertyPath: m_RootOrder

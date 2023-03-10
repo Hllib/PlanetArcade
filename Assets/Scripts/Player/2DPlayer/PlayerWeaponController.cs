@@ -21,8 +21,6 @@ public class PlayerWeaponController : MonoBehaviour
 
     [SerializeField]
     private Transform _gunPoint;
-    [SerializeField]
-    private GameObject _bullet;
 
     private int _playerSpriteOrderInLayer = 50;
     float _playerLookAngle;

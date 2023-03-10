@@ -48,6 +48,7 @@ public abstract class Enemy : MonoBehaviour
     private void Start()
     {
         Init();
+        Flip();
     }
 
     protected void UpdateHealthBar(float percentage)
@@ -63,9 +64,13 @@ public abstract class Enemy : MonoBehaviour
         damageText.transform.SetParent(gameObject.GetComponentInChildren<Canvas>().GetComponentsInChildren<Image>()[1].transform);
     }
 
+    public void Flip()
+    {
+        transform.Rotate(0f, 180f, 0f);
+    }
+
     public virtual void CalculateMovement()
-    {    
-        spriteRenderer.flipX = currentTarget == pointA.position ? true : false;
+    {
         if (transform.position == pointA.position)
         {
             currentTarget = pointB.position;
@@ -89,34 +94,26 @@ public abstract class Enemy : MonoBehaviour
             hasStoped = false;
         }
 
-        CheckInCombatDirection();
-
         transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
     }
 
     public virtual void CheckInCombatDirection()
     {
         if (GameManager.Instance.IsPlayerDead) return;
-        Vector3 direction = player.transform.localPosition - transform.localPosition;
 
-        if (direction.x > 0 && isInCombat)
-        {
-            spriteRenderer.flipX = true;
-        }
-        else if (direction.x < 0 && isInCombat)
-        {
-            spriteRenderer.flipX = false;
-        }
+        transform.LookAt(player.transform);
+        transform.right = player.transform.position - transform.position;
     }
 
     IEnumerator Stop()
     {
+        hasStoped = true;
+        Flip();
         animator.SetBool("Walk", false);
         speed = 0;
         yield return new WaitForSeconds(3f);
         animator.SetBool("Walk", true);
         speed = tempSpeed;
-        hasStoped = true;
     }
 
     public virtual void Update()

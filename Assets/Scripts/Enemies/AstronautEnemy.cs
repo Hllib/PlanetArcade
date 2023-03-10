@@ -14,13 +14,6 @@ public class AstronautEnemy : Enemy, IDamageable
     private float _attackRadius = 6.0f;
     private bool _isAlerted;
 
-    [SerializeField]
-    private GameObject _smallBulletPrefab;
-    [SerializeField]
-    private GameObject _bigBulletPrefab;
-
-    private int _shotCounter;
-
     enum HorizontalLookDirection
     {
         Left,
@@ -69,23 +62,6 @@ public class AstronautEnemy : Enemy, IDamageable
         }
     }
 
-    public override void CheckInCombatDirection()
-    {
-        if (GameManager.Instance.IsPlayerDead) return;
-        Vector3 direction = player.transform.localPosition - transform.localPosition;
-
-        if (direction.x > 0 && isInCombat)
-        {
-            spriteRenderer.flipX = false;
-            lookDirection = (int)HorizontalLookDirection.Right;
-        }
-        else if (direction.x < 0 && isInCombat)
-        {
-            spriteRenderer.flipX = true;
-            lookDirection = (int)HorizontalLookDirection.Left;
-        }
-    }
-
     private void CheckAttackZone(float attackRadius)
     {
         float distance = Vector3.Distance(this.transform.localPosition, player.transform.localPosition);
@@ -96,7 +72,7 @@ public class AstronautEnemy : Enemy, IDamageable
             speed = 0;
             StopAllCoroutines();
             animator.SetBool("Walk", false);
-            if(Time.time > _canAttack)
+            if (Time.time > _canAttack)
             {
                 Fire();
             }
@@ -115,25 +91,9 @@ public class AstronautEnemy : Enemy, IDamageable
     private void Fire()
     {
         _canAttack = Time.time + _attackRate;
-        float bulletRotationY = 0f;
-        switch (lookDirection)
-        {
-            case (int)HorizontalLookDirection.Left: bulletRotationY = 180; break;
-            case (int)HorizontalLookDirection.Right: bulletRotationY = 0; break;
-        }
-        switch (_shotCounter)
-        {
-            case < 3:
-                Instantiate(_smallBulletPrefab, transform.position, Quaternion.Euler(0f, bulletRotationY, 0));
-                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fire, this.transform.position);
-                _shotCounter++;
-                break;
-            case >= 3:
-                Instantiate(_bigBulletPrefab, transform.position, Quaternion.Euler(0f, bulletRotationY, 0));
-                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fireBig, this.transform.position);
-                _shotCounter = 0;
-                break;
-        }
+
+        //attack
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fire, this.transform.position);
     }
 
     public void StepSound()

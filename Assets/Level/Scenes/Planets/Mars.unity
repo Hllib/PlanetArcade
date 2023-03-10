@@ -7914,6 +7914,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a485407254a7e7547b6f811677917dfe, type: 3}
+--- !u!114 &833669880 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8303383173915946570, guid: a1c9ec5a76cbb384da550b43ec19f3b8, type: 3}
+  m_PrefabInstance: {fileID: 238093079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e414353f37de642bdcc2d7d0ede7ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &839652139 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3391612265408937470, guid: 6f3a2a7f8b319b14b94c771835439220, type: 3}
@@ -31259,6 +31270,10 @@ PrefabInstance:
       propertyPath: _quickSelections.Array.data[2]
       value: 
       objectReference: {fileID: 985011810}
+    - target: {fileID: 4037679145554905718, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
+      propertyPath: _bulletPooler
+      value: 
+      objectReference: {fileID: 833669880}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
 --- !u!1 &2413558930165084867 stripped
