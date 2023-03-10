@@ -16,9 +16,6 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 37948ef46900e5640bbf90a41bf4faa7, type: 3}
   scaleFactor: 1
   fireForce: 15
-  shootStartPoints:
-    X: 1
-    Y: 0.3
   shootSound:
     Guid:
       Data1: -2136771390
@@ -26,3 +23,7 @@ MonoBehaviour:
       Data3: 1042997941
       Data4: -2094166611
     Path: event:/SFX/Player/Weapons/PistolFire
+  shootStartPoints:
+    X: 1
+    Y: 0.3
+  bulletScriptableObject: {fileID: 11400000, guid: 60f6bfa7ad944e741920e4c0eeff6270, type: 2}

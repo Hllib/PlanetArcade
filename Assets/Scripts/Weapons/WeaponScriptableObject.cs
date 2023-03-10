@@ -2,7 +2,7 @@ using FMODUnity;
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Weapon", menuName = "ScriptableObjects/Weapon")]
+[CreateAssetMenu(fileName = "New Weapon", menuName = "ScriptableObjects/New Weapon")]
 public class WeaponScriptableObject : ScriptableObject
 {
     public string title;
@@ -10,6 +10,8 @@ public class WeaponScriptableObject : ScriptableObject
     public float scaleFactor;
     public float fireForce;
 
+    public EventReference shootSound;
+    
     [Serializable]
     public struct ShootStartPoints
     {
@@ -18,6 +20,5 @@ public class WeaponScriptableObject : ScriptableObject
     }
 
     public ShootStartPoints shootStartPoints;
-
-    public EventReference shootSound;
+    public BulletScriptableObject bulletScriptableObject;
 }

@@ -130,8 +130,15 @@ public class PlayerWeaponController : MonoBehaviour
 
     private void ShootBullet()
     {
-        GameObject bullet = Instantiate(_bullet, _gunPoint.position, transform.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(_weaponScriptableObject.fireForce * _gunPoint.transform.right, ForceMode2D.Impulse);
+        GameObject bullet = ObjectPooler.Instance.GetPooledObject();
+        if(bullet != null )
+        {
+            bullet.transform.position = _gunPoint.position;
+            bullet.transform.rotation = transform.rotation;
+            bullet.GetComponent<Bullet>().GetMessage(_weaponScriptableObject.bulletScriptableObject);
+            bullet.SetActive(true);
+            bullet.GetComponent<Rigidbody2D>().AddForce(_weaponScriptableObject.fireForce * _gunPoint.transform.right, ForceMode2D.Impulse);
+        }
     }
 
     IEnumerator ShootRoutine(int ammoAmount)
