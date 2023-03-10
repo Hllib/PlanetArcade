@@ -7,25 +7,26 @@ using UnityEngine.UIElements;
 
 public class PlayerWeaponController : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer _scopeSpriteRenderer;
+    [SerializeField] private Inventory _playerInventory;
+    [SerializeField] private Player _player;
+
     private Transform _aimTransform;
     private SpriteRenderer _weaponSpriteRenderer;
-    [SerializeField]
-    private SpriteRenderer _scopeSpriteRenderer;
-    [SerializeField]
-    private Inventory _playerInventory;
-    [SerializeField]
-    private Player _player;
     private PlayerAnimator _playerAnimator;
     private int _lookDirection;
 
-    [SerializeField]
-    private WeaponHolderScriptableObject _weaponHolderScriptableObject;
+    [SerializeField] private WeaponHolderScriptableObject _weaponHolderScriptableObject;
     private WeaponScriptableObject _weaponScriptableObject;
+
+    [SerializeField]
+    private Transform _gunPoint;
+    [SerializeField]
+    private GameObject _bullet;
 
     private int _playerSpriteOrderInLayer = 50;
     float _playerLookAngle;
     private bool _isShooting = false;
-
 
     enum LookDirection
     {
@@ -56,8 +57,11 @@ public class PlayerWeaponController : MonoBehaviour
         if (_weaponScriptableObject != null)
         {
             _isShooting = true;
+
+            _gunPoint.transform.localPosition = new Vector3(_weaponScriptableObject.shootStartPoints.X, _weaponScriptableObject.shootStartPoints.Y, 0);
             _weaponSpriteRenderer.sprite = _weaponScriptableObject.sprite;
             _weaponSpriteRenderer.transform.localScale = new Vector3(_weaponScriptableObject.scaleFactor, _weaponScriptableObject.scaleFactor, 0);
+
             _weaponSpriteRenderer.enabled = true;
             _scopeSpriteRenderer.enabled = true;
 
@@ -100,12 +104,12 @@ public class PlayerWeaponController : MonoBehaviour
 
     private void Aim()
     {
-        Vector3 mousePos = Input.mousePosition;
-        mousePos.z = Camera.main.nearClipPlane;
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
-        Vector3 aimDirection = (worldPosition - transform.position).normalized;
-        _playerLookAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-        _aimTransform.eulerAngles = new Vector3(0, 0, _playerLookAngle);
+         Vector3 mousePos = Input.mousePosition;
+         mousePos.z = Camera.main.nearClipPlane;
+         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
+         Vector3 aimDirection = (worldPosition - transform.position).normalized;
+         _playerLookAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+         _aimTransform.eulerAngles = new Vector3(0, 0, _playerLookAngle);
 
         Vector3 aimLocalScale = Vector3.one;
         if (_playerLookAngle > 90 || _playerLookAngle < -90)
@@ -124,6 +128,12 @@ public class PlayerWeaponController : MonoBehaviour
         }
     }
 
+    private void ShootBullet()
+    {
+        GameObject bullet = Instantiate(_bullet, _gunPoint.position, transform.rotation);
+        bullet.GetComponent<Rigidbody2D>().AddForce(_weaponScriptableObject.fireForce * _gunPoint.transform.right, ForceMode2D.Impulse);
+    }
+
     IEnumerator ShootRoutine(int ammoAmount)
     {
         while (true)
@@ -134,7 +144,7 @@ public class PlayerWeaponController : MonoBehaviour
                 break;
             }
 
-            _weaponScriptableObject.Shoot();
+            ShootBullet();
             ammoAmount -= 1;
             _player.UpdateAmmo(ammoAmount);
 
