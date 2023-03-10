@@ -9,6 +9,7 @@ public class WeaponScriptableObject : ScriptableObject
     public Sprite sprite;
     public float scaleFactor;
     public float fireForce;
+    public float fireRateDelay;
 
     public EventReference shootSound;
     

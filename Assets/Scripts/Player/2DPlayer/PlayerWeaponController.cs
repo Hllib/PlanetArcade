@@ -139,6 +139,7 @@ public class PlayerWeaponController : MonoBehaviour
             bullet.GetComponent<Bullet>().GetMessage(_weaponScriptableObject.bulletScriptableObject);
             bullet.SetActive(true);
             bullet.GetComponent<Rigidbody2D>().AddForce(_weaponScriptableObject.fireForce * _gunPoint.transform.right, ForceMode2D.Impulse);
+            AudioManager.Instance.PlayOneShot(_weaponScriptableObject.shootSound, this.transform.position);
         }
     }
 
@@ -156,7 +157,7 @@ public class PlayerWeaponController : MonoBehaviour
             ammoAmount -= 1;
             _player.UpdateAmmo(ammoAmount);
 
-            yield return new WaitForSeconds(0.7f);
+            yield return new WaitForSeconds(_weaponScriptableObject.fireRateDelay);
         }
     }
 }
