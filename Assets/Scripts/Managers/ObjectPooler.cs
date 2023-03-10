@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
 {
-    public GameObject poolObject;
-    public int poolAmount;
-    public bool willGrow;
+    private GameObject _poolObject;
+    private int _poolAmount;
+    private bool _willGrow;
+
+    [SerializeField]
+    private ObjectPoolerScriptableObject _poolerScriptableObject;
 
     private List<GameObject> poolList;
 
@@ -28,14 +31,18 @@ public class ObjectPooler : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+
+        _poolObject = _poolerScriptableObject.poolObject;
+        _poolAmount = _poolerScriptableObject.poolAmount;
+        _willGrow = _poolerScriptableObject.willGrow;
     }
 
     private void Start()
     {
         poolList = new List<GameObject>();
-        for (int i = 0; i < poolAmount; i++)
+        for (int i = 0; i < _poolAmount; i++)
         {
-            GameObject obj = Instantiate(poolObject);
+            GameObject obj = Instantiate(_poolObject);
             obj.transform.SetParent(transform, true);
             obj.SetActive(false);
             poolList.Add(obj);
@@ -50,13 +57,14 @@ public class ObjectPooler : MonoBehaviour
             {
                 return poolList[i];
             }
+        }
 
-            if(willGrow)
-            {
-                GameObject obj = Instantiate(poolObject);
-                poolList.Add(obj);
-                return obj;
-            }
+        if (_willGrow)
+        {
+            GameObject obj = Instantiate(_poolObject);
+            poolList.Add(obj);
+            obj.transform.SetParent(transform, true);
+            return obj;
         }
 
         return null;

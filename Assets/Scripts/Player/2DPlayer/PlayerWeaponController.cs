@@ -131,6 +131,7 @@ public class PlayerWeaponController : MonoBehaviour
     private void ShootBullet()
     {
         GameObject bullet = ObjectPooler.Instance.GetPooledObject();
+
         if(bullet != null )
         {
             bullet.transform.position = _gunPoint.position;
@@ -155,7 +156,7 @@ public class PlayerWeaponController : MonoBehaviour
             ammoAmount -= 1;
             _player.UpdateAmmo(ammoAmount);
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.7f);
         }
     }
 }
