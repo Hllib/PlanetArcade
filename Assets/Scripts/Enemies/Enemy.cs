@@ -1,17 +1,12 @@
-using Cinemachine.Utility;
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.UI;
 
 public abstract class Enemy : MonoBehaviour
 {
-    [SerializeField]
     protected int health;
-    [SerializeField]
     protected float speed;
     [SerializeField]
     protected Transform pointA, pointB;
@@ -40,15 +35,6 @@ public abstract class Enemy : MonoBehaviour
     protected Transform face;
     [SerializeField]
     protected Transform back;
-    [SerializeField]
-    protected Transform leftMapBorder;
-
-    public enum LookDirection
-    {
-        Right,
-        Left
-    }
-    protected int lookDirection;
 
     public virtual void Init()
     {
@@ -83,7 +69,6 @@ public abstract class Enemy : MonoBehaviour
     public void FlipDirection()
     {
         transform.Rotate(0f, 180f, 0f);
-        this.lookDirection = lookDirection == (int)LookDirection.Left ? (int)LookDirection.Right : (int)LookDirection.Left; 
     }
 
     public virtual void CalculateMovement()
@@ -116,39 +101,18 @@ public abstract class Enemy : MonoBehaviour
 
     public virtual void CheckLookDirection()
     {
-        var faceToBorder = Mathf.Abs(leftMapBorder.position.x - face.position.x);
-        var backToBorder = Mathf.Abs(leftMapBorder.position.x - back.position.x);
-        if (faceToBorder < backToBorder)
-        {
-            this.lookDirection = (int)LookDirection.Left;
-        }
-        else
-        {
-            this.lookDirection = (int)LookDirection.Right;
-        }
+        float faceToTargetDistance = MathF.Abs(currentTarget.x - face.position.x);
+        float backToTargetDistance = MathF.Abs(currentTarget.x - back.position.x);
 
-        var distanceToPlayer = player.transform.position - this.transform.position;
-
-        if (distanceToPlayer.x > 0 && isInCombat)
+        if (faceToTargetDistance > backToTargetDistance)
         {
-            if (this.lookDirection == (int)LookDirection.Left)
-            {
-                FlipDirection();
-            }
-        }
-        else if (distanceToPlayer.x < 0 && isInCombat)
-        {
-            if(this.lookDirection == (int)LookDirection.Right)
-            {
-                FlipDirection();
-            }
+            FlipDirection();
         }
     }
 
     IEnumerator Stop()
     {
         hasStoped = true;
-        FlipDirection();
         animator.SetBool("Walk", false);
         speed = 0;
         yield return new WaitForSeconds(3f);

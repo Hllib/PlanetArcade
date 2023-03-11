@@ -106,7 +106,7 @@ public class RobotBoss : Enemy, IDamageable
 
     }
 
-    public override void Update()
+    protected override void Update()
     {
         if (player.isDead)
         { return; }
