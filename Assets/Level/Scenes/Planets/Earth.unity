@@ -15180,16 +15180,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1806466860}
     - target: {fileID: 1804730723567810858, guid: 592665bb579b96c4495eda56e098e331, type: 3}
+      propertyPath: lootPrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804730723567810858, guid: 592665bb579b96c4495eda56e098e331, type: 3}
       propertyPath: isTutorialSlime
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5476318456164106914, guid: 592665bb579b96c4495eda56e098e331, type: 3}
       propertyPath: m_Name
-      value: Slime_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5476318456164106914, guid: 592665bb579b96c4495eda56e098e331, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      value: SlimeTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 5476318456164106926, guid: 592665bb579b96c4495eda56e098e331, type: 3}
       propertyPath: m_RootOrder

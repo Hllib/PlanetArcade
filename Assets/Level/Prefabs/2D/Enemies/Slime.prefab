@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 1804730723567810852}
   - component: {fileID: 1804730723567810858}
   m_Layer: 0
-  m_Name: Slime_tutorial
+  m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -278,7 +278,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 21
+  m_SortingOrder: 43
   m_Sprite: {fileID: 21300000, guid: 9d69ae98725365b4b94189120dc1b40a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
   pointB: {fileID: 0}
   healthBarImg: {fileID: 5962387371109731846}
   damageReceivedTextPrefab: {fileID: 4177831865770034744, guid: 2fd9291ca114ec84bbcb89cf9d821568, type: 3}
-  lootPrefab: {fileID: 0}
+  lootPrefab: {fileID: 4205873235056903673, guid: fabf44e6ac138554a8a9c322a07f0143, type: 3}
   face: {fileID: 93365253}
   back: {fileID: 522797346}
   isTutorialSlime: 0
