@@ -110,7 +110,7 @@ public class RobotBoss : Enemy, IDamageable
     {
         if (player.isDead)
         { return; }
-        CheckInCombatDirection();
+        CheckLookDirection();
         CheckAttackZone(_attackRadius);
         CheckCloseCombat();
     }
@@ -241,7 +241,7 @@ public class RobotBoss : Enemy, IDamageable
         _isShieldActive = false;
     }
 
-    public override void CheckInCombatDirection()
+    public override void CheckLookDirection()
     {
 
     }

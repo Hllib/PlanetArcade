@@ -1,6 +1,8 @@
+using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -17,6 +19,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected Vector3 currentTarget;
     protected Vector3 previousTarget;
+
     protected Animator animator;
     protected SpriteRenderer spriteRenderer;
     protected Player player;
@@ -33,6 +36,20 @@ public abstract class Enemy : MonoBehaviour
     protected GameObject lootPrefab;
     protected float tempSpeed;
 
+    [SerializeField]
+    protected Transform face;
+    [SerializeField]
+    protected Transform back;
+    [SerializeField]
+    protected Transform leftMapBorder;
+
+    public enum LookDirection
+    {
+        Right,
+        Left
+    }
+    protected int lookDirection;
+
     public virtual void Init()
     {
         this.animator = GetComponent<Animator>();
@@ -48,7 +65,6 @@ public abstract class Enemy : MonoBehaviour
     private void Start()
     {
         Init();
-        Flip();
     }
 
     protected void UpdateHealthBar(float percentage)
@@ -64,9 +80,10 @@ public abstract class Enemy : MonoBehaviour
         damageText.transform.SetParent(gameObject.GetComponentInChildren<Canvas>().GetComponentsInChildren<Image>()[1].transform);
     }
 
-    public void Flip()
+    public void FlipDirection()
     {
         transform.Rotate(0f, 180f, 0f);
+        this.lookDirection = lookDirection == (int)LookDirection.Left ? (int)LookDirection.Right : (int)LookDirection.Left; 
     }
 
     public virtual void CalculateMovement()
@@ -97,18 +114,41 @@ public abstract class Enemy : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
     }
 
-    public virtual void CheckInCombatDirection()
+    public virtual void CheckLookDirection()
     {
-        if (GameManager.Instance.IsPlayerDead) return;
+        var faceToBorder = Mathf.Abs(leftMapBorder.position.x - face.position.x);
+        var backToBorder = Mathf.Abs(leftMapBorder.position.x - back.position.x);
+        if (faceToBorder < backToBorder)
+        {
+            this.lookDirection = (int)LookDirection.Left;
+        }
+        else
+        {
+            this.lookDirection = (int)LookDirection.Right;
+        }
 
-        transform.LookAt(player.transform);
-        transform.right = player.transform.position - transform.position;
+        var distanceToPlayer = player.transform.position - this.transform.position;
+
+        if (distanceToPlayer.x > 0 && isInCombat)
+        {
+            if (this.lookDirection == (int)LookDirection.Left)
+            {
+                FlipDirection();
+            }
+        }
+        else if (distanceToPlayer.x < 0 && isInCombat)
+        {
+            if(this.lookDirection == (int)LookDirection.Right)
+            {
+                FlipDirection();
+            }
+        }
     }
 
     IEnumerator Stop()
     {
         hasStoped = true;
-        Flip();
+        FlipDirection();
         animator.SetBool("Walk", false);
         speed = 0;
         yield return new WaitForSeconds(3f);
@@ -116,8 +156,13 @@ public abstract class Enemy : MonoBehaviour
         speed = tempSpeed;
     }
 
-    public virtual void Update()
+    protected virtual void Update()
     {
         CalculateMovement();
+    }
+
+    protected void LateUpdate()
+    {
+        CheckLookDirection();
     }
 }
