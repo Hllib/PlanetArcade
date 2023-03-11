@@ -9,9 +9,6 @@ public class AstronautEnemy : Enemy, IDamageable
     public int Health { get; set; }
     private int _initialHealth;
 
-    private float _canAttack = 0.0f;
-    private float _attackRate = 2.0f;
-    private float _attackRadius = 6.0f;
     private bool _isAlerted;
 
     protected override void Init()
@@ -25,10 +22,12 @@ public class AstronautEnemy : Enemy, IDamageable
         tempSpeed = speed;
     }
 
-    protected override void Update()
+    protected override void SetAttackSettings()
     {
-        base.Update();
-        CheckAttackZone(_attackRadius);
+        attackRate = 2.0f;
+        chaseStartRadius = 3.5f;
+        chaseStopRadius = 5.0f;
+        attackRadius = 1.2f;
     }
 
     public void Damage(int damage)
@@ -53,7 +52,7 @@ public class AstronautEnemy : Enemy, IDamageable
         }
     }
 
-    private void CheckAttackZone(float attackRadius)
+    protected override void CheckAttackZone()
     {
         float distance = Vector3.Distance(this.transform.localPosition, player.transform.localPosition);
 
@@ -63,9 +62,9 @@ public class AstronautEnemy : Enemy, IDamageable
             speed = 0;
             StopAllCoroutines();
             animator.SetBool("Walk", false);
-            if (Time.time > _canAttack)
+            if (Time.time > canAttack)
             {
-                Fire();
+                Attack();
             }
             isInCombat = true;
         }
@@ -79,11 +78,14 @@ public class AstronautEnemy : Enemy, IDamageable
         }
     }
 
+    protected override void Attack()
+    {
+        Fire();
+    }
+
     private void Fire()
     {
-        _canAttack = Time.time + _attackRate;
-
-        //attack
+        canAttack = Time.time + attackRate;
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fire, this.transform.position);
     }
 

@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     protected int health;
     protected float speed;
@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour
         this.animator = GetComponent<Animator>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        SetAttackSettings();
     }
 
     protected void DropLoot()
@@ -99,10 +100,36 @@ public class Enemy : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
     }
 
+    protected float canAttack = 0.0f;
+    protected float attackRate;
+    protected float chaseStartRadius;
+    protected float chaseStopRadius;
+    protected float attackRadius;
+
+    protected abstract void SetAttackSettings();
+
     protected virtual void CheckAttackZone()
     {
-
+        float distance = Vector3.Distance(this.transform.localPosition, player.transform.localPosition);
+        if (distance < chaseStartRadius)
+        {
+            currentTarget = player.transform.position;
+            isInCombat = true;
+        }
+        if (distance < attackRadius && Time.time > canAttack && !GameManager.Instance.IsPlayerDead)
+        {
+            Attack();
+            canAttack = Time.time + attackRate;
+        }
+        if (distance > chaseStopRadius)
+        {
+            isInCombat = false;
+            currentTarget = previousTarget;
+        }
     }
+
+    protected abstract void Attack();
+
 
     public virtual void CheckLookDirection()
     {
@@ -128,7 +155,9 @@ public class Enemy : MonoBehaviour
     protected virtual void Update()
     {
         if (GameManager.Instance.IsPlayerDead) return;
+
         CalculateMovement();
+        CheckAttackZone();
     }
 
     protected void LateUpdate()

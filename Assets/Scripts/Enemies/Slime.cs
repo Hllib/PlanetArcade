@@ -12,14 +12,16 @@ public class Slime : Enemy, IDamageable
     public int Health { get; set; }
     private int _initialHealth;
 
-    private float _canAttack = 0.0f;
-    private float _attackRate = 2.0f;
-    private float _chaseStartRadius = 3.0f;
-    private float _chaseStopRadius = 5.0f;
-    private float _attackRadius = 1.2f;
-
     [SerializeField]
     public bool isTutorialSlime;
+
+    protected override void SetAttackSettings()
+    {
+        attackRate = 2.0f;
+        chaseStartRadius = 3.5f;
+        chaseStopRadius = 5.0f;
+        attackRadius = 1.2f;
+    }
 
     public void Damage(int damage)
     {
@@ -61,40 +63,17 @@ public class Slime : Enemy, IDamageable
         tempSpeed = speed;
     }
 
-    private void CheckAttackZone(float chaseStartTarget, float chaseStopRadius, float attackRadius)
+    protected override void Attack()
     {
-        float distance = Vector3.Distance(this.transform.localPosition, player.transform.localPosition);
-        if (distance < chaseStartTarget)
-        {
-            currentTarget = player.transform.position;
-            isInCombat = true;
-        }
-        if (distance < attackRadius && Time.time > _canAttack && !GameManager.Instance.IsPlayerDead)
-        {
-            StartCoroutine(Attack());
-            _canAttack = Time.time + _attackRate;
-        }
-        if (distance > chaseStopRadius)
-        {
-            isInCombat = false;
-            currentTarget = previousTarget;
-        }
+         StartCoroutine(AttackRoutine());
     }
 
-    IEnumerator Attack()
+    IEnumerator AttackRoutine()
     {
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.slimeAttack, this.transform.position);
         this.animator.SetTrigger("Attack");
         yield return new WaitForSeconds(0.5f);
         player.Damage(1);
-    }
-
-    public override void CalculateMovement()
-    {
-        if (GameManager.Instance.IsPlayerDead) return;
-
-        CheckAttackZone(_chaseStartRadius, _chaseStopRadius, _attackRadius);
-        base.CalculateMovement();
     }
 
     public void JumpSound()

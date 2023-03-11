@@ -7,9 +7,6 @@ public class RobotBoss : Enemy, IDamageable
     public int Health { get; set; }
     private int _initialHealth;
 
-    private float _canAttack = 0.0f;
-    private float _attackRate = 4.0f;
-    private float _attackRadius = 10.0f;
     private float _closeCombatRadius = 5.0f;
 
     private bool _powerAttackEnabled;
@@ -31,6 +28,14 @@ public class RobotBoss : Enemy, IDamageable
     private bool _isShieldActive;
 
     private RobotBossAnimator _animator;
+
+    protected override void SetAttackSettings()
+    {
+        attackRate = 3.0f;
+        chaseStartRadius = 3.5f;
+        chaseStopRadius = 5.0f;
+        attackRadius = 10f;
+    }
 
     public void Damage(int damage)
     {
@@ -108,10 +113,8 @@ public class RobotBoss : Enemy, IDamageable
 
     protected override void Update()
     {
-        if (player.isDead)
-        { return; }
         CheckLookDirection();
-        CheckAttackZone(_attackRadius);
+        CheckAttackZone();
         CheckCloseCombat();
     }
 
@@ -135,16 +138,16 @@ public class RobotBoss : Enemy, IDamageable
         }
     }
 
-    private void CheckAttackZone(float attackRadius)
+    protected override void CheckAttackZone()
     {
         float distance = Vector3.Distance(this.transform.localPosition, player.transform.localPosition);
 
         if (distance < attackRadius)
         {
-            if (Time.time > _canAttack)
+            if (Time.time > canAttack)
             {
                 Attack();
-                _canAttack = Time.time + _attackRate;
+                canAttack = Time.time + attackRate;
             }
             isInCombat = true;
         }
@@ -154,7 +157,7 @@ public class RobotBoss : Enemy, IDamageable
         }
     }
 
-    private void Attack()
+    protected override void Attack()
     {
         if (_abilityCountdown >= 10)
         {
