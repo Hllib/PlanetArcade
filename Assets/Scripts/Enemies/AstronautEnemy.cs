@@ -1,7 +1,6 @@
-using FMOD;
-using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AstronautEnemy : Enemy, IDamageable
@@ -9,7 +8,8 @@ public class AstronautEnemy : Enemy, IDamageable
     public int Health { get; set; }
     private int _initialHealth;
 
-    private bool _isAlerted;
+    [SerializeField]
+    private Transform _gunPoint;
 
     protected override void Init()
     {
@@ -25,9 +25,9 @@ public class AstronautEnemy : Enemy, IDamageable
     protected override void SetAttackSettings()
     {
         attackRate = 2.0f;
-        chaseStartRadius = 3.5f;
-        chaseStopRadius = 5.0f;
-        attackRadius = 1.2f;
+        chaseStartRadius = 5.5f;
+        chaseStopRadius = 8.0f;
+        attackRadius = 6.5f;
     }
 
     public void Damage(int damage)
@@ -52,41 +52,26 @@ public class AstronautEnemy : Enemy, IDamageable
         }
     }
 
-    protected override void CheckAttackZone()
-    {
-        float distance = Vector3.Distance(this.transform.localPosition, player.transform.localPosition);
-
-        if (distance < attackRadius && !GameManager.Instance.IsPlayerDead)
-        {
-            _isAlerted = true;
-            speed = 0;
-            StopAllCoroutines();
-            animator.SetBool("Walk", false);
-            if (Time.time > canAttack)
-            {
-                Attack();
-            }
-            isInCombat = true;
-        }
-        if (distance > attackRadius && _isAlerted)
-        {
-            isInCombat = false;
-            speed = tempSpeed;
-            animator.SetBool("Walk", true);
-            currentTarget = previousTarget;
-            _isAlerted = false;
-        }
-    }
-
     protected override void Attack()
     {
-        Fire();
+        StartCoroutine(Fire());
     }
 
-    private void Fire()
+
+    [SerializeField]
+    private LineRenderer _line;
+
+    IEnumerator Fire()
     {
-        canAttack = Time.time + attackRate;
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fire, this.transform.position);
+
+        _line.gameObject.SetActive(true);
+        _line.SetPosition(0, _gunPoint.position);
+        _line.SetPosition(1, player.transform.position);
+        player.Damage(1);
+        yield return new WaitForSeconds(0.5f);
+
+        _line.gameObject.SetActive(false);
     }
 
     public void StepSound()

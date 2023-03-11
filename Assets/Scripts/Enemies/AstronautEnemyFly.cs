@@ -7,8 +7,6 @@ public class AstronautEnemyFly : Enemy, IDamageable
     public int Health { get; set; }
     private int _initialHealth;
 
-    private bool _isAlerted;
-
     protected override void Init()
     {
         base.Init();
@@ -26,33 +24,14 @@ public class AstronautEnemyFly : Enemy, IDamageable
         if (transform.position == pointA.position)
         {
             currentTarget = pointB.position;
+            previousTarget = pointB.position;
         }
         else if (transform.position == pointB.position)
         {
             currentTarget = pointA.position;
+            previousTarget = pointA.position;
         }
         transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
-    }
-
-    //DIFFERS FROM BASE CLASS
-    protected override void CheckAttackZone()
-    {
-        float distance = Vector3.Distance(this.transform.localPosition, player.transform.localPosition);
-
-        if (distance < attackRadius && !GameManager.Instance.IsPlayerDead)
-        {
-            _isAlerted = true;
-            if (Time.time > canAttack)
-            {
-                Attack();
-            }
-            isInCombat = true;
-        }
-        if (distance > attackRadius && _isAlerted)
-        {
-            isInCombat = false;
-            _isAlerted = false;
-        }
     }
     
     public void Damage(int damage)
@@ -80,7 +59,9 @@ public class AstronautEnemyFly : Enemy, IDamageable
     protected override void SetAttackSettings()
     {
         attackRate = 2.0f;
-        attackRadius = 6.5f;
+        chaseStartRadius = 3.5f;
+        chaseStopRadius = 5.0f;
+        attackRadius = 1.2f;
     }
 
     protected override void Attack()
@@ -90,7 +71,6 @@ public class AstronautEnemyFly : Enemy, IDamageable
 
     private void Fire()
     {
-        canAttack = Time.time + attackRate;
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fire, this.transform.position);
     }
 }

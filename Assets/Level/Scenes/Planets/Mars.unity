@@ -335,7 +335,7 @@ PrefabInstance:
     - target: {fileID: 1613410225, guid: 23137183732b7934c89db276db52be54, type: 3}
       propertyPath: lootPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4205873235056903673, guid: fabf44e6ac138554a8a9c322a07f0143, type: 3}
     - target: {fileID: 1613410225, guid: 23137183732b7934c89db276db52be54, type: 3}
       propertyPath: lookDirection
       value: 1
@@ -12661,6 +12661,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1797698715 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2820140463903095518, guid: 6f64bb9324044374abb0e9615d174de6, type: 3}
@@ -28693,6 +28694,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &542050244266197422
 GameObject:
   m_ObjectHideFlags: 0
@@ -29613,6 +29615,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &542050244679104008
 MonoBehaviour:
   m_ObjectHideFlags: 0
