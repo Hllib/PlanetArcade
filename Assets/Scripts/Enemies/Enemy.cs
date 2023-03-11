@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     protected int health;
     protected float speed;
@@ -36,14 +36,14 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField]
     protected Transform back;
 
-    public virtual void Init()
+    protected virtual void Init()
     {
         this.animator = GetComponent<Animator>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
-    protected virtual void DropLoot()
+    protected void DropLoot()
     {
         Instantiate(lootPrefab, transform.position, Quaternion.identity);
     }
@@ -66,7 +66,7 @@ public abstract class Enemy : MonoBehaviour
         damageText.transform.SetParent(gameObject.GetComponentInChildren<Canvas>().GetComponentsInChildren<Image>()[1].transform);
     }
 
-    public void FlipDirection()
+    protected void FlipDirection()
     {
         transform.Rotate(0f, 180f, 0f);
     }
@@ -99,6 +99,11 @@ public abstract class Enemy : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
     }
 
+    protected virtual void CheckAttackZone()
+    {
+
+    }
+
     public virtual void CheckLookDirection()
     {
         float faceToTargetDistance = MathF.Abs(currentTarget.x - face.position.x);
@@ -122,6 +127,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (GameManager.Instance.IsPlayerDead) return;
         CalculateMovement();
     }
 

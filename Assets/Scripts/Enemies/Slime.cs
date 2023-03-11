@@ -18,6 +18,9 @@ public class Slime : Enemy, IDamageable
     private float _chaseStopRadius = 5.0f;
     private float _attackRadius = 1.2f;
 
+    [SerializeField]
+    public bool isTutorialSlime;
+
     public void Damage(int damage)
     {
         if (isDead) return;
@@ -38,10 +41,16 @@ public class Slime : Enemy, IDamageable
             Destroy(gameObject);
             UIManager.Instance.DisplayMessage("Slime destroyed!");
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.slimeDeath, this.transform.position);
+
+            if (isTutorialSlime)
+            {
+                Guide.Instance.HasFinishedTutorial = true;
+                Guide.Instance.FinalMessage();
+            }
         }
     }
 
-    public override void Init()
+    protected override void Init()
     {
         base.Init();
 
@@ -74,7 +83,7 @@ public class Slime : Enemy, IDamageable
 
     IEnumerator Attack()
     {
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.slimeAttack, this.transform.position);    
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.slimeAttack, this.transform.position);
         this.animator.SetTrigger("Attack");
         yield return new WaitForSeconds(0.5f);
         player.Damage(1);

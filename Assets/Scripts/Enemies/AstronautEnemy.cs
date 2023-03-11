@@ -14,14 +14,7 @@ public class AstronautEnemy : Enemy, IDamageable
     private float _attackRadius = 6.0f;
     private bool _isAlerted;
 
-    enum HorizontalLookDirection
-    {
-        Left,
-        Right
-    }
-    public int lookDirection;
-
-    public override void Init()
+    protected override void Init()
     {
         base.Init();
 
@@ -32,12 +25,10 @@ public class AstronautEnemy : Enemy, IDamageable
         tempSpeed = speed;
     }
 
-    public override void CalculateMovement()
+    protected override void Update()
     {
-        if (GameManager.Instance.IsPlayerDead) return;
-
+        base.Update();
         CheckAttackZone(_attackRadius);
-        base.CalculateMovement();
     }
 
     public void Damage(int damage)

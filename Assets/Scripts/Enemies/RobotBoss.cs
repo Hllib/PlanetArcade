@@ -89,7 +89,7 @@ public class RobotBoss : Enemy, IDamageable
         ShowFloatingDamage(damage, Color.green);
     }
 
-    public override void Init()
+    protected override void Init()
     {
         base.Init();
 

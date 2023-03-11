@@ -12,7 +12,7 @@ public class AstronautEnemyFly : Enemy, IDamageable
     private float _attackRadius = 6.5f;
     private bool _isAlerted;
 
-    public override void Init()
+    protected override void Init()
     {
         base.Init();
 
@@ -25,8 +25,6 @@ public class AstronautEnemyFly : Enemy, IDamageable
 
     public override void CalculateMovement()
     {
-        if (GameManager.Instance.IsPlayerDead) return;
-
         if (transform.position == pointA.position)
         {
             currentTarget = pointB.position;
