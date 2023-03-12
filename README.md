@@ -3,16 +3,16 @@ This is my first single-handedly developed game.
 
 Planet Arcade features exciting space adventures in both 3D and 2D.
 
-The development process involved skills in 2D:
+The development process involved:
   - creating level design;
   - working with animations; 
   - creating motion logic; 
   - setup of AI;
-  
- As well as skills in 3D:
   - layout and construction of 3D locations;
   - creating cutscenes and working with Cinemachine timeline; 
   - setting up the 3D player controller;
+  - working with scriptableObjects;
+  - creating an objectPooler;
  
 The game presents a wide variaty of UI elements and required:
   - creating HUD for player and enemies;
@@ -24,9 +24,7 @@ The game presents a wide variaty of UI elements and required:
 The game also uses Ink - narrative scripting language for games, thus was created a dialogue system with branching options.
 FMOD Studio is used for managing all of the audio in the project.
 
-The game is production-ready, however there are still many issues to be considered and there's a lot of space for improvement.
-
-Here are some screenshots from "Planet Arcade" v0.1.0 <br><br>
+Here are some screenshots from "Planet Arcade" v1.1.0 <br><br>
 <img src="https://user-images.githubusercontent.com/108517092/223064610-fc6d9f02-d90f-406f-96ba-b7a5c6c20245.jpg" width="450" height="300" />
 <img src="https://user-images.githubusercontent.com/108517092/223065027-f5df29bb-1f9b-43eb-a64a-0b8835422a0a.jpg" width="450" height="300" />
 <img src="https://user-images.githubusercontent.com/108517092/223065150-047caf22-bcdc-41e5-9efd-714a00b8e8d0.jpg" width="450" height="300" />
@@ -39,3 +37,5 @@ Here are some screenshots from "Planet Arcade" v0.1.0 <br><br>
 <img src="https://user-images.githubusercontent.com/108517092/223065487-fdb80202-2926-4964-82b2-0d8efcbf081d.jpg" width="450" height="300" />
 <img src="https://user-images.githubusercontent.com/108517092/223065491-4606c501-8d1e-44b0-9879-5f1b373a8f97.jpg" width="450" height="300" />
 <img src="https://user-images.githubusercontent.com/108517092/223065460-53a5f5cc-688e-434f-99b3-ff3715e0381f.jpg" width="450" height="300" />
+
+Icons used in the projects by Icons8: https://icons8.com
