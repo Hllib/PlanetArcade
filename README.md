@@ -18,9 +18,7 @@ Planet Arcade features exciting space adventures in both 3D and 2D. Main charact
 ### Copyright information
  - [Icons8](https://icons8.com/)
  - [Pixabay](https://pixabay.com/)
- - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
- - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+ - [Readme.so](https://readme.so/)
 
 ## Technologies 
 - **Unity3D**
