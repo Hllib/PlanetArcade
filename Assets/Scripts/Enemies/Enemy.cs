@@ -1,15 +1,11 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.UI;
 
 public abstract class Enemy : MonoBehaviour
 {
-    [SerializeField]
-    protected int health;
-    [SerializeField]
     protected float speed;
     [SerializeField]
     protected Transform pointA, pointB;
@@ -17,6 +13,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected Vector3 currentTarget;
     protected Vector3 previousTarget;
+
     protected Animator animator;
     protected SpriteRenderer spriteRenderer;
     protected Player player;
@@ -33,14 +30,24 @@ public abstract class Enemy : MonoBehaviour
     protected GameObject lootPrefab;
     protected float tempSpeed;
 
-    public virtual void Init()
+    [SerializeField]
+    protected Transform face;
+    [SerializeField]
+    protected Transform back;
+
+    [SerializeField]
+    protected EnemyScriptableObject enemyScriptableObject;
+
+    protected virtual void Init()
     {
         this.animator = GetComponent<Animator>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+        SetInitialSettings();
     }
 
-    protected virtual void DropLoot()
+    protected void DropLoot()
     {
         Instantiate(lootPrefab, transform.position, Quaternion.identity);
     }
@@ -63,9 +70,13 @@ public abstract class Enemy : MonoBehaviour
         damageText.transform.SetParent(gameObject.GetComponentInChildren<Canvas>().GetComponentsInChildren<Image>()[1].transform);
     }
 
+    protected void FlipDirection()
+    {
+        transform.Rotate(0f, 180f, 0f);
+    }
+
     public virtual void CalculateMovement()
-    {    
-        spriteRenderer.flipX = currentTarget == pointA.position ? true : false;
+    {
         if (transform.position == pointA.position)
         {
             currentTarget = pointB.position;
@@ -89,38 +100,71 @@ public abstract class Enemy : MonoBehaviour
             hasStoped = false;
         }
 
-        CheckInCombatDirection();
-
         transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
     }
 
-    public virtual void CheckInCombatDirection()
-    {
-        if (GameManager.Instance.IsPlayerDead) return;
-        Vector3 direction = player.transform.localPosition - transform.localPosition;
+    protected float canAttack = 0.0f;
+    protected float attackRate;
+    protected float chaseStartRadius;
+    protected float chaseStopRadius;
+    protected float attackRadius;
 
-        if (direction.x > 0 && isInCombat)
+    protected abstract void SetInitialSettings();
+
+    protected virtual void CheckAttackZone()
+    {
+        float distance = Vector3.Distance(this.transform.localPosition, player.transform.localPosition);
+        if (distance < chaseStartRadius || isInCombat == true)
         {
-            spriteRenderer.flipX = true;
+            currentTarget = player.transform.position;
+            isInCombat = true;
         }
-        else if (direction.x < 0 && isInCombat)
+        if (distance < attackRadius && Time.time > canAttack && !GameManager.Instance.IsPlayerDead)
         {
-            spriteRenderer.flipX = false;
+            Attack();
+            canAttack = Time.time + attackRate;
+        }
+        if (distance > chaseStopRadius)
+        {
+            isInCombat = false;
+            currentTarget = previousTarget;
+        }
+    }
+
+    protected abstract void Attack();
+
+
+    public virtual void CheckLookDirection()
+    {
+        float faceToTargetDistance = MathF.Abs(currentTarget.x - face.position.x);
+        float backToTargetDistance = MathF.Abs(currentTarget.x - back.position.x);
+
+        if (faceToTargetDistance > backToTargetDistance)
+        {
+            FlipDirection();
         }
     }
 
     IEnumerator Stop()
     {
+        hasStoped = true;
         animator.SetBool("Walk", false);
         speed = 0;
         yield return new WaitForSeconds(3f);
         animator.SetBool("Walk", true);
         speed = tempSpeed;
-        hasStoped = true;
     }
 
-    public virtual void Update()
+    protected virtual void Update()
     {
+        if (GameManager.Instance.IsPlayerDead) return;
+
         CalculateMovement();
+        CheckAttackZone();
+    }
+
+    protected void LateUpdate()
+    {
+        CheckLookDirection();
     }
 }

@@ -12,16 +12,29 @@ public class Slime : Enemy, IDamageable
     public int Health { get; set; }
     private int _initialHealth;
 
-    private float _canAttack = 0.0f;
-    private float _attackRate = 2.0f;
-    private float _chaseStartRadius = 3.0f;
-    private float _chaseStopRadius = 5.0f;
-    private float _attackRadius = 1.2f;
+    [SerializeField]
+    public bool isTutorialSlime;
+
+    protected override void SetInitialSettings()
+    {
+        EnemyScriptableObject AI = enemyScriptableObject;
+
+        speed = AI.speed;
+        tempSpeed = speed;
+        Health = AI.health;
+        _initialHealth = Health;
+
+        attackRadius = AI.attackRadius;
+        attackRate = AI.attackRate;
+        chaseStartRadius = AI.chaseStartRadius;
+        chaseStopRadius = AI.chaseStopRadius;
+    }
 
     public void Damage(int damage)
     {
         if (isDead) return;
 
+        isInCombat = true;
         Health -= damage;
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hit, this.transform.position);
         UpdateHealthBar(Health * 100 / _initialHealth);
@@ -38,54 +51,26 @@ public class Slime : Enemy, IDamageable
             Destroy(gameObject);
             UIManager.Instance.DisplayMessage("Slime destroyed!");
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.slimeDeath, this.transform.position);
+
+            if (isTutorialSlime)
+            {
+                Guide.Instance.HasFinishedTutorial = true;
+                Guide.Instance.FinalMessage();
+            }
         }
     }
 
-    public override void Init()
+    protected override void Attack()
     {
-        base.Init();
-
-        speed = 2;
-        health = 20;
-        Health = this.health;
-        _initialHealth = Health;
-        tempSpeed = speed;
+         StartCoroutine(AttackRoutine());
     }
 
-    private void CheckAttackZone(float chaseStartTarget, float chaseStopRadius, float attackRadius)
+    IEnumerator AttackRoutine()
     {
-        float distance = Vector3.Distance(this.transform.localPosition, player.transform.localPosition);
-        if (distance < chaseStartTarget)
-        {
-            currentTarget = player.transform.position;
-            isInCombat = true;
-        }
-        if (distance < attackRadius && Time.time > _canAttack && !GameManager.Instance.IsPlayerDead)
-        {
-            StartCoroutine(Attack());
-            _canAttack = Time.time + _attackRate;
-        }
-        if (distance > chaseStopRadius)
-        {
-            isInCombat = false;
-            currentTarget = previousTarget;
-        }
-    }
-
-    IEnumerator Attack()
-    {
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.slimeAttack, this.transform.position);    
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.slimeAttack, this.transform.position);
         this.animator.SetTrigger("Attack");
         yield return new WaitForSeconds(0.5f);
         player.Damage(1);
-    }
-
-    public override void CalculateMovement()
-    {
-        if (GameManager.Instance.IsPlayerDead) return;
-
-        CheckAttackZone(_chaseStartRadius, _chaseStopRadius, _attackRadius);
-        base.CalculateMovement();
     }
 
     public void JumpSound()

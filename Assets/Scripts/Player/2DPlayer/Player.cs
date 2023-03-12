@@ -16,10 +16,10 @@ public class Player : MonoBehaviour, IDamageable
     private double _ammoToBullets = 15.0;
 
     private PlayerAnimator _animator;
-    private WeaponGraphicController[] _weaponGraphicControllers;
-    private WeaponGraphicController _currentWeaponGraphic;
     private Rigidbody2D _rigidbody;
     private Inventory _playerInventory;
+    [SerializeField]
+    private PlayerWeaponController _playerWeaponController;
     [SerializeField]
     protected GameObject damageReceivedTextPrefab;
     [SerializeField]
@@ -54,7 +54,6 @@ public class Player : MonoBehaviour, IDamageable
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<PlayerAnimator>();
         _playerInventory = GetComponent<Inventory>();
-        _weaponGraphicControllers = GetComponentsInChildren<WeaponGraphicController>();
 
         GetInventory();
 
@@ -111,26 +110,6 @@ public class Player : MonoBehaviour, IDamageable
         PlayerPrefs.Save();
     }
 
-    void ChooseWeaponGraphic()
-    {
-        if (_playerInventory.SelectedItem != null)
-        {
-            _currentWeaponGraphic = _weaponGraphicControllers.SingleOrDefault(controller => controller.InventoryId == _playerInventory.SelectedItem.id);
-            if (_currentWeaponGraphic != null)
-            {
-                _currentWeaponGraphic.SwitchWeaponPosition(LookDirection);
-            }
-        }
-    }
-
-    void HideWeaponGraphic()
-    {
-        if (_currentWeaponGraphic != null)
-        {
-            _currentWeaponGraphic.HideGraphics();
-        }
-    }
-
     void Update()
     {
         if (isDead) return;
@@ -141,7 +120,7 @@ public class Player : MonoBehaviour, IDamageable
         CheckShield();
         if (_playerInventory.SelectedItem != null)
         {
-            CheckFire();
+             CheckFire();
         }
 
         _currentSpeed = speed;
@@ -187,37 +166,19 @@ public class Player : MonoBehaviour, IDamageable
         {
             speed = 0;
             _animator.Fire();
-            ChooseWeaponGraphic();
-            if (_currentWeaponGraphic != null)
-            {
-                FindActiveWeapon((int)_ammoAmount);
-            }
+
+            _playerWeaponController.OnShoot(_ammoAmount);
 
             _canFire = Time.time + _fireRate;
             _hasFired = true;
         }
         if (Input.GetMouseButtonUp(0) && _hasFired)
         {
+            _playerWeaponController.HideWeapon();
+
             speed = _isSprinting ? 3.0f * 2 : 3.0f;
-            HideWeaponGraphic();
             _animator.CeaseFire();
             _hasFired = false;
-        }
-    }
-
-    void FindActiveWeapon(int ammoAmount) // when calling this method item selected must be a weapon
-    {
-        switch (_playerInventory.SelectedItem.id)
-        {
-            case InventoryTypes.Rifle:
-                var activeRifle = _currentWeaponGraphic.GetComponentsInChildren<Rifle>().Single(child => child.isActiveAndEnabled);
-                activeRifle.Fire(LookDirection, ammoAmount);
-                break;
-            case InventoryTypes.Pistol:
-                var activePistol = _currentWeaponGraphic.GetComponentsInChildren<Pistol>().Single(child => child.isActiveAndEnabled);
-                activePistol.Fire(LookDirection, ammoAmount);
-                break;
-            default: break;
         }
     }
 

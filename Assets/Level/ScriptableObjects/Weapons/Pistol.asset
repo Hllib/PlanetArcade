@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5648709af25d8334ba0097584726b1ff, type: 3}
+  m_Name: Pistol
+  m_EditorClassIdentifier: 
+  title: Pistol
+  sprite: {fileID: 21300000, guid: 37948ef46900e5640bbf90a41bf4faa7, type: 3}
+  scaleFactor: 1
+  fireForce: 15
+  fireRateDelay: 1
+  shootSound:
+    Guid:
+      Data1: -2136771390
+      Data2: 1145237751
+      Data3: 1042997941
+      Data4: -2094166611
+    Path: event:/SFX/Player/Weapons/PistolFire
+  shootStartPoints:
+    X: 1
+    Y: 0.3
+  bulletScriptableObject: {fileID: 11400000, guid: 60f6bfa7ad944e741920e4c0eeff6270, type: 2}

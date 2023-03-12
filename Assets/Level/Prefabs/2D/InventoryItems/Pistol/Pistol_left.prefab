@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -6628414004274166170, guid: af46dabb06674604b879d174561916d8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37948ef46900e5640bbf90a41bf4faa7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7692308, y: 0.7692308}
+  m_Size: {x: 0.94, y: 0.94}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -102,9 +102,9 @@ BoxCollider2D:
   m_Offset: {x: 0.027264059, y: -0.042242676}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.46455672, y: 0.5549155}
-    oldSize: {x: 0.7692308, y: 0.7692308}
-    newSize: {x: 0.7692308, y: 0.7692308}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.94, y: 0.94}
+    newSize: {x: 0.94, y: 0.94}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -124,5 +124,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c5df54e6ddeb3241a388aa1929d7392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 0}
-  _player: {fileID: 0}

@@ -15,11 +15,7 @@ public class PlayerAnimator : MonoBehaviour
         Left,
         Right,
         Front,
-        Back,
-        LB,
-        RB,
-        RF,
-        LF
+        Back
     }
 
     private void Start()
@@ -54,27 +50,6 @@ public class PlayerAnimator : MonoBehaviour
         CheckForSprint();
 
         CheckVerticalMovement(verticalMove);
-        CheckDiagonalFire(horizontalMove, verticalMove);
-    }
-
-    void CheckDiagonalFire(float horizontalMove, float verticalMove)
-    {
-        if (horizontalMove == -1 && verticalMove == 1) // LB
-        {
-            _player.LookDirection = (int)LookDirection.LB;
-        }
-        if (horizontalMove == 1 && verticalMove == 1) // RB
-        {
-            _player.LookDirection = (int)LookDirection.RB;
-        }
-        if (horizontalMove == -1 && verticalMove == -1) // LF
-        {
-            _player.LookDirection = (int)LookDirection.LF;
-        }
-        if (horizontalMove == 1 && verticalMove == -1) // RF
-        {
-            _player.LookDirection = (int)LookDirection.RF;
-        }
     }
 
     private void CheckVerticalMovement(float verticalMove)
@@ -144,11 +119,25 @@ public class PlayerAnimator : MonoBehaviour
         {
             case (int)LookDirection.Front: directionToPass = 0; break;
             case (int)LookDirection.Back: directionToPass = 1; break;
-                default: directionToPass = 2; break;
+            default: directionToPass = 2; break;
         }
 
         _animator.SetInteger("LookDirection", directionToPass);
         _animator.SetTrigger("Hit");
+    }
+
+    public void ChooseShootDirection(int lookDirection)
+    {
+        var directionToPass = 0;
+        switch (lookDirection)
+        {
+            case (int)LookDirection.Front: directionToPass = 0; break;
+            case (int)LookDirection.Back: directionToPass = 1; break;
+            case (int)LookDirection.Left: directionToPass = 2; _spriteRenderer.flipX = false; break;
+            case (int)LookDirection.Right: directionToPass = 2; _spriteRenderer.flipX = true; break;
+        }
+
+        _animator.SetInteger("LookDirection", directionToPass);
     }
 
     public void OnPlayerDeath()

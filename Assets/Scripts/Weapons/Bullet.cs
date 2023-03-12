@@ -4,34 +4,42 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private float _speed = 7.0f;
-    private bool _hasDamaged;
-    [SerializeField]
     private int _damage;
+    private SpriteRenderer _spriteRenderer;
 
-    private void Start()
+    private void Awake()
     {
-        Destroy(gameObject, 1.0f);
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    public void GetMessage(BulletScriptableObject bulletScriptableObject)
     {
-        Move();
+        _damage = bulletScriptableObject.damage;
+        _spriteRenderer.sprite = bulletScriptableObject.sprite;
     }
 
-    private void Move()
+    private void OnEnable()
     {
-        transform.Translate(new Vector3(_speed * Time.deltaTime, 0, 0));
+        Invoke("Disable", 2.0f);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Disable()
     {
-        IDamageable hit = other.GetComponent<IDamageable>();
+        this.gameObject.SetActive(false);
+    }
 
-        if (hit != null && !_hasDamaged)
+    private void OnDisable()
+    {
+        CancelInvoke();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        IDamageable hit = collision.gameObject.GetComponent<IDamageable>();
+        if (hit != null)
         {
             hit.Damage(_damage);
-            _hasDamaged = true;
+            Disable();
         }
     }
 }

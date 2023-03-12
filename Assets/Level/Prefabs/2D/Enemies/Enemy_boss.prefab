@@ -105,6 +105,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3519711000215441373
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +431,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!60 &146776073
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -496,19 +498,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ee5a808e7d9ce540b9f1c4f9337428d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  speed: 0
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   healthBarImg: {fileID: 3519711000634244230}
   damageReceivedTextPrefab: {fileID: 4177831865770034744, guid: 2fd9291ca114ec84bbcb89cf9d821568, type: 3}
   lootPrefab: {fileID: 0}
+  face: {fileID: 0}
+  back: {fileID: 0}
+  enemyScriptableObject: {fileID: 11400000, guid: 188d82c32875df54495251576c8868e6, type: 2}
   _firePillarPrefab: {fileID: 414861115337591644, guid: c5d20a5547850de40a91622375cba5bf, type: 3}
   _fireHandPrefab: {fileID: 3208129017005803310, guid: b034ef7dafbfa804dbc8be9da5728ba7, type: 3}
+  _meteorPrefab: {fileID: 2751304956734649249, guid: a4137e6c5dc3f1c418e53eeb7ca43a8e, type: 3}
   _shield: {fileID: 1886847310}
   _fireRings:
   - {fileID: 2703490470302826576}
   - {fileID: 2703490470216884146}
+  _portalToFinal: {fileID: 0}
 --- !u!114 &3519711001481699477
 MonoBehaviour:
   m_ObjectHideFlags: 0

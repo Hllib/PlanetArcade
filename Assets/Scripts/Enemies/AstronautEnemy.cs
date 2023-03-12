@@ -1,7 +1,6 @@
-using FMOD;
-using FMOD.Studio;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AstronautEnemy : Enemy, IDamageable
@@ -9,48 +8,31 @@ public class AstronautEnemy : Enemy, IDamageable
     public int Health { get; set; }
     private int _initialHealth;
 
-    private float _canAttack = 0.0f;
-    private float _attackRate = 2.0f;
-    private float _attackRadius = 6.0f;
-    private bool _isAlerted;
-
     [SerializeField]
-    private GameObject _smallBulletPrefab;
+    private Transform _gunPoint;
     [SerializeField]
-    private GameObject _bigBulletPrefab;
+    private LineRenderer _line;
 
-    private int _shotCounter;
-
-    enum HorizontalLookDirection
+    protected override void SetInitialSettings()
     {
-        Left,
-        Right
-    }
-    public int lookDirection;
+        EnemyScriptableObject AI = enemyScriptableObject;
 
-    public override void Init()
-    {
-        base.Init();
-
-        speed = 3;
-        health = 50;
-        Health = base.health;
-        _initialHealth = Health;
+        speed = AI.speed;
         tempSpeed = speed;
-    }
+        Health = AI.health;
+        _initialHealth = Health;
 
-    public override void CalculateMovement()
-    {
-        if (GameManager.Instance.IsPlayerDead) return;
-
-        CheckAttackZone(_attackRadius);
-        base.CalculateMovement();
+        attackRadius = AI.attackRadius;
+        attackRate = AI.attackRate;
+        chaseStartRadius = AI.chaseStartRadius;
+        chaseStopRadius = AI.chaseStopRadius;
     }
 
     public void Damage(int damage)
     {
         if (isDead) return;
 
+        isInCombat = true;
         Health -= damage;
         UpdateHealthBar(Health * 100 / _initialHealth);
         ShowFloatingDamage(damage, Color.red);
@@ -69,71 +51,24 @@ public class AstronautEnemy : Enemy, IDamageable
         }
     }
 
-    public override void CheckInCombatDirection()
+    protected override void Attack()
     {
-        if (GameManager.Instance.IsPlayerDead) return;
-        Vector3 direction = player.transform.localPosition - transform.localPosition;
-
-        if (direction.x > 0 && isInCombat)
-        {
-            spriteRenderer.flipX = false;
-            lookDirection = (int)HorizontalLookDirection.Right;
-        }
-        else if (direction.x < 0 && isInCombat)
-        {
-            spriteRenderer.flipX = true;
-            lookDirection = (int)HorizontalLookDirection.Left;
-        }
+        StartCoroutine(Fire());
     }
 
-    private void CheckAttackZone(float attackRadius)
+    IEnumerator Fire()
     {
-        float distance = Vector3.Distance(this.transform.localPosition, player.transform.localPosition);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fire, this.transform.position);
 
-        if (distance < attackRadius && !GameManager.Instance.IsPlayerDead)
-        {
-            _isAlerted = true;
-            speed = 0;
-            StopAllCoroutines();
-            animator.SetBool("Walk", false);
-            if(Time.time > _canAttack)
-            {
-                Fire();
-            }
-            isInCombat = true;
-        }
-        if (distance > attackRadius && _isAlerted)
-        {
-            isInCombat = false;
-            speed = tempSpeed;
-            animator.SetBool("Walk", true);
-            currentTarget = previousTarget;
-            _isAlerted = false;
-        }
-    }
+        Vector3 offset = new Vector3(0, 0.3f, 0);
+        _line.gameObject.SetActive(true);
+        _line.SetPosition(0, _gunPoint.position);
+        _line.SetPosition(1, player.transform.position + offset);
 
-    private void Fire()
-    {
-        _canAttack = Time.time + _attackRate;
-        float bulletRotationY = 0f;
-        switch (lookDirection)
-        {
-            case (int)HorizontalLookDirection.Left: bulletRotationY = 180; break;
-            case (int)HorizontalLookDirection.Right: bulletRotationY = 0; break;
-        }
-        switch (_shotCounter)
-        {
-            case < 3:
-                Instantiate(_smallBulletPrefab, transform.position, Quaternion.Euler(0f, bulletRotationY, 0));
-                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fire, this.transform.position);
-                _shotCounter++;
-                break;
-            case >= 3:
-                Instantiate(_bigBulletPrefab, transform.position, Quaternion.Euler(0f, bulletRotationY, 0));
-                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fireBig, this.transform.position);
-                _shotCounter = 0;
-                break;
-        }
+        player.Damage(1);
+        yield return new WaitForSeconds(0.5f);
+
+        _line.gameObject.SetActive(false);
     }
 
     public void StepSound()

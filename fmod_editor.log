@@ -7,23 +7,63 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.67ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000017F2D425FE8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000201A4230A38 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
-[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
-[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] SystemI::createSound                     : filename = ../../FMOD_projects/PlanetArcade/Build/Desktop/Ambience.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 00000200E0BE3E18, queue head = 00000200E536D838, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000200E0BE3E18
+[LOG] SystemI::createSoundInternal             :     Create name='../../FMOD_projects/PlanetArcade/Build/Desktop/Ambience.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3264000
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 4864
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000200DC8BE690
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='amb_forest_wind', format=5, channels=2, frequency=48000, lengthbytes=146944, lengthpcm=576000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.818329.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000200E0BE3E18
+[LOG] SoundI::release                          : amb_forest_wind (00000201F49400E8)
+[LOG] SoundI::release                          :     amb_forest_wind (00000200E550FF88)
+[LOG] SoundI::release                          :     amb_forest_wind (00000201FFFD1438)
+[LOG] SoundI::release                          : Piano Instrumental 3 (00000201F28E1D38)
+[LOG] SoundI::release                          :     Piano Instrumental 3 (00000202008C3078)
+[LOG] SoundI::release                          :     Piano Instrumental 3 (000002010D3AFCA8)
+[LOG] SoundI::release                          : amb_forest_wind (00000200E0BE3E18)
+[LOG] SoundI::release                          :     amb_forest_wind (00000200E55102C8)
+[LOG] SoundI::release                          :     amb_forest_wind (00000201FFFD1798)
+[LOG] SoundI::release                          :  (0000020207B424F8)
+[LOG] SoundI::release                          :     PistolFire (00000200E5510C88)
+[LOG] SoundI::release                          :  (00000200DC5151C8)
+[LOG] SoundI::release                          :     ItemEquip (00000201F4F70D68)
+[LOG] SoundI::release                          :  (0000020205B0E178)
+[LOG] SoundI::release                          :     footsteps_player_grass_01 (00000201F4F70A28)
+[LOG] SoundI::release                          :  (0000020205B0E008)
+[LOG] SoundI::release                          :     footsteps_player_grass_02 (00000200E56FBB18)
+[LOG] SoundI::release                          :  (0000020205B0E5C8)
+[LOG] SoundI::release                          :     footsteps_player_grass_03 (00000201F4F703A8)
+[LOG] SoundI::release                          :  (00000200DC514928)
+[LOG] SoundI::release                          :     RifleFire (0000020206409A38)
+[LOG] SoundI::release                          :  (0000020205B0E2E8)
+[LOG] SoundI::release                          :     Click 03_Minimal UI Sounds (00000201F4F70208)
+[LOG] SoundI::release                          :  (0000020205B0E458)
+[LOG] SoundI::release                          :     Funny Click_Minimal UI Sounds (00000201F4F70888)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
@@ -31,3 +71,5 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
