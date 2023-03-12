@@ -10,30 +10,29 @@ public class AstronautEnemy : Enemy, IDamageable
 
     [SerializeField]
     private Transform _gunPoint;
+    [SerializeField]
+    private LineRenderer _line;
 
-    protected override void Init()
+    protected override void SetInitialSettings()
     {
-        base.Init();
+        EnemyScriptableObject AI = enemyScriptableObject;
 
-        speed = 3;
-        health = 50;
-        Health = base.health;
-        _initialHealth = Health;
+        speed = AI.speed;
         tempSpeed = speed;
-    }
+        Health = AI.health;
+        _initialHealth = Health;
 
-    protected override void SetAttackSettings()
-    {
-        attackRate = 2.0f;
-        chaseStartRadius = 5.5f;
-        chaseStopRadius = 8.0f;
-        attackRadius = 6.5f;
+        attackRadius = AI.attackRadius;
+        attackRate = AI.attackRate;
+        chaseStartRadius = AI.chaseStartRadius;
+        chaseStopRadius = AI.chaseStopRadius;
     }
 
     public void Damage(int damage)
     {
         if (isDead) return;
 
+        isInCombat = true;
         Health -= damage;
         UpdateHealthBar(Health * 100 / _initialHealth);
         ShowFloatingDamage(damage, Color.red);
@@ -57,17 +56,15 @@ public class AstronautEnemy : Enemy, IDamageable
         StartCoroutine(Fire());
     }
 
-
-    [SerializeField]
-    private LineRenderer _line;
-
     IEnumerator Fire()
     {
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fire, this.transform.position);
 
+        Vector3 offset = new Vector3(0, 0.3f, 0);
         _line.gameObject.SetActive(true);
         _line.SetPosition(0, _gunPoint.position);
-        _line.SetPosition(1, player.transform.position);
+        _line.SetPosition(1, player.transform.position + offset);
+
         player.Damage(1);
         yield return new WaitForSeconds(0.5f);
 

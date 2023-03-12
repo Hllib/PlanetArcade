@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScriptableObject : MonoBehaviour
+[CreateAssetMenu (fileName = "Enemy", menuName = "ScriptableObjects/New Enemy")]
+public class EnemyScriptableObject : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float speed;
+    public int health;
+    public float attackRate;
+    public float chaseStartRadius;
+    public float chaseStopRadius;
+    public float attackRadius;
 }

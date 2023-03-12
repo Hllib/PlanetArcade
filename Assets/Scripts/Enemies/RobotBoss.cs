@@ -29,12 +29,18 @@ public class RobotBoss : Enemy, IDamageable
 
     private RobotBossAnimator _animator;
 
-    protected override void SetAttackSettings()
+    protected override void SetInitialSettings()
     {
-        attackRate = 3.0f;
-        chaseStartRadius = 3.5f;
-        chaseStopRadius = 5.0f;
-        attackRadius = 10f;
+        EnemyScriptableObject AI = enemyScriptableObject;
+
+        speed = AI.speed;
+        Health = AI.health;
+        _initialHealth = Health;
+
+        attackRadius = AI.attackRadius;
+        attackRate = AI.attackRate;
+        chaseStartRadius = AI.chaseStartRadius;
+        chaseStopRadius = AI.chaseStopRadius;
     }
 
     public void Damage(int damage)
@@ -97,12 +103,6 @@ public class RobotBoss : Enemy, IDamageable
     protected override void Init()
     {
         base.Init();
-
-        health = 200;
-        Health = health;
-        _initialHealth = Health;
-        speed = 0;
-
         _animator = GetComponent<RobotBossAnimator>();
     }
 

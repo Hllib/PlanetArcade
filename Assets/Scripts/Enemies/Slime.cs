@@ -15,18 +15,26 @@ public class Slime : Enemy, IDamageable
     [SerializeField]
     public bool isTutorialSlime;
 
-    protected override void SetAttackSettings()
+    protected override void SetInitialSettings()
     {
-        attackRate = 2.0f;
-        chaseStartRadius = 3.5f;
-        chaseStopRadius = 5.0f;
-        attackRadius = 1.2f;
+        EnemyScriptableObject AI = enemyScriptableObject;
+
+        speed = AI.speed;
+        tempSpeed = speed;
+        Health = AI.health;
+        _initialHealth = Health;
+
+        attackRadius = AI.attackRadius;
+        attackRate = AI.attackRate;
+        chaseStartRadius = AI.chaseStartRadius;
+        chaseStopRadius = AI.chaseStopRadius;
     }
 
     public void Damage(int damage)
     {
         if (isDead) return;
 
+        isInCombat = true;
         Health -= damage;
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hit, this.transform.position);
         UpdateHealthBar(Health * 100 / _initialHealth);
@@ -50,17 +58,6 @@ public class Slime : Enemy, IDamageable
                 Guide.Instance.FinalMessage();
             }
         }
-    }
-
-    protected override void Init()
-    {
-        base.Init();
-
-        speed = 2;
-        health = 20;
-        Health = this.health;
-        _initialHealth = Health;
-        tempSpeed = speed;
     }
 
     protected override void Attack()

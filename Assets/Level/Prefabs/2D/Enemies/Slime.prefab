@@ -389,6 +389,7 @@ MonoBehaviour:
   lootPrefab: {fileID: 4205873235056903673, guid: fabf44e6ac138554a8a9c322a07f0143, type: 3}
   face: {fileID: 93365253}
   back: {fileID: 522797346}
+  enemyScriptableObject: {fileID: 11400000, guid: 1bbdf243279bc1e4ba45ebb9d76813b3, type: 2}
   isTutorialSlime: 0
 --- !u!1 &7326766795233740998
 GameObject:

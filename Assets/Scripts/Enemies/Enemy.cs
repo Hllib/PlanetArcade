@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public abstract class Enemy : MonoBehaviour
 {
-    protected int health;
     protected float speed;
     [SerializeField]
     protected Transform pointA, pointB;
@@ -36,12 +35,16 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField]
     protected Transform back;
 
+    [SerializeField]
+    protected EnemyScriptableObject enemyScriptableObject;
+
     protected virtual void Init()
     {
         this.animator = GetComponent<Animator>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        SetAttackSettings();
+
+        SetInitialSettings();
     }
 
     protected void DropLoot()
@@ -106,12 +109,12 @@ public abstract class Enemy : MonoBehaviour
     protected float chaseStopRadius;
     protected float attackRadius;
 
-    protected abstract void SetAttackSettings();
+    protected abstract void SetInitialSettings();
 
     protected virtual void CheckAttackZone()
     {
         float distance = Vector3.Distance(this.transform.localPosition, player.transform.localPosition);
-        if (distance < chaseStartRadius)
+        if (distance < chaseStartRadius || isInCombat == true)
         {
             currentTarget = player.transform.position;
             isInCombat = true;
