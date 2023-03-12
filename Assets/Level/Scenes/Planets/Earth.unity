@@ -15191,6 +15191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeTutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 5476318456164106914, guid: 592665bb579b96c4495eda56e098e331, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5476318456164106926, guid: 592665bb579b96c4495eda56e098e331, type: 3}
       propertyPath: m_RootOrder
       value: 2
