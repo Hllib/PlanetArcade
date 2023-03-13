@@ -9,13 +9,13 @@
 
 ## About
 This is my first single-handedly developed game. <p></p>
-The main goal of the project was and still remains to utilize the set of skills in Unity3D that is already present as well as constantly extend it, applying new knowledge to improve the content, optimization, logical structure etc. of the project.
+The main goal of the project was and remains to utilize the set of skills in Unity3D that is already present as well as constantly extend it, applying new knowledge to improve the content, optimization, logical structure etc. of the project.
 
 Planet Arcade features exciting space adventures in both 3D and 2D. Main character volunteered to go on a mission to retreive artifacts left by another life form on the planets of Galaxy. But the path is full of dangers and wonders. Who knows, what he might find on the surface.
 
 ## License
 [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/)
-### Copyright information
+### Acknowledgements
  - [Icons8](https://icons8.com/)
  - [Pixabay](https://pixabay.com/)
  - [Readme.so](https://readme.so/)
@@ -24,7 +24,7 @@ Planet Arcade features exciting space adventures in both 3D and 2D. Main charact
 - **Unity3D**
 - **C#**
 - **FMODStudio**
-- **Ink scriptable language**
+- **Ink scripting language**
 
 
 ## Details
