@@ -22,6 +22,7 @@ public class Artifact : MonoBehaviour, IGatherable
                     AudioManager.Instance.PlayOneShot(FMODEvents.Instance.winMusicCave, Vector3.zero);
                     break;
                 case InventoryTypes.ArtifactMars:
+                    MarsManager.Instance.ShowPortal();
                     UIManager.Instance.ShowArtifact(InventoryTypes.ArtifactMars);
                     break;
             }

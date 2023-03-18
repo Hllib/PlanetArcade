@@ -37,7 +37,7 @@ public class Player : MonoBehaviour, IDamageable
     private bool _hasFired;
 
     public bool FireBlocked { get; set; }
-    public bool IsShieldEnabled { get; private set; }
+    public bool IsShieldEnabled { get; set; }
     private bool _hasShield;
     [SerializeField]
     private bool _isSprinting;
@@ -113,14 +113,19 @@ public class Player : MonoBehaviour, IDamageable
     void Update()
     {
         if (isDead) return;
-        if (GameManager.Instance.IsPaused) return;
+        if (GameManager.Instance.IsPaused)
+        {
+            IsShieldEnabled = false;
+            _shield.ShowShield(false);
+            return;
+        }
 
         CalculateMovement();
         UpdateSound();
         CheckShield();
         if (_playerInventory.SelectedItem != null)
         {
-             CheckFire();
+            CheckFire();
         }
 
         _currentSpeed = speed;
@@ -244,7 +249,7 @@ public class Player : MonoBehaviour, IDamageable
             }
             else
             {
-                
+
             }
         }
     }

@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
 
     private void OnEnable()
     {
-        Invoke("Disable", 2.0f);
+        Invoke("Disable", 1.0f);
     }
 
     public void Disable()

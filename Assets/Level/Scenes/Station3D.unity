@@ -3657,6 +3657,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &533691558
 GameObject:
   m_ObjectHideFlags: 3
@@ -4579,6 +4580,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &708295999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4729,6 +4731,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &813208760
 GameObject:
   m_ObjectHideFlags: 0
@@ -5088,6 +5091,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &854512847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7292,6 +7296,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1220320569
 GameObject:
   m_ObjectHideFlags: 0
@@ -8383,6 +8388,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1405684293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10077,6 +10083,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1600066975
 GameObject:
   m_ObjectHideFlags: 0
@@ -10139,8 +10146,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1817546173}
   m_HandleRect: {fileID: 1817546171}
   m_Direction: 2
-  m_Value: 0.99999994
-  m_Size: 0.58920795
+  m_Value: 0.99999976
+  m_Size: 0.5892079
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10262,7 +10269,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8333481726314500824, guid: b40d6f6160cb4a149b2e4eb2c0a4ce3c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d2cda5e262041b4187683118a866309, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -10582,7 +10589,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2f605f8487435b64780f2f663cc01c4c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 116b6c6472386e14d9bf6d5b6e042cc2, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -11956,6 +11963,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2040735961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13041,6 +13049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65faa7fa184e32745beb5afb1b74ab92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _worldPosition: 0
 --- !u!1 &2470665921473669657
 GameObject:
   m_ObjectHideFlags: 0
@@ -13441,6 +13450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65faa7fa184e32745beb5afb1b74ab92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _worldPosition: 0
 --- !u!114 &5247551850114117797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13735,7 +13745,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5247551848723562962}
   m_HandleRect: {fileID: 5247551848723562963}
   m_Direction: 2
-  m_Value: 0.99999976
+  m_Value: 0.9999999
   m_Size: 0.5239663
   m_NumberOfSteps: 0
   m_OnValueChanged:

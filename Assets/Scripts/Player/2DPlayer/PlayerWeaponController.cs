@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -43,6 +44,13 @@ public class PlayerWeaponController : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.IsPlayerDead)
+        {
+            StopAllCoroutines();
+            HideWeapon();
+            return;
+        }
+
         CheckPlayerLookDirection(_playerLookAngle);
         Aim();
     }

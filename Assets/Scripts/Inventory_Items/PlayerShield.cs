@@ -46,9 +46,9 @@ public class PlayerShield : MonoBehaviour
             _deflectTolerance = _healthEnhanced;
             _coolDown = _coolDownTimeEnhanced;
         }
-        else 
+        else
         {
-            _spriteRenderer.sprite = _regularShield;    
+            _spriteRenderer.sprite = _regularShield;
             _deflectTolerance = _health;
             _coolDown = _coolDownTime;
         }
@@ -62,10 +62,11 @@ public class PlayerShield : MonoBehaviour
         {
             _animator.SetTrigger("Defend");
         }
-        else 
+        else
         {
             CanDelflect = false;
             _spriteRenderer.enabled = false;
+            _player.IsShieldEnabled = false;
             StartCoroutine(CoolDown());
         }
     }

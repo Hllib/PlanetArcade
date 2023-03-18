@@ -22,8 +22,6 @@ public class RobotBoss : Enemy, IDamageable
     private GameObject _shield;
     [SerializeField]
     private GameObject[] _fireRings;
-    [SerializeField]
-    private GameObject _portalToFinal;
 
     private bool _isShieldActive;
 
@@ -78,7 +76,6 @@ public class RobotBoss : Enemy, IDamageable
 
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.bossDeath, this.transform.position);
         MarsManager.Instance.StopFightMusic();
-        _portalToFinal.SetActive(true);
 
         if (lootPrefab != null)
         {

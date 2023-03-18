@@ -59,8 +59,6 @@ public class StationManager : MonoBehaviour
             _introCutsceneHolder.SetActive(true);
             BlockMovement();
         }
-
-        Cursor.visible = false;
     }
 
     //called from timeLine through a signal

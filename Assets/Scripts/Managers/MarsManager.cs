@@ -8,6 +8,8 @@ public class MarsManager : MonoBehaviour
     private Player _player;
     [SerializeField]
     private bool _isOnMars;
+    [SerializeField]
+    private GameObject _portalToFinalScene;
 
     private static MarsManager _instance;
 
@@ -35,6 +37,11 @@ public class MarsManager : MonoBehaviour
         {
             StartCoroutine(SaveInv());
         }
+    }
+
+    public void ShowPortal()
+    {
+        _portalToFinalScene.SetActive(true);
     }
 
     IEnumerator SaveInv()
