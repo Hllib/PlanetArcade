@@ -40,7 +40,7 @@ The development process involved:
   - setup of an objectPooler;
   - working with scriptableObjects;
 
-  The game presents a wide variaty of UI elements and required:
+  The game presents a wide variety of UI elements and required:
   - creating HUD for player and enemies;
   - immersive inventory system with hover-tooltips and drag-and-drop of elements;
   - various menus and panels, dynamic interactable buttons and shop system;
