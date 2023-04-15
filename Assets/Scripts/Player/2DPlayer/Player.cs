@@ -247,10 +247,6 @@ public class Player : MonoBehaviour, IDamageable
                     OnPlayerDeath();
                 }
             }
-            else
-            {
-
-            }
         }
     }
 
@@ -303,10 +299,6 @@ public class Player : MonoBehaviour, IDamageable
         {
             _playerFootstepsWalk.stop(STOP_MODE.ALLOWFADEOUT);
             _playerFootstepsSprint.stop(STOP_MODE.ALLOWFADEOUT);
-        }
-        else
-        {
-
         }
     }
 }

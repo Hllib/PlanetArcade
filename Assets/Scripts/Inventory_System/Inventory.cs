@@ -96,6 +96,18 @@ public class Inventory : MonoBehaviour
         _scrollBar.gameObject.SetActive(false);
     }
 
+    private void SetSelectedItem(GameObject selectedItem)
+    {
+        var localSelectedItem = selectedItem.GetComponentInChildren<UIItem>().item;
+
+        if (localSelectedItem != null)
+        {
+            SelectedItem = localSelectedItem;
+            UIManager.Instance.DisplayMessage("Player holds " + SelectedItem.title);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.itemEquip, Vector3.zero);
+        }
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -107,30 +119,15 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (_quickSelections[0].GetComponentInChildren<UIItem>().item != null)
-            {
-                SelectedItem = _quickSelections[0].GetComponentInChildren<UIItem>().item;
-                UIManager.Instance.DisplayMessage("Player holds " + SelectedItem.title);
-                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.itemEquip, Vector3.zero);
-            }
+            SetSelectedItem(_quickSelections[0]);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (_quickSelections[1].GetComponentInChildren<UIItem>().item != null)
-            {
-                SelectedItem = _quickSelections[1].GetComponentInChildren<UIItem>().item;
-                UIManager.Instance.DisplayMessage("Player holds " + SelectedItem.title);
-                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.itemEquip, Vector3.zero);
-            }
+            SetSelectedItem(_quickSelections[1]);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            if (_quickSelections[2].GetComponentInChildren<UIItem>().item != null)
-            {
-                SelectedItem = _quickSelections[2].GetComponentInChildren<UIItem>().item;
-                UIManager.Instance.DisplayMessage("Player holds " + SelectedItem.title);
-                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.itemEquip, Vector3.zero);
-            }
+            SetSelectedItem(_quickSelections[2]);
         }
     }
 }

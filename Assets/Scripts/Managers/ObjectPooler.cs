@@ -51,7 +51,7 @@ public class ObjectPooler : MonoBehaviour
 
     public GameObject GetPooledObject()
     {
-        for(int i = 0; i < poolList.Count; i++)
+        for (int i = 0; i < poolList.Count; i++)
         {
             if (!poolList[i].activeInHierarchy)
             {
