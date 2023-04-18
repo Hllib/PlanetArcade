@@ -14,13 +14,22 @@ public class CaveEntrance : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.GetComponent<Player>() != null)
         {
             _player = collision.GetComponent<Player>();
             _player.FireBlocked = true;
 
             _playerInv = collision.GetComponent<Inventory>();
             _enterCavePanel.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<Player>() != null)
+        {
+            _enterCavePanel.SetActive(false);
+            _player.FireBlocked = false;
         }
     }
 
