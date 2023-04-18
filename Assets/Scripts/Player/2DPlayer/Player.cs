@@ -12,34 +12,29 @@ using FMOD.Studio;
 public class Player : MonoBehaviour, IDamageable
 {
     public bool isDead;
-    private int _ammoAmount;
-    private double _ammoToBullets = 15.0;
+    public int LookDirection { get; set; }
+    public int Health { get; set; }
+    public float speed = 3.0f;
+
+    [SerializeField] private PlayerWeaponController _playerWeaponController;
+    [SerializeField] private GameObject _damageReceivedTextPrefab;
+    [SerializeField] private PlayerShield _shield;
+
+    private const double AmmoToBulletsRate = 15.0;
+    private const float InitialSpeed = 3.0f;
 
     private PlayerAnimator _animator;
     private Rigidbody2D _rigidbody;
     private Inventory _playerInventory;
-    [SerializeField]
-    private PlayerWeaponController _playerWeaponController;
-    [SerializeField]
-    protected GameObject damageReceivedTextPrefab;
-    [SerializeField]
-    private PlayerShield _shield;
 
-    private const float InitialSpeed = 3.0f;
-    public float speed = 3.0f;
-    [SerializeField]
-
-    public int LookDirection { get; set; }
-    public int Health { get; set; }
-
+    private int _ammoAmount;
     private float _canFire = 0.0f;
     private float _fireRate = 1.0f;
-    private bool _hasFired;
 
+    private bool _hasFired;
     public bool FireBlocked { get; set; }
     public bool IsShieldEnabled { get; set; }
     private bool _hasShield;
-    [SerializeField]
     private bool _isSprinting;
     private bool _sprintAllowed;
 
@@ -58,7 +53,7 @@ public class Player : MonoBehaviour, IDamageable
         GetInventory();
 
         var ammoBoxCount = _playerInventory.playerItems.Count(item => item.id == InventoryTypes.Ammo);
-        _ammoAmount = ammoBoxCount * (int)_ammoToBullets;
+        _ammoAmount = ammoBoxCount * (int)AmmoToBulletsRate;
         UIManager.Instance.UpdateAmmoCount(_ammoAmount);
 
         Health = PlayerSettings.Health;
@@ -131,7 +126,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public void AddToAmmo()
     {
-        _ammoAmount += (int)_ammoToBullets;
+        _ammoAmount += (int)AmmoToBulletsRate;
         UIManager.Instance.UpdateAmmoCount(_ammoAmount);
     }
 
@@ -139,7 +134,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         _ammoAmount = ammount;
 
-        var currentBoxexCount = _ammoAmount / _ammoToBullets;
+        var currentBoxexCount = _ammoAmount / AmmoToBulletsRate;
         var ammoBoxesInInventory = _playerInventory.playerItems.Count(item => item.id == InventoryTypes.Ammo);
         if (currentBoxexCount <= ammoBoxesInInventory - 1)
         {
@@ -209,7 +204,7 @@ public class Player : MonoBehaviour, IDamageable
 
     private void ShowFloatingDamage(int damage, Color color)
     {
-        GameObject damageText = Instantiate(damageReceivedTextPrefab, transform.position, Quaternion.identity) as GameObject;
+        GameObject damageText = Instantiate(_damageReceivedTextPrefab, transform.position, Quaternion.identity) as GameObject;
         damageText.GetComponent<TextMeshProUGUI>().text = damage.ToString();
         damageText.GetComponent<TextMeshProUGUI>().color = color;
         damageText.transform.SetParent(gameObject.GetComponentInChildren<Canvas>().GetComponentInChildren<Image>().transform);

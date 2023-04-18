@@ -14833,6 +14833,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2413558930649294449, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
+      propertyPath: _damageReceivedTextPrefab
+      value: 
+      objectReference: {fileID: 4177831865770034744, guid: 2fd9291ca114ec84bbcb89cf9d821568, type: 3}
     - target: {fileID: 2413558930649294450, guid: 6959b587e5778b3458ae4b77ba41551b, type: 3}
       propertyPath: m_RootOrder
       value: 1
