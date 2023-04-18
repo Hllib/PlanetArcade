@@ -129,7 +129,7 @@ public class Guide : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && !_hasGivenKey)
+        if (collision.gameObject.GetComponent<Player>() != null && !_hasGivenKey)
         {
             _arrowPointer.gameObject.SetActive(false);
             GenerateGuide(Script.FirstMeet);

@@ -26,7 +26,6 @@ public class AstronautEnemyFly : Enemy, IDamageable
         chaseStopRadius = AI.chaseStopRadius;
     }
 
-    //DIFFERS FROM BASE CLASS
     public override void CalculateMovement()
     {
         if (transform.position == pointA.position)

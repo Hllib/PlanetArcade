@@ -25,9 +25,9 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField]
     private PlayerShield _shield;
 
+    private const float InitialSpeed = 3.0f;
     public float speed = 3.0f;
     [SerializeField]
-    private float _currentSpeed;
 
     public int LookDirection { get; set; }
     public int Health { get; set; }
@@ -127,8 +127,6 @@ public class Player : MonoBehaviour, IDamageable
         {
             CheckFire();
         }
-
-        _currentSpeed = speed;
     }
 
     public void AddToAmmo()
@@ -181,7 +179,7 @@ public class Player : MonoBehaviour, IDamageable
         {
             _playerWeaponController.HideWeapon();
 
-            speed = _isSprinting ? 3.0f * 2 : 3.0f;
+            speed = _isSprinting ? InitialSpeed * 2 : InitialSpeed;
             _animator.CeaseFire();
             _hasFired = false;
         }
