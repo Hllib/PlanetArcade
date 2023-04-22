@@ -5,8 +5,7 @@ using UnityEngine;
 public class Artifact : MonoBehaviour, IGatherable
 {
     public Inventory PlayerInventory { get; set; }
-    [SerializeField]
-    private int _inventoryType;
+    [SerializeField] private int _inventoryType;
 
     public void OnTriggerEnter2D(Collider2D other)
     {

@@ -9,22 +9,16 @@ using UnityEngine.UI;
 
 public class Guide : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject _guidePanel;
-    [SerializeField]
-    private Text _guideText;
-    [SerializeField]
-    private GameObject _arrowPointer;
-    [SerializeField]
-    private GameObject _disabledAmmo;
-    [SerializeField]
-    private GameObject _slime;
-    [SerializeField]
-    private Text _okButtonText;
-    [SerializeField]
-    private Player _player;
-    [SerializeField]
-    private GameObject _scrollbar;
+    [SerializeField] private GameObject _guidePanel;
+    [SerializeField] private Text _guideText;
+    [SerializeField] private GameObject _arrowPointer;
+    [SerializeField] private GameObject _disabledAmmo;
+    [SerializeField] private GameObject _slime;
+    [SerializeField] private Text _okButtonText;
+    [SerializeField] private Player _player;
+    [SerializeField] private GameObject _scrollbar;
+
+    private bool _hasGivenKey;
 
     public bool HasFinishedTutorial { get; set; }
 
@@ -124,8 +118,6 @@ public class Guide : MonoBehaviour
         ShowPanel();
         GenerateGuide(Script.PickUpShiled);
     }
-
-    private bool _hasGivenKey;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

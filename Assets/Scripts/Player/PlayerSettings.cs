@@ -26,6 +26,5 @@ public class PlayerSettings : MonoBehaviour
     public const string GameStarted = "GameStarted";
     public const string GameFinished = "GameFinished";
 
-
     public const string GotAchievement = "ShowAchievement";
 }

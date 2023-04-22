@@ -7,10 +7,8 @@ public class AstronautEnemyFly : Enemy, IDamageable
     public int Health { get; set; }
     private int _initialHealth;
 
-    [SerializeField]
-    private Transform _gunPoint;
-    [SerializeField]
-    private LineRenderer _line;
+    [SerializeField] private Transform _gunPoint;
+    [SerializeField] private LineRenderer _line;
 
     protected override void SetInitialSettings()
     {
@@ -69,7 +67,7 @@ public class AstronautEnemyFly : Enemy, IDamageable
         StartCoroutine(Fire());
     }
 
-    IEnumerator Fire()
+    protected IEnumerator Fire()
     {
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fire, this.transform.position);
 

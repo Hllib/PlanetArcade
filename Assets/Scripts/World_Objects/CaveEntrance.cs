@@ -28,8 +28,7 @@ public class CaveEntrance : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Player>() != null)
         {
-            _enterCavePanel.SetActive(false);
-            _player.FireBlocked = false;
+            Leave();
         }
     }
 

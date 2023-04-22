@@ -12,16 +12,11 @@ public class RobotBoss : Enemy, IDamageable
     private bool _powerAttackEnabled;
     private int _abilityCountdown;
 
-    [SerializeField]
-    private GameObject _firePillarPrefab;
-    [SerializeField]
-    private GameObject _fireHandPrefab;
-    [SerializeField]
-    private GameObject _meteorPrefab;
-    [SerializeField]
-    private GameObject _shield;
-    [SerializeField]
-    private GameObject[] _fireRings;
+    [SerializeField] private GameObject _firePillarPrefab;
+    [SerializeField] private GameObject _fireHandPrefab;
+    [SerializeField] private GameObject _meteorPrefab;
+    [SerializeField] private GameObject _shield;
+    [SerializeField] private GameObject[] _fireRings;
 
     private bool _isShieldActive;
 

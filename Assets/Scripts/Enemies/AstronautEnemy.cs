@@ -6,12 +6,12 @@ using UnityEngine;
 public class AstronautEnemy : Enemy, IDamageable
 {
     public int Health { get; set; }
-    private int _initialHealth;
+    protected int initialHealth;
 
     [SerializeField]
-    private Transform _gunPoint;
+    protected Transform _gunPoint;
     [SerializeField]
-    private LineRenderer _line;
+    protected LineRenderer _line;
 
     protected override void SetInitialSettings()
     {
@@ -20,7 +20,7 @@ public class AstronautEnemy : Enemy, IDamageable
         speed = AI.speed;
         tempSpeed = speed;
         Health = AI.health;
-        _initialHealth = Health;
+        initialHealth = Health;
 
         attackRadius = AI.attackRadius;
         attackRate = AI.attackRate;
@@ -34,7 +34,7 @@ public class AstronautEnemy : Enemy, IDamageable
 
         isInCombat = true;
         Health -= damage;
-        UpdateHealthBar(Health * 100 / _initialHealth);
+        UpdateHealthBar(Health * 100 / initialHealth);
         ShowFloatingDamage(damage, Color.red);
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hit, this.transform.position);
 
@@ -56,7 +56,7 @@ public class AstronautEnemy : Enemy, IDamageable
         StartCoroutine(Fire());
     }
 
-    IEnumerator Fire()
+    public IEnumerator Fire()
     {
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.fire, this.transform.position);
 

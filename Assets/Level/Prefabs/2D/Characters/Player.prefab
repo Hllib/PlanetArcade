@@ -122,6 +122,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1188892698
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,12 +476,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
-  _playerWeaponController: {fileID: 4037679145554905718}
-  damageReceivedTextPrefab: {fileID: 4177831865770034744, guid: 2fd9291ca114ec84bbcb89cf9d821568, type: 3}
-  _shield: {fileID: 495236267}
   speed: 3
-  _currentSpeed: 0
-  _isSprinting: 0
+  _playerWeaponController: {fileID: 4037679145554905718}
+  _damageReceivedTextPrefab: {fileID: 4177831865770034744, guid: 2fd9291ca114ec84bbcb89cf9d821568, type: 3}
+  _shield: {fileID: 495236267}
 --- !u!114 &2413558930649294454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,6 +616,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2413558930853048748
 GameObject:
   m_ObjectHideFlags: 0
