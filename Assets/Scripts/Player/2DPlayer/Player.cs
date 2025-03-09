@@ -198,7 +198,7 @@ public class Player : MonoBehaviour, IDamageable
             _isSprinting = false;
         }
 
-        _rigidbody.velocity = new Vector2(horizontalInput * speed, verticalInput * speed);
+        _rigidbody.linearVelocity = new Vector2(horizontalInput * speed, verticalInput * speed);
         _animator.Move(horizontalInput, verticalInput);
     }
 
@@ -256,7 +256,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.playerDeath, transform.position);
 
-        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.linearVelocity = Vector3.zero;
         speed = 0f;
         _animator.OnPlayerDeath();
         isDead = true;
@@ -266,7 +266,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public void UpdateSound()
     {
-        if ((_rigidbody.velocity.x != 0 || _rigidbody.velocity.y != 0) && !_isSprinting)
+        if ((_rigidbody.linearVelocity.x != 0 || _rigidbody.linearVelocity.y != 0) && !_isSprinting)
         {
             _playerFootstepsSprint.stop(STOP_MODE.IMMEDIATE);
 
@@ -277,7 +277,7 @@ public class Player : MonoBehaviour, IDamageable
                 _playerFootstepsWalk.start();
             }
         }
-        else if ((_rigidbody.velocity.x != 0 || _rigidbody.velocity.y != 0) && _isSprinting)
+        else if ((_rigidbody.linearVelocity.x != 0 || _rigidbody.linearVelocity.y != 0) && _isSprinting)
         {
             _playerFootstepsWalk.stop(STOP_MODE.IMMEDIATE);
 
@@ -288,7 +288,7 @@ public class Player : MonoBehaviour, IDamageable
                 _playerFootstepsSprint.start();
             }
         }
-        else if (_rigidbody.velocity.x == 0 && _rigidbody.velocity.y == 0)
+        else if (_rigidbody.linearVelocity.x == 0 && _rigidbody.linearVelocity.y == 0)
         {
             _playerFootstepsWalk.stop(STOP_MODE.ALLOWFADEOUT);
             _playerFootstepsSprint.stop(STOP_MODE.ALLOWFADEOUT);
